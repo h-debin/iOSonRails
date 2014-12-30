@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
+		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
+		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
+		BAD5D70B1A52E2780009CC5F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6E61A52E03C0009CC5F /* Info.plist */; };
+		BAD5D70C1A52E2BD0009CC5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */; };
+		BAD5D7221A52E8670009CC5F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7101A52E8670009CC5F /* AFHTTPRequestOperation.m */; };
+		BAD5D7231A52E8670009CC5F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7121A52E8670009CC5F /* AFHTTPRequestOperationManager.m */; };
+		BAD5D7241A52E8670009CC5F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7141A52E8670009CC5F /* AFHTTPSessionManager.m */; };
+		BAD5D7251A52E8670009CC5F /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7171A52E8670009CC5F /* AFNetworkReachabilityManager.m */; };
+		BAD5D7261A52E8670009CC5F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7191A52E8670009CC5F /* AFSecurityPolicy.m */; };
+		BAD5D7271A52E8670009CC5F /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D71B1A52E8670009CC5F /* AFURLConnectionOperation.m */; };
+		BAD5D7281A52E8670009CC5F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D71D1A52E8670009CC5F /* AFURLRequestSerialization.m */; };
+		BAD5D7291A52E8670009CC5F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D71F1A52E8670009CC5F /* AFURLResponseSerialization.m */; };
+		BAD5D72A1A52E8670009CC5F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7211A52E8670009CC5F /* AFURLSessionManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAD5D6FC1A52E03C0009CC5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAD5D6DA1A52E03C0009CC5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAD5D6E11A52E03C0009CC5F;
+			remoteInfo = iOSonRails;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAD5D6E91A52E03C0009CC5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BAD5D6F21A52E03C0009CC5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BAD5D6FB1A52E03C0009CC5F /* iOSonRailsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSonRailsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD5D7001A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSonRailsTests.m; sourceTree = "<group>"; };
+		BAD5D70F1A52E8670009CC5F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		BAD5D7101A52E8670009CC5F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		BAD5D7111A52E8670009CC5F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		BAD5D7121A52E8670009CC5F /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		BAD5D7131A52E8670009CC5F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		BAD5D7141A52E8670009CC5F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		BAD5D7151A52E8670009CC5F /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		BAD5D7161A52E8670009CC5F /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		BAD5D7171A52E8670009CC5F /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		BAD5D7181A52E8670009CC5F /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		BAD5D7191A52E8670009CC5F /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		BAD5D71A1A52E8670009CC5F /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		BAD5D71B1A52E8670009CC5F /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		BAD5D71C1A52E8670009CC5F /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		BAD5D71D1A52E8670009CC5F /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		BAD5D71E1A52E8670009CC5F /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		BAD5D71F1A52E8670009CC5F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		BAD5D7201A52E8670009CC5F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		BAD5D7211A52E8670009CC5F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAD5D6DF1A52E03C0009CC5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAD5D6F81A52E03C0009CC5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAD5D6D91A52E03C0009CC5F = {
+			isa = PBXGroup;
+			children = (
+				BAD5D6E41A52E03C0009CC5F /* iOSonRails */,
+				BAD5D6FE1A52E03C0009CC5F /* iOSonRailsTests */,
+				BAD5D6E31A52E03C0009CC5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAD5D6E31A52E03C0009CC5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */,
+				BAD5D6FB1A52E03C0009CC5F /* iOSonRailsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAD5D6E41A52E03C0009CC5F /* iOSonRails */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5D70D1A52E8670009CC5F /* ThirdPartyLibs */,
+				BAD5D6E91A52E03C0009CC5F /* AppDelegate.h */,
+				BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */,
+				BAD5D6F21A52E03C0009CC5F /* Images.xcassets */,
+				BAD5D6E51A52E03C0009CC5F /* Supporting Files */,
+			);
+			path = iOSonRails;
+			sourceTree = "<group>";
+		};
+		BAD5D6E51A52E03C0009CC5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5D6E61A52E03C0009CC5F /* Info.plist */,
+				BAD5D6E71A52E03C0009CC5F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAD5D6FE1A52E03C0009CC5F /* iOSonRailsTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */,
+				BAD5D6FF1A52E03C0009CC5F /* Supporting Files */,
+			);
+			path = iOSonRailsTests;
+			sourceTree = "<group>";
+		};
+		BAD5D6FF1A52E03C0009CC5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5D7001A52E03C0009CC5F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAD5D70D1A52E8670009CC5F /* ThirdPartyLibs */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5D70E1A52E8670009CC5F /* AFNetworking */,
+			);
+			path = ThirdPartyLibs;
+			sourceTree = "<group>";
+		};
+		BAD5D70E1A52E8670009CC5F /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5D70F1A52E8670009CC5F /* AFHTTPRequestOperation.h */,
+				BAD5D7101A52E8670009CC5F /* AFHTTPRequestOperation.m */,
+				BAD5D7111A52E8670009CC5F /* AFHTTPRequestOperationManager.h */,
+				BAD5D7121A52E8670009CC5F /* AFHTTPRequestOperationManager.m */,
+				BAD5D7131A52E8670009CC5F /* AFHTTPSessionManager.h */,
+				BAD5D7141A52E8670009CC5F /* AFHTTPSessionManager.m */,
+				BAD5D7151A52E8670009CC5F /* AFNetworking.h */,
+				BAD5D7161A52E8670009CC5F /* AFNetworkReachabilityManager.h */,
+				BAD5D7171A52E8670009CC5F /* AFNetworkReachabilityManager.m */,
+				BAD5D7181A52E8670009CC5F /* AFSecurityPolicy.h */,
+				BAD5D7191A52E8670009CC5F /* AFSecurityPolicy.m */,
+				BAD5D71A1A52E8670009CC5F /* AFURLConnectionOperation.h */,
+				BAD5D71B1A52E8670009CC5F /* AFURLConnectionOperation.m */,
+				BAD5D71C1A52E8670009CC5F /* AFURLRequestSerialization.h */,
+				BAD5D71D1A52E8670009CC5F /* AFURLRequestSerialization.m */,
+				BAD5D71E1A52E8670009CC5F /* AFURLResponseSerialization.h */,
+				BAD5D71F1A52E8670009CC5F /* AFURLResponseSerialization.m */,
+				BAD5D7201A52E8670009CC5F /* AFURLSessionManager.h */,
+				BAD5D7211A52E8670009CC5F /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAD5D6E11A52E03C0009CC5F /* iOSonRails */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAD5D7051A52E03C0009CC5F /* Build configuration list for PBXNativeTarget "iOSonRails" */;
+			buildPhases = (
+				BAD5D6DE1A52E03C0009CC5F /* Sources */,
+				BAD5D6DF1A52E03C0009CC5F /* Frameworks */,
+				BAD5D6E01A52E03C0009CC5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSonRails;
+			productName = iOSonRails;
+			productReference = BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAD5D6FA1A52E03C0009CC5F /* iOSonRailsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAD5D7081A52E03C0009CC5F /* Build configuration list for PBXNativeTarget "iOSonRailsTests" */;
+			buildPhases = (
+				BAD5D6F71A52E03C0009CC5F /* Sources */,
+				BAD5D6F81A52E03C0009CC5F /* Frameworks */,
+				BAD5D6F91A52E03C0009CC5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAD5D6FD1A52E03C0009CC5F /* PBXTargetDependency */,
+			);
+			name = iOSonRailsTests;
+			productName = iOSonRailsTests;
+			productReference = BAD5D6FB1A52E03C0009CC5F /* iOSonRailsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAD5D6DA1A52E03C0009CC5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = minghe;
+				TargetAttributes = {
+					BAD5D6E11A52E03C0009CC5F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					BAD5D6FA1A52E03C0009CC5F = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = BAD5D6E11A52E03C0009CC5F;
+					};
+				};
+			};
+			buildConfigurationList = BAD5D6DD1A52E03C0009CC5F /* Build configuration list for PBXProject "iOSonRails" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BAD5D6D91A52E03C0009CC5F;
+			productRefGroup = BAD5D6E31A52E03C0009CC5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAD5D6E11A52E03C0009CC5F /* iOSonRails */,
+				BAD5D6FA1A52E03C0009CC5F /* iOSonRailsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAD5D6E01A52E03C0009CC5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAD5D70B1A52E2780009CC5F /* Info.plist in Resources */,
+				BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAD5D6F91A52E03C0009CC5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAD5D6DE1A52E03C0009CC5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAD5D7281A52E8670009CC5F /* AFURLRequestSerialization.m in Sources */,
+				BAD5D7271A52E8670009CC5F /* AFURLConnectionOperation.m in Sources */,
+				BAD5D7261A52E8670009CC5F /* AFSecurityPolicy.m in Sources */,
+				BAD5D7221A52E8670009CC5F /* AFHTTPRequestOperation.m in Sources */,
+				BAD5D72A1A52E8670009CC5F /* AFURLSessionManager.m in Sources */,
+				BAD5D7291A52E8670009CC5F /* AFURLResponseSerialization.m in Sources */,
+				BAD5D70C1A52E2BD0009CC5F /* AppDelegate.m in Sources */,
+				BAD5D7241A52E8670009CC5F /* AFHTTPSessionManager.m in Sources */,
+				BAD5D7231A52E8670009CC5F /* AFHTTPRequestOperationManager.m in Sources */,
+				BAD5D7251A52E8670009CC5F /* AFNetworkReachabilityManager.m in Sources */,
+				BAD5D6E81A52E03C0009CC5F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAD5D6F71A52E03C0009CC5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAD5D6FD1A52E03C0009CC5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAD5D6E11A52E03C0009CC5F /* iOSonRails */;
+			targetProxy = BAD5D6FC1A52E03C0009CC5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BAD5D7031A52E03C0009CC5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BAD5D7041A52E03C0009CC5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAD5D7061A52E03C0009CC5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iOSonRails/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BAD5D7071A52E03C0009CC5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iOSonRails/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BAD5D7091A52E03C0009CC5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSonRailsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSonRails.app/iOSonRails";
+			};
+			name = Debug;
+		};
+		BAD5D70A1A52E03C0009CC5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSonRailsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSonRails.app/iOSonRails";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAD5D6DD1A52E03C0009CC5F /* Build configuration list for PBXProject "iOSonRails" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAD5D7031A52E03C0009CC5F /* Debug */,
+				BAD5D7041A52E03C0009CC5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAD5D7051A52E03C0009CC5F /* Build configuration list for PBXNativeTarget "iOSonRails" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAD5D7061A52E03C0009CC5F /* Debug */,
+				BAD5D7071A52E03C0009CC5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BAD5D7081A52E03C0009CC5F /* Build configuration list for PBXNativeTarget "iOSonRailsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAD5D7091A52E03C0009CC5F /* Debug */,
+				BAD5D70A1A52E03C0009CC5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAD5D6DA1A52E03C0009CC5F /* Project object */;
+}
