@@ -1,3 +1,10 @@
+---
+title: iOS on Rails&#58; up and running
+layout: post
+categories: iOS Rails
+tag: ‘iOS on Rails’
+---
+
 作为一个 iOS 开发，相信很多人和我一样想给自己的App快速的建立后端Server, 把各种
 高负荷的计算工作都扔到后端，这样 App 的开发就可以重点放在提高用户体验上。 而作
 为一个 Ruby 开发者，我们同样希望自己优雅的 Ruby 代码不仅仅作为 Web App 的后端，
@@ -9,52 +16,54 @@
 
 而今天这这篇文章是一个开始，一个很简单的开始: 是一个 Rails 和 iOS 相遇的故事。
 
-####需求
+## 需求
 
 我们要做一个自己的新闻客户端。
 
-####分析
+## 分析
 
 这就是一个很典型的需要后端支持的 App 的场景，App不可能去代替后端去完成新闻的获取，
 信息的处理等工作，App的目的是为终端用户提供最优质的新闻阅读体验。
 
-####实现
+## 实现
 
-##### Rails
+### Rails
 
 有很多种方式去为 iOS App 搭建一个后端，但是也许 Rails 是最快的方式，
 Rails 让我们可以在几分钟之内就可以搭建起一个干净的API Server：backend-as-a-service.
 显然我们App需要的resource是新闻（news），那么我们的REST API应该是这样子:
 
-```
+{% highlight objc %}
  GET /news
-```
+{% endhighlight %}
 
 对于Rails来说，我们只要进行下面几步就可以达到目的了:
+
 - 创建一个 Rails 项目
 
-```
-    Rails new Server
-```
+{% highlight objc %}
+    rails new Server
+{% endhighlight %}
 
 - 创建相应的model和controller
 
-```
-    Rails g model news
-    Rails g controller news
-```
+{% highlight objc %}
+    rails g model news
+    rails g controller news
+{% endhighlight %}
 
 - 在config/routes.rb中设置路由
 
-```
+{% highlight objc %}
     Rails.Application.routes.draw do
       resources :news
     end
-```
+{% endhighlight %}
+
 现在我们可以查看我们Server已经支持了哪些路由了
 
-```
-    $ rake routes
+{% highlight sh %}
+$ rake routes
 
      Prefix Verb   URI Pattern              Controller#Action
     news_index GET    /news(.:format)          news#index
@@ -65,25 +74,24 @@ Rails 让我们可以在几分钟之内就可以搭建起一个干净的API Serv
                PATCH  /news/:id(.:format)      news#update
                PUT    /news/:id(.:format)      news#update
                DELETE /news/:id(.:format)      news#destroy
-
-```
+{% endhighlight %}
 
 当然我们需要去 controller 去实现相应的 Actioin，为了支持 'GET /news' 这个路由，我们需要去实现
 index方法，所以我们的 App/controllers/news_controller.rb 如下:
 
-```
+{% highlight ruby %}
 class NewsController < ApplicationController
   def index
     render :json => News.all
   end
 end
-```
+{% endhighlight %}
 
 - 添加测试数据
 
 给我们的项目添加一点测试数据吧, db/seed.rb
 
-```
+{% highlight ruby %}
 1000.times do
   News.create(title:Faker::Name.name,
               link:Faker::Internet.url,
@@ -95,18 +103,22 @@ end
               from_site: Faker::Lorem.word)
 end
 
+{% endhighlight %}
+
+{% highlight sh %}
     $ rake db:seed
-```
+{% endhighlight %}
 
 简单的测试一下我们的API。
 
-```
-    $ Rails s
+{% highlight sh %}
+    $ rails s
     $ curl 127.0.0.1/news
-```
+{% endhighlight %}
+
 是不是看到哗啦啦的一大波数据，这就说明基于Rails的一个简单的 API Server就完成了。
 
-##### iOS
+### iOS
 
 对于很多的 Ruby 开发者来说，习惯了使用 Vim/Emacs 写代码之后，打开笨重的 Xcode，真是一件
 不是那么爽的事情啊，不过对于 iOS 开发来说， Xcode 真的对我们的开发提供了很多方便的功能，
@@ -124,11 +136,11 @@ end
 从我们的 Rails Server 拿到我们新闻之后， 将第一条新闻的标题显示在 View 的中间。所以
 我们只要下面一段简单的代码就可以达到目的.
 
-```
+{% highlight objc %}
 self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 
-    UIViewController *viewController = [[UIViewController alloc] init];                                                                                                                          
+    UIViewController *viewController = [[UIViewController alloc] init];
     UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UILabel *label = [[UILabel alloc] initWithFrame:
                       CGRectMake(0,
@@ -166,20 +178,19 @@ self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
      ];
 }
 
-```
+{% endhighlight %}
 
 作为一个骄傲的 Ruby 程序员，你应该已经猜到上面那段代码的大体意思：创建一个 View，在View的
 中间放置一个 label，然后从我们的 Rails Server 上请求新闻，并且将第一条新闻标题放到 label
 上面去显示。对，就是这样的。当然别忘了在 AppDelegate.m 中添加
 
-```
+<pre>
 #import "AFNetworking.h"
-
 #define SERVER_URL "http://127.0.0.1:3000/news"
+</pre>
 
-```
 然后你就点击 build and run 或者 command + R 让 Xcode 去编译并且运行我们的 App。如果没有什
 么意外你应该可以看到我们的 App 已经完美的运行起来，虽然它非常的简单。但是我们的 Rails 在
 此刻和我们的 iOS 终于合体了。(此处应该有掌声 ): )
 
-完整的代码可以在 https://github.com/metrue/iOSonRails
+完整的代码可以在 [https://github.com/metrue/iOSonRails](https://github.com/metrue/iOSonRails)
