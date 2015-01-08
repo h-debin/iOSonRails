@@ -139,6 +139,9 @@ iOS 中 Cocoa 里面大量的设计模式都必须有 Block 作为支撑。而�
 都是使用的是 Block. 所以深入理解 Block 是学习 Ruby 和 iOS 开发的基础，甚至
 对于理解其他语言如 Javascript 都是非常有意义的。
 
+### 最后
+你依然可以在 GitHub 上看我们的完整代码示例.
+[https://github.com/metrue/iOSonRails](https://github.com/metrue/iOSonRails)
 
 
 
