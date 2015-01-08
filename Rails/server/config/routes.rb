@@ -53,6 +53,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  #
+  match '/request_access_token', to:'user#create', via: [:post]
 
   resources :news
 end

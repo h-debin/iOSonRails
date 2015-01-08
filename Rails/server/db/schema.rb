@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229153520) do
+ActiveRecord::Schema.define(version: 20150108110547) do
 
   create_table "news", force: true do |t|
     t.text     "title"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20141229153520) do
     t.text     "category"
     t.text     "from_site"
     t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.text     "device_uuid"
+    t.text     "token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
