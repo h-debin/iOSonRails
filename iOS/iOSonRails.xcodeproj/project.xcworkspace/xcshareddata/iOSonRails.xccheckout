@@ -14,11 +14,11 @@
 		<string>https://github.com/metrue/iOSonRails</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>setup_and_run/iOS/iOSonRails/iOSonRails.xcodeproj</string>
+	<string>iOS/iOSonRails.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5C60E090D04EC288D067587274AEF1AF30671357</key>
-		<string>../../../../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/metrue/iOSonRails</string>
