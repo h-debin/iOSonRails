@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "AFNetworking.h"
+#import "HTTPClient.h"
+#import "UserManager.h"
 
 #define SERVER_URL "http://127.0.0.1:3000/news"
 
@@ -38,14 +40,20 @@
     
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
+
+    NSString *uuid = [[UserManager sharedUserManager] getUUID];
+    [[UserManager sharedUserManager] saveUUIDToKeyChain:uuid];
+    NSLog(@"UUID: %@", [[UserManager sharedUserManager] getUUID]);
     
+    /**
+    HTTPClient *sharedClient = [HTTPClient sharedHTTPClient];
     [self get:@SERVER_URL parameters:@{}
       success:^(id JSON) {
           label.text = JSON[0][@"title"];
       } failure:^(NSError *error) {
           NSLog(@"%@", [error localizedDescription]);
       }];
-
+     */
     return YES;
 }
 

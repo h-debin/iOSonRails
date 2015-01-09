@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA1DB6871A5FDB6C00B4E453 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */; };
+		BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6901A5FF44700B4E453 /* UserManager.m */; };
+		BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1DB6921A5FF87400B4E453 /* Security.framework */; };
+		BA1DB6961A5FFA4400B4E453 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6951A5FFA4400B4E453 /* UICKeyChainStore.m */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
@@ -34,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA1DB6851A5FDB6C00B4E453 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		BA1DB68F1A5FF44700B4E453 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = ThirdPartyLibs/Keychain/UserManager.h; sourceTree = "<group>"; };
+		BA1DB6901A5FF44700B4E453 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = ThirdPartyLibs/Keychain/UserManager.m; sourceTree = "<group>"; };
+		BA1DB6921A5FF87400B4E453 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BA1DB6941A5FFA4400B4E453 /* UICKeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UICKeyChainStore.h; path = UICKeyChainStore/Lib/UICKeyChainStore.h; sourceTree = SOURCE_ROOT; };
+		BA1DB6951A5FFA4400B4E453 /* UICKeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICKeyChainStore.m; path = UICKeyChainStore/Lib/UICKeyChainStore.m; sourceTree = SOURCE_ROOT; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,10 +94,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA1DB6881A5FEE5200B4E453 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				BA1DB6941A5FFA4400B4E453 /* UICKeyChainStore.h */,
+				BA1DB6951A5FFA4400B4E453 /* UICKeyChainStore.m */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 		BAD5D6D91A52E03C0009CC5F = {
 			isa = PBXGroup;
 			children = (
 				BAD5D6E41A52E03C0009CC5F /* iOSonRails */,
+				BAD5D70D1A52E8670009CC5F /* ThirdPartyLibs */,
 				BAD5D6FE1A52E03C0009CC5F /* iOSonRailsTests */,
 				BAD5D6E31A52E03C0009CC5F /* Products */,
 			);
@@ -103,11 +125,14 @@
 		BAD5D6E41A52E03C0009CC5F /* iOSonRails */ = {
 			isa = PBXGroup;
 			children = (
-				BAD5D70D1A52E8670009CC5F /* ThirdPartyLibs */,
 				BAD5D6E91A52E03C0009CC5F /* AppDelegate.h */,
 				BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */,
 				BAD5D6F21A52E03C0009CC5F /* Images.xcassets */,
 				BAD5D6E51A52E03C0009CC5F /* Supporting Files */,
+				BA1DB6851A5FDB6C00B4E453 /* HTTPClient.h */,
+				BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */,
+				BA1DB68F1A5FF44700B4E453 /* UserManager.h */,
+				BA1DB6901A5FF44700B4E453 /* UserManager.m */,
 			);
 			path = iOSonRails;
 			sourceTree = "<group>";
@@ -134,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD5D7001A52E03C0009CC5F /* Info.plist */,
+				BA1DB6921A5FF87400B4E453 /* Security.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,9 +167,11 @@
 		BAD5D70D1A52E8670009CC5F /* ThirdPartyLibs */ = {
 			isa = PBXGroup;
 			children = (
+				BA1DB6881A5FEE5200B4E453 /* Keychain */,
 				BAD5D70E1A52E8670009CC5F /* AFNetworking */,
 			);
-			path = ThirdPartyLibs;
+			name = ThirdPartyLibs;
+			path = iOSonRails/ThirdPartyLibs;
 			sourceTree = "<group>";
 		};
 		BAD5D70E1A52E8670009CC5F /* AFNetworking */ = {
@@ -273,9 +301,12 @@
 			files = (
 				BAD5D7281A52E8670009CC5F /* AFURLRequestSerialization.m in Sources */,
 				BAD5D7271A52E8670009CC5F /* AFURLConnectionOperation.m in Sources */,
+				BA1DB6871A5FDB6C00B4E453 /* HTTPClient.m in Sources */,
 				BAD5D7261A52E8670009CC5F /* AFSecurityPolicy.m in Sources */,
 				BAD5D7221A52E8670009CC5F /* AFHTTPRequestOperation.m in Sources */,
 				BAD5D72A1A52E8670009CC5F /* AFURLSessionManager.m in Sources */,
+				BA1DB6961A5FFA4400B4E453 /* UICKeyChainStore.m in Sources */,
+				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
 				BAD5D7291A52E8670009CC5F /* AFURLResponseSerialization.m in Sources */,
 				BAD5D70C1A52E2BD0009CC5F /* AppDelegate.m in Sources */,
 				BAD5D7241A52E8670009CC5F /* AFHTTPSessionManager.m in Sources */,
@@ -457,6 +488,7 @@
 				BAD5D7071A52E03C0009CC5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAD5D7081A52E03C0009CC5F /* Build configuration list for PBXNativeTarget "iOSonRailsTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +497,7 @@
 				BAD5D70A1A52E03C0009CC5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
