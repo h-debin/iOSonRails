@@ -10,8 +10,8 @@
 #import "AFNetworking.h"
 #import "HTTPClient.h"
 #import "UserManager.h"
+#import "Macro.h"
 
-#define SERVER_URL "http://127.0.0.1:3000/news"
 
 @interface AppDelegate ()
 
@@ -42,8 +42,9 @@
     [self.window makeKeyAndVisible];
 
     NSString *uuid = [[UserManager sharedUserManager] getUUID];
-    [[UserManager sharedUserManager] saveUUIDToKeyChain:uuid];
     NSLog(@"UUID: %@", [[UserManager sharedUserManager] getUUID]);
+    [[UserManager sharedUserManager] saveUUIDToKeyChain:uuid];
+    NSLog(@"Token: %@", [[UserManager sharedUserManager] getToken]);
     
     /**
     HTTPClient *sharedClient = [HTTPClient sharedHTTPClient];

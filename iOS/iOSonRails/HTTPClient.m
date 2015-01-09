@@ -7,10 +7,8 @@
 //
 
 #import "HTTPClient.h"
+#import "Macro.h"
 
-#ifndef SERVER_URL
-#define SERVER_URL "http://127.0.0.1/"
-#endif
 
 @implementation HTTPClient
 
@@ -82,10 +80,6 @@
           success:successHandler
           failure:failureHandler
      ];
-}
-
-- (void) isa {
-    NSLog(@"I am %@", self);
 }
 
 @end

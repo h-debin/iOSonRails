@@ -1,0 +1,13 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'iOSonRails' do
+  pod "AFNetworking", "~> 2.0"
+ # pod 'RestKit', '~> 0.20.0'
+  pod 'UICKeyChainStore'
+end
+
+target 'iOSonRailsTests' do
+
+end
+

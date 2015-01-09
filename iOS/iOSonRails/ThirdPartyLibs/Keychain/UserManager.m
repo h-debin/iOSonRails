@@ -8,6 +8,8 @@
 
 #import "UserManager.h"
 #import "UICKeyChainStore.h"
+#import "HTTPClient.h"
+#import "Macro.h"
 
 @implementation UserManager
 
@@ -29,6 +31,28 @@
     } else {
         return [self getUUIDFromDevice];
     }
+}
+
+- (NSString *)getToken {
+    NSString *token = [self getTokenFromKeyChain];
+    if (token == nil) {
+        [self requestTokenFromServer];
+    }
+    return token;
+}
+
+- (void)requestTokenFromServer {
+    NSDictionary *params = @{ @"uuid": [self getUUID] };
+    HTTPClient *sharedHTTPClient = [HTTPClient sharedHTTPClient];
+    [sharedHTTPClient post:@TOKEN_REQUEST_URL
+                 parameter:params
+                   success:^(id JSON) {
+                       [self saveTokenToKeyChain:JSON[@"token"]];
+                   }
+                   failure:^(NSError *error){
+                       NSLog(@"Error: can not request toke %@", [error localizedDescription]);
+                   }
+     ];
 }
 
 - (NSString *)getUUIDFromDevice {
@@ -58,5 +82,6 @@
     [store setString:uuid forKey:@"uuid"];
     [store synchronize];
 }
+
 
 @end
