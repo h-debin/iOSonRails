@@ -14,7 +14,5 @@
 
 - (NSString *)getUUID;
 - (NSString *)getToken;
-- (void)saveUUIDToKeyChain:(NSString *)uuid;
-- (void)saveTokenToKeyChain:(NSString *)token;
 
 @end

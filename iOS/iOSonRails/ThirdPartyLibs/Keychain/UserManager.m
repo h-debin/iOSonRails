@@ -29,7 +29,9 @@
     if (uuid) {
         return uuid;
     } else {
-        return [self getUUIDFromDevice];
+        uuid = [self getUUIDFromDevice];
+        [self saveUUIDToKeyChain:uuid];
+        return uuid;
     }
 }
 
@@ -82,6 +84,5 @@
     [store setString:uuid forKey:@"uuid"];
     [store synchronize];
 }
-
 
 @end

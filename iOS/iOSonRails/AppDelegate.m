@@ -41,9 +41,7 @@
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
 
-    NSString *uuid = [[UserManager sharedUserManager] getUUID];
     NSLog(@"UUID: %@", [[UserManager sharedUserManager] getUUID]);
-    [[UserManager sharedUserManager] saveUUIDToKeyChain:uuid];
     NSLog(@"Token: %@", [[UserManager sharedUserManager] getToken]);
     
     /**
@@ -56,18 +54,6 @@
       }];
      */
     return YES;
-}
-
-- (void)get:(NSString *)url parameters:(NSDictionary *)params success:(void (^)(id))successHandler failure:(void (^)(NSError *))failureHandler {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:params
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             successHandler(responseObject);
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError  *error) {
-             failureHandler(error);
-         }
-     ];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
