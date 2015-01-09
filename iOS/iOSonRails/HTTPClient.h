@@ -24,12 +24,14 @@
      failure:(void (^)(NSError *error))failureHandler;
 
 - (void)getWithAccessToken:(NSString *)url
+                      uuid:(NSString *)uuid
                      token:(NSString *)token
                  parameter:(NSDictionary *)params
                    success:(void (^)(id JSON))successHandler
                    failure:(void (^)(NSError *error))failureHandler;
 
 - (void)postWithAccessToken:(NSString *)url
+                      uuid:(NSString *)uuid
                       token:(NSString *)token
                   parameter:(NSDictionary *)params
                     success:(void (^)(id JSON))successHandler

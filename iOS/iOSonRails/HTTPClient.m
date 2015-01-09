@@ -60,9 +60,10 @@
     [self request:url parameter:params method:@"POST" success:successHandler failure:failureHandler];
 }
 
-- (void)getWithAccessToken:(NSString *)url token:(NSString *)token parameter:(NSDictionary *)params success:(void (^)(id))successHandler failure:(void (^)(NSError *))failureHandler {
+- (void)getWithAccessToken:(NSString *)url uuid:(NSString *)uuid token:(NSString *)token parameter:(NSDictionary *)params success:(void (^)(id))successHandler failure:(void (^)(NSError *))failureHandler {
     NSMutableDictionary *paramsWithToken = [[NSMutableDictionary alloc] initWithDictionary:params];
     [paramsWithToken setObject:token forKey:@"token"];
+    [paramsWithToken setObject:uuid forKey:@"uuid"];
     [self request:url
         parameter:paramsWithToken
            method:@"GET"
@@ -71,9 +72,10 @@
      ];
 }
 
-- (void)postWithAccessToken:(NSString *)url token:(NSString *)token parameter:(NSDictionary *)params success:(void (^)(id))successHandler failure:(void (^)(NSError *))failureHandler {
+- (void)postWithAccessToken:(NSString *)url uuid:(NSString *)uuid token:(NSString *)token parameter:(NSDictionary *)params success:(void (^)(id))successHandler failure:(void (^)(NSError *))failureHandler {
     NSMutableDictionary *paramsWithToken = [[NSMutableDictionary alloc] initWithDictionary:params];
     [paramsWithToken setObject:token forKey:@"token"];
+    [paramsWithToken setObject:uuid forKey:@"uuid"];
     [self request:url
         parameter:paramsWithToken
            method:@"POST"

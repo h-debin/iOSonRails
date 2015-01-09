@@ -10,6 +10,7 @@
 #define iOSonRails_Macro_h
 
 #define SERVER_URL "http://127.0.0.1:3000/"
+#define NEWS_URL "http://127.0.0.1:3000/news"
 #define TOKEN_REQUEST_URL "http://127.0.0.1:3000/request_access_token"
 
 #endif

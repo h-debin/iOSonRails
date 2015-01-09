@@ -44,15 +44,18 @@
     NSLog(@"UUID: %@", [[UserManager sharedUserManager] getUUID]);
     NSLog(@"Token: %@", [[UserManager sharedUserManager] getToken]);
     
-    /**
     HTTPClient *sharedClient = [HTTPClient sharedHTTPClient];
-    [self get:@SERVER_URL parameters:@{}
-      success:^(id JSON) {
-          label.text = JSON[0][@"title"];
-      } failure:^(NSError *error) {
-          NSLog(@"%@", [error localizedDescription]);
-      }];
-     */
+    [sharedClient getWithAccessToken:@NEWS_URL
+                                uuid:[[UserManager sharedUserManager] getUUID]
+                               token:[[UserManager sharedUserManager] getToken]
+                           parameter:@{}
+                             success:^(id JSON) {
+                                 label.text = JSON[0][@"title"];
+                             } failure:^(NSError *error) {
+                                 NSLog(@"%@", [error localizedDescription]);
+                             }
+     ];
+    
     return YES;
 }
 
