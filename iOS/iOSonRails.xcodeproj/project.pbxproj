@@ -7,20 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B2DDD87A53DAD120976EFE6 /* libPods-iOSonRails.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */; };
+		BA1DB6871A5FDB6C00B4E453 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */; };
+		BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6901A5FF44700B4E453 /* UserManager.m */; };
+		BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1DB6921A5FF87400B4E453 /* Security.framework */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
 		BAD5D70B1A52E2780009CC5F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6E61A52E03C0009CC5F /* Info.plist */; };
 		BAD5D70C1A52E2BD0009CC5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */; };
-		BAD5D7221A52E8670009CC5F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7101A52E8670009CC5F /* AFHTTPRequestOperation.m */; };
-		BAD5D7231A52E8670009CC5F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7121A52E8670009CC5F /* AFHTTPRequestOperationManager.m */; };
-		BAD5D7241A52E8670009CC5F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7141A52E8670009CC5F /* AFHTTPSessionManager.m */; };
-		BAD5D7251A52E8670009CC5F /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7171A52E8670009CC5F /* AFNetworkReachabilityManager.m */; };
-		BAD5D7261A52E8670009CC5F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7191A52E8670009CC5F /* AFSecurityPolicy.m */; };
-		BAD5D7271A52E8670009CC5F /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D71B1A52E8670009CC5F /* AFURLConnectionOperation.m */; };
-		BAD5D7281A52E8670009CC5F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D71D1A52E8670009CC5F /* AFURLRequestSerialization.m */; };
-		BAD5D7291A52E8670009CC5F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D71F1A52E8670009CC5F /* AFURLResponseSerialization.m */; };
-		BAD5D72A1A52E8670009CC5F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7211A52E8670009CC5F /* AFURLSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +29,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSonRails.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FABE1F2DF8E5C107F17CBF6 /* Pods-iOSonRails.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSonRails.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSonRails/Pods-iOSonRails.release.xcconfig"; sourceTree = "<group>"; };
+		BA02E34E1A602FC900C99A1E /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		BA1DB6851A5FDB6C00B4E453 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		BA1DB68F1A5FF44700B4E453 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = ThirdPartyLibs/Keychain/UserManager.h; sourceTree = "<group>"; };
+		BA1DB6901A5FF44700B4E453 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = ThirdPartyLibs/Keychain/UserManager.m; sourceTree = "<group>"; };
+		BA1DB6921A5FF87400B4E453 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,25 +46,7 @@
 		BAD5D6FB1A52E03C0009CC5F /* iOSonRailsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSonRailsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D7001A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSonRailsTests.m; sourceTree = "<group>"; };
-		BAD5D70F1A52E8670009CC5F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		BAD5D7101A52E8670009CC5F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		BAD5D7111A52E8670009CC5F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		BAD5D7121A52E8670009CC5F /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		BAD5D7131A52E8670009CC5F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		BAD5D7141A52E8670009CC5F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		BAD5D7151A52E8670009CC5F /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		BAD5D7161A52E8670009CC5F /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		BAD5D7171A52E8670009CC5F /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		BAD5D7181A52E8670009CC5F /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		BAD5D7191A52E8670009CC5F /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		BAD5D71A1A52E8670009CC5F /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		BAD5D71B1A52E8670009CC5F /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		BAD5D71C1A52E8670009CC5F /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		BAD5D71D1A52E8670009CC5F /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		BAD5D71E1A52E8670009CC5F /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		BAD5D71F1A52E8670009CC5F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		BAD5D7201A52E8670009CC5F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		BAD5D7211A52E8670009CC5F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		C8C6597F878D88F0DABEB5FB /* Pods-iOSonRails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSonRails.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSonRails/Pods-iOSonRails.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */,
+				8B2DDD87A53DAD120976EFE6 /* libPods-iOSonRails.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +75,8 @@
 				BAD5D6E41A52E03C0009CC5F /* iOSonRails */,
 				BAD5D6FE1A52E03C0009CC5F /* iOSonRailsTests */,
 				BAD5D6E31A52E03C0009CC5F /* Products */,
+				D308DE147F5DADD426D22BB4 /* Pods */,
+				DA02936B6D1617D528B45F3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,11 +92,15 @@
 		BAD5D6E41A52E03C0009CC5F /* iOSonRails */ = {
 			isa = PBXGroup;
 			children = (
-				BAD5D70D1A52E8670009CC5F /* ThirdPartyLibs */,
 				BAD5D6E91A52E03C0009CC5F /* AppDelegate.h */,
 				BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */,
 				BAD5D6F21A52E03C0009CC5F /* Images.xcassets */,
 				BAD5D6E51A52E03C0009CC5F /* Supporting Files */,
+				BA1DB6851A5FDB6C00B4E453 /* HTTPClient.h */,
+				BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */,
+				BA1DB68F1A5FF44700B4E453 /* UserManager.h */,
+				BA1DB6901A5FF44700B4E453 /* UserManager.m */,
+				BA02E34E1A602FC900C99A1E /* Macro.h */,
 			);
 			path = iOSonRails;
 			sourceTree = "<group>";
@@ -134,42 +127,26 @@
 			isa = PBXGroup;
 			children = (
 				BAD5D7001A52E03C0009CC5F /* Info.plist */,
+				BA1DB6921A5FF87400B4E453 /* Security.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BAD5D70D1A52E8670009CC5F /* ThirdPartyLibs */ = {
+		D308DE147F5DADD426D22BB4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BAD5D70E1A52E8670009CC5F /* AFNetworking */,
+				C8C6597F878D88F0DABEB5FB /* Pods-iOSonRails.debug.xcconfig */,
+				9FABE1F2DF8E5C107F17CBF6 /* Pods-iOSonRails.release.xcconfig */,
 			);
-			path = ThirdPartyLibs;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		BAD5D70E1A52E8670009CC5F /* AFNetworking */ = {
+		DA02936B6D1617D528B45F3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BAD5D70F1A52E8670009CC5F /* AFHTTPRequestOperation.h */,
-				BAD5D7101A52E8670009CC5F /* AFHTTPRequestOperation.m */,
-				BAD5D7111A52E8670009CC5F /* AFHTTPRequestOperationManager.h */,
-				BAD5D7121A52E8670009CC5F /* AFHTTPRequestOperationManager.m */,
-				BAD5D7131A52E8670009CC5F /* AFHTTPSessionManager.h */,
-				BAD5D7141A52E8670009CC5F /* AFHTTPSessionManager.m */,
-				BAD5D7151A52E8670009CC5F /* AFNetworking.h */,
-				BAD5D7161A52E8670009CC5F /* AFNetworkReachabilityManager.h */,
-				BAD5D7171A52E8670009CC5F /* AFNetworkReachabilityManager.m */,
-				BAD5D7181A52E8670009CC5F /* AFSecurityPolicy.h */,
-				BAD5D7191A52E8670009CC5F /* AFSecurityPolicy.m */,
-				BAD5D71A1A52E8670009CC5F /* AFURLConnectionOperation.h */,
-				BAD5D71B1A52E8670009CC5F /* AFURLConnectionOperation.m */,
-				BAD5D71C1A52E8670009CC5F /* AFURLRequestSerialization.h */,
-				BAD5D71D1A52E8670009CC5F /* AFURLRequestSerialization.m */,
-				BAD5D71E1A52E8670009CC5F /* AFURLResponseSerialization.h */,
-				BAD5D71F1A52E8670009CC5F /* AFURLResponseSerialization.m */,
-				BAD5D7201A52E8670009CC5F /* AFURLSessionManager.h */,
-				BAD5D7211A52E8670009CC5F /* AFURLSessionManager.m */,
+				90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */,
 			);
-			path = AFNetworking;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAD5D7051A52E03C0009CC5F /* Build configuration list for PBXNativeTarget "iOSonRails" */;
 			buildPhases = (
+				DE18FC630DE6F6F18FEEA397 /* Check Pods Manifest.lock */,
 				BAD5D6DE1A52E03C0009CC5F /* Sources */,
 				BAD5D6DF1A52E03C0009CC5F /* Frameworks */,
 				BAD5D6E01A52E03C0009CC5F /* Resources */,
+				AE0DBDA77E9D3AC987D984EC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,21 +245,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AE0DBDA77E9D3AC987D984EC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSonRails/Pods-iOSonRails-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE18FC630DE6F6F18FEEA397 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BAD5D6DE1A52E03C0009CC5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAD5D7281A52E8670009CC5F /* AFURLRequestSerialization.m in Sources */,
-				BAD5D7271A52E8670009CC5F /* AFURLConnectionOperation.m in Sources */,
-				BAD5D7261A52E8670009CC5F /* AFSecurityPolicy.m in Sources */,
-				BAD5D7221A52E8670009CC5F /* AFHTTPRequestOperation.m in Sources */,
-				BAD5D72A1A52E8670009CC5F /* AFURLSessionManager.m in Sources */,
-				BAD5D7291A52E8670009CC5F /* AFURLResponseSerialization.m in Sources */,
+				BA1DB6871A5FDB6C00B4E453 /* HTTPClient.m in Sources */,
+				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
 				BAD5D70C1A52E2BD0009CC5F /* AppDelegate.m in Sources */,
-				BAD5D7241A52E8670009CC5F /* AFHTTPSessionManager.m in Sources */,
-				BAD5D7231A52E8670009CC5F /* AFHTTPRequestOperationManager.m in Sources */,
-				BAD5D7251A52E8670009CC5F /* AFNetworkReachabilityManager.m in Sources */,
 				BAD5D6E81A52E03C0009CC5F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +389,7 @@
 		};
 		BAD5D7061A52E03C0009CC5F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C6597F878D88F0DABEB5FB /* Pods-iOSonRails.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOSonRails/Info.plist;
@@ -395,6 +401,7 @@
 		};
 		BAD5D7071A52E03C0009CC5F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FABE1F2DF8E5C107F17CBF6 /* Pods-iOSonRails.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOSonRails/Info.plist;
@@ -457,6 +464,7 @@
 				BAD5D7071A52E03C0009CC5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAD5D7081A52E03C0009CC5F /* Build configuration list for PBXNativeTarget "iOSonRailsTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +473,7 @@
 				BAD5D70A1A52E03C0009CC5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

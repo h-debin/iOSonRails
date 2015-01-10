@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 #import "AFNetworking.h"
+#import "HTTPClient.h"
+#import "UserManager.h"
+#import "Macro.h"
 
-#define SERVER_URL "http://127.0.0.1:3000/news"
 
 @interface AppDelegate ()
 
@@ -38,27 +40,23 @@
     
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
+
+    NSLog(@"UUID: %@", [[UserManager sharedUserManager] getUUID]);
+    NSLog(@"Token: %@", [[UserManager sharedUserManager] getToken]);
     
-    [self get:@SERVER_URL parameters:@{}
-      success:^(id JSON) {
-          label.text = JSON[0][@"title"];
-      } failure:^(NSError *error) {
-          NSLog(@"%@", [error localizedDescription]);
-      }];
-
-    return YES;
-}
-
-- (void)get:(NSString *)url parameters:(NSDictionary *)params success:(void (^)(id))successHandler failure:(void (^)(NSError *))failureHandler {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:params
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             successHandler(responseObject);
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError  *error) {
-             failureHandler(error);
-         }
+    HTTPClient *sharedClient = [HTTPClient sharedHTTPClient];
+    [sharedClient getWithAccessToken:@NEWS_URL
+                                uuid:[[UserManager sharedUserManager] getUUID]
+                               token:[[UserManager sharedUserManager] getToken]
+                           parameter:@{}
+                             success:^(id JSON) {
+                                 label.text = JSON[0][@"title"];
+                             } failure:^(NSError *error) {
+                                 NSLog(@"%@", [error localizedDescription]);
+                             }
      ];
+    
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

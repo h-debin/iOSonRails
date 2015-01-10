@@ -10,6 +10,8 @@
 	<string>iOSonRails</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>5928309140879E871CA2C91C35635A4223DBC07C</key>
+		<string>https://github.com/kishikawakatsumi/UICKeyChainStore</string>
 		<key>5C60E090D04EC288D067587274AEF1AF30671357</key>
 		<string>https://github.com/metrue/iOSonRails</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>iOS/iOSonRails.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>5928309140879E871CA2C91C35635A4223DBC07C</key>
+		<string>../../../iOS/UICKeyChainStore</string>
 		<key>5C60E090D04EC288D067587274AEF1AF30671357</key>
 		<string>../../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>5C60E090D04EC288D067587274AEF1AF30671357</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOSonRails</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5928309140879E871CA2C91C35635A4223DBC07C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>UICKeyChainStore</string>
 		</dict>
 	</array>
 </dict>
