@@ -8,7 +8,7 @@ iOSonRails is just about “iOS on Rails”, this project is a guide to develop 
 
 ### how it works
 
-this project started from Dec. 30 2014, we are make a News iOS App with a Rails-backend serve, we come up a post about iOSonRails with a feature or functional release. We have completed following topics till now.
+this project started from Dec. 30 2014, we are making a News iOS App with a Rails-backend serve, we come up a post about iOSonRails with a feature or functional release. We have completed following topics till now.
 
 |# | topic | release | 
 |---| ----- | -------- |
