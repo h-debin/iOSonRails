@@ -41,3 +41,6 @@ gem 'spring',        group: :development
 # use Faker for testing
 gem 'faker'
 
+# use thin for web server
+gem 'thin'
+

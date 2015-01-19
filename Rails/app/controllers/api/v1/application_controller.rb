@@ -16,6 +16,15 @@ class ApplicationController < ActionController::Base
   def token_autentication
     device_uuid = request.headers[:UUID]
     token = request.headers[:Token]
+
+    # ++
+    #logger.warn "*** BEGIN RAW REQUEST HEADERS ***"
+    #self.request.env.each do |header|
+    #    logger.warn "HEADER KEY: #{header[0]}"
+    #      logger.warn "HEADER VAL: #{header[1]}"
+    #end
+    #logger.warn "*** END RAW REQUEST HEADERS ***"
+    # ++
     if User.find_by(device_uuid: device_uuid,  token: token)
       return true
     end

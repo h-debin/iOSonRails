@@ -11,6 +11,7 @@
 #import "HTTPClient.h"
 #import "UserManager.h"
 #import "Macro.h"
+#import "NewsListViewController.h"
 
 
 @interface AppDelegate ()
@@ -38,22 +39,21 @@
     [view addSubview:label];
     viewController.view = view;
     
-    self.window.rootViewController = viewController;
+    self.window.rootViewController = [[NewsListViewController alloc] init];
     [self.window makeKeyAndVisible];
 
     NSLog(@"UUID: %@", [[UserManager sharedUserManager] getUUID]);
     NSLog(@"Token: %@", [[UserManager sharedUserManager] getToken]);
     
     HTTPClient *sharedClient = [HTTPClient sharedHTTPClient];
-    [sharedClient getWithAccessToken:@NEWS_URL
-                                uuid:[[UserManager sharedUserManager] getUUID]
-                               token:[[UserManager sharedUserManager] getToken]
-                           parameter:@{}
-                             success:^(id JSON) {
-                                 label.text = JSON[0][@"title"];
-                             } failure:^(NSError *error) {
-                                 NSLog(@"%@", [error localizedDescription]);
-                             }
+    [sharedClient get:@NEWS_URL
+            parameter:@{}
+              success:^(id JSON) {
+                  label.text = JSON[0][@"title"];
+              }
+              failure:^(NSError *error) {
+                  NSLog(@"%@", [error localizedDescription]);
+              }
      ];
     
     return YES;

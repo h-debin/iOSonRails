@@ -9,6 +9,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-iOSonRails-MMPlaceHolder.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-iOSonRails-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-iOSonRails-SVPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-iOSonRails-UICKeyChainStore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3FDA892385D7021064399C3F</key>
+		<key>1A86A11C548A1B2B6E90C125</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA23810BB5663CE403019309</key>
+		<key>1E72E3BE184C747A8A7E4F4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ECAB48FB6B43B57574E5BB2D</key>
+		<key>37952A9A87CA9F741FEAC4F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A08C3DE093F5DDF7CF74ACFD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B49B84231AFEFDE9F2543627</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D88A824B7E96A32E500A5103</key>
 		<dict>
 			<key>primary</key>
 			<true/>

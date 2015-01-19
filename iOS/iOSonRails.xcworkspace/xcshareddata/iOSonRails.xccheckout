@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5928309140879E871CA2C91C35635A4223DBC07C</key>
-		<string>../..iOS/UICKeyChainStore/</string>
+		<string>../..iOS/UICKeyChainStore</string>
 		<key>5C60E090D04EC288D067587274AEF1AF30671357</key>
 		<string>../..</string>
 	</dict>
