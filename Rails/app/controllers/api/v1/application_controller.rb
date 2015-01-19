@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
   end
 
   def token_autentication
-    device_uuid = params[:uuid]
-    token = params[:token]
+    device_uuid = request.headers[:UUID]
+    token = request.headers[:Token]
     if User.find_by(device_uuid: device_uuid,  token: token)
       return true
     end

@@ -54,11 +54,10 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   #
-  match '/request_access_token', to:'user#create', via: [:post]
-
   namespace :api do
     namespace :v1 do
       resources :news, only: [:index, :show]
+      match '/request_access_token', to:'user#create', via: [:post]
     end
   end
 end

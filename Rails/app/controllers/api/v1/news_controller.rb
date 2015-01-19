@@ -10,6 +10,10 @@ module Api
 
       def show
         news = News.find_by(id: params[:id])
+        puts "_____"
+        puts request.headers[:UUID]
+        puts request.headers[:Token]
+        puts "_____"
         if stale?(etag: news)
           render :json => News.find_by(id: params[:id])
         end
