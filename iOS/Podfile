@@ -2,9 +2,12 @@
 # platform :ios, '6.0'
 
 target 'iOSonRails' do
-  pod "AFNetworking", "~> 2.0"
+  pod 'AFNetworking', '~> 2.0'
  # pod 'RestKit', '~> 0.20.0'
+  pod 'SVPullToRefresh' 
+  pod 'SDWebImage', '~>3.6'
   pod 'UICKeyChainStore'
+  pod 'MMPlaceHolder'
 end
 
 target 'iOSonRailsTests' do
