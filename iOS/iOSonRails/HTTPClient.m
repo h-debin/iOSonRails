@@ -7,6 +7,7 @@
 //
 
 #import "HTTPClient.h"
+#import "UserManager.h"
 #import "Macro.h"
 
 
@@ -25,6 +26,8 @@
 
 - (void)request:(NSString *)url parameter:(NSDictionary *)params method:(NSString *)method success:(void (^)(id))successHandler failure:(void (^)(NSError *))failureHandler {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:[[UserManager sharedUserManager] getUUID] forHTTPHeaderField: @"UUID"];
+    [manager.requestSerializer setValue:[[UserManager sharedUserManager] getToken] forHTTPHeaderField: @"Token"];
     if ([method isEqualToString:@"GET"]) {
         [manager GET:url parameters:params
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
