@@ -56,5 +56,9 @@ Rails.application.routes.draw do
   #
   match '/request_access_token', to:'user#create', via: [:post]
 
-  resources :news
+  namespace :api do
+    namespace :v1 do
+      resources :news
+    end
+  end
 end
