@@ -4,18 +4,14 @@ module Api
       def index
         all_news = News.all
         if stale?(etag: all_news)
-          render :json => News.all 
+          render :json => all_news
         end
       end
 
       def show
         news = News.find_by(id: params[:id])
-        puts "_____"
-        puts request.headers[:UUID]
-        puts request.headers[:Token]
-        puts "_____"
         if stale?(etag: news)
-          render :json => News.find_by(id: params[:id])
+          render :json => news
         end
       end
     end
