@@ -22,7 +22,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    /**
+     init URL Cache
+     */
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity: 2 * 1024 * 1024
+                                                        diskCapacity:20 * 1024 *1024
+                                                             diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
@@ -41,20 +48,6 @@
     
     self.window.rootViewController = [[NewsListViewController alloc] init];
     [self.window makeKeyAndVisible];
-
-    NSLog(@"UUID: %@", [[UserManager sharedUserManager] getUUID]);
-    NSLog(@"Token: %@", [[UserManager sharedUserManager] getToken]);
-    
-    HTTPClient *sharedClient = [HTTPClient sharedHTTPClient];
-    [sharedClient get:@NEWS_URL
-            parameter:@{}
-              success:^(id JSON) {
-                  label.text = JSON[0][@"title"];
-              }
-              failure:^(NSError *error) {
-                  NSLog(@"%@", [error localizedDescription]);
-              }
-     ];
     
     return YES;
 }
