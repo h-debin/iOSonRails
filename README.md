@@ -15,7 +15,7 @@ this project started from Dec. 30 2014, we are making a News iOS App with a Rail
 |1 |[iOS on Rails: Up and Running](http://blog.minghe.me/ios/rails/2014/12/30/iOS%20on%20Rails:%20up%20and%20running.html) |[v0.1](https://github.com/metrue/iOSonRails/releases/tag/v0.1)|
 |2|[iOS on Rails: iOS on Rails: Block Basic in Ruby and Objective C](http://blog.minghe.me/objective-c/ruby/2015/01/05/iOS%20on%20Rails:%20Block%20basic%20in%20Ruby%20and%20Objective%20C.html)|[code example](https://github.com/metrue/iOSonRails/tree/master/basic_knowledge/block)|
 |3| [iOS on Rails: 使用 Access Token 进行访问控制](http://blog.minghe.me/objective-c/ruby/2015/01/05/iOS%20on%20Rails:%20%E4%BD%BF%E7%94%A8Access%20Token%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6.html) | [v0.2](https://github.com/metrue/iOSonRails/releases/tag/v0.2)|
-|4| [iOS on Rails: Provide and Consume RESTful Service ](http://minghe.me/objective-c/ruby/2015/01/20/iOS%20on%20Rails:%20Server%20RESTful%20Service.html)|done|
+|4| [iOS on Rails: Provide and Consume RESTful Service ](http://minghe.me/objective-c/ruby/2015/01/20/iOS%20on%20Rails:%20Server%20RESTful%20Service.html)|[v0.3](https://github.com/metrue/iOSonRails/releases/tag/v0.3)|
 |5| Rails Third-Party Authentication | ongoing| 
 
 ### Getting Started
