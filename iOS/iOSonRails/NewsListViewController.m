@@ -43,6 +43,7 @@
     //[self.tableView showPlaceHolderWithLineColor:[UIColor redColor]];
     //[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
+    /*
     __weak NewsListViewController *weakSelf = self;
     [self.tableView addPullToRefreshWithActionHandler:^{
         [weakSelf requestNews];
@@ -52,6 +53,8 @@
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         [weakSelf requestNews];
     }];
+    */
+    [self requestNews];
 }
 
 - (void)requestNews {
@@ -61,7 +64,6 @@
               success:^(id JSON) {
                   for (int i = 0; i < [JSON count]; i++) {
                       News *news = [[News alloc] initWithDictionary:JSON[i]];
-                      NSLog(@"%@", news);
                       [self.newsList addObject:news];
                   }
                   [self.tableView reloadData];

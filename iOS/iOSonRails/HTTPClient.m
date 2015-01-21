@@ -24,9 +24,16 @@
     return sharedHTTPClient;
 }
 
+- (BOOL)networkIsAvailable {
+    return [AFNetworkReachabilityManager sharedManager].isReachable ? YES : NO;
+}
+
 - (NSString *)getEtag:(NSURLRequest *)request {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSLog(@"Path: %@", paths);
+    NSLog(@"Log: %@", request.URL);
     NSString *filename = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", request.URL]];
+    NSLog(@"Filename: %@", filename);
     NSString *etag = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
     return etag;
 }
@@ -37,53 +44,37 @@
                                                   URLString:url
                                                  parameters:params
                                                       error:nil];
+    /**
+     *  use different cache policy according to network status
+     */
+    if ([self networkIsAvailable]) {
+        [mutableRequest setCachePolicy: NSURLRequestReloadIgnoringCacheData];
+    } else {
+        [mutableRequest setCachePolicy: NSURLRequestReturnCacheDataElseLoad];
+    }
+    
+    NSLog(@"Etag: %@", [self getEtag:mutableRequest]);
 
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:mutableRequest];
     requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
     [mutableRequest setValue:[[UserManager sharedUserManager] getUUID] forHTTPHeaderField: @"UUID"];
     [mutableRequest setValue:[[UserManager sharedUserManager] getToken] forHTTPHeaderField: @"Token"];
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self cachedResponseObject:operation];
         successHandler(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failureHandler(error);
     }];
     [requestOperation start];
 }
-/**
 
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:[[UserManager sharedUserManager] getUUID] forHTTPHeaderField: @"UUID"];
-    [manager.requestSerializer setValue:[[UserManager sharedUserManager] getToken] forHTTPHeaderField: @"Token"];
-    [manager.requestSerializer setValue:etag forHTTPHeaderField:@"If-None-Match"];
+- (id)cachedResponseObject:(AFHTTPRequestOperation *)operation{
     
-    if ([method isEqualToString:@"GET"]) {
-        [manager GET:url parameters:params
-             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 successHandler(responseObject);
-                 NSLog(@"%@",operation.response.allHeaderFields[@"Etag"]);
-             }
-             failure:^(AFHTTPRequestOperation *operation, NSError  *error) {
-                 failureHandler(error);
-             }
-         ];
-    } else if( [method isEqualToString:@"POST"]) {
-        [manager POST:url parameters:params
-             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 successHandler(responseObject);
-             }
-             failure:^(AFHTTPRequestOperation *operation, NSError  *error) {
-                 failureHandler(error);
-             }
-         ];
-    } else {
-        NSError *error = [[NSError alloc] initWithDomain:@"HTTPClient"
-                                                    code:1
-                                                userInfo:@{@"error": @"only GET and POST support"}
-                          ];
-        failureHandler(error);
-    }
+    NSCachedURLResponse* cachedResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:operation.request];
+    AFHTTPResponseSerializer* serializer = [AFJSONResponseSerializer serializer];
+    id responseObject = [serializer responseObjectForResponse:cachedResponse.response data:cachedResponse.data error:nil];
+    return responseObject;
 }
- */
 
 - (void)get:(NSString *)url parameter:(NSDictionary *)params success:(void (^)(id))successHandler failure:(void (^)(NSError *))failureHandler {
     [self request:url parameter:params method:@"GET" success:successHandler failure:failureHandler];
