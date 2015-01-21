@@ -8,7 +8,7 @@
 
 #import "UserManager.h"
 #import "UICKeyChainStore.h"
-#import "HTTPClient.h"
+#import "AFNetworking.h"
 #import "Macro.h"
 
 @implementation UserManager
@@ -45,15 +45,16 @@
 
 - (void)requestTokenFromServer {
     NSDictionary *params = @{ @"uuid": [self getUUID] };
-    HTTPClient *sharedHTTPClient = [HTTPClient sharedHTTPClient];
-    [sharedHTTPClient post:@TOKEN_REQUEST_URL
-                 parameter:params
-                   success:^(id JSON) {
-                       [self saveTokenToKeyChain:JSON[@"token"]];
-                   }
-                   failure:^(NSError *error){
-                       NSLog(@"Error: can not request toke %@", [error localizedDescription]);
-                   }
+   
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:@TOKEN_REQUEST_URL
+       parameters:params
+          success:^(AFHTTPRequestOperation *operation, id JSON) {
+              [self saveTokenToKeyChain:JSON[@"token"]];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"Error: cannot requst token %@", [error localizedDescription]);
+          }
      ];
 }
 
