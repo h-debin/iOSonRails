@@ -8,18 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		8B2DDD87A53DAD120976EFE6 /* libPods-iOSonRails.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */; };
-		BA14522C1A6CFB9500E5BF2F /* AppStore.png in Resources */ = {isa = PBXBuildFile; fileRef = BA14522B1A6CFB9400E5BF2F /* AppStore.png */; };
-		BA1DB6871A5FDB6C00B4E453 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */; };
+		BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7B91A80FDE90040ED7E /* AppDelegate.m */; };
+		BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */; };
+		BA05A7C91A80FDE90040ED7E /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C11A80FDE90040ED7E /* News.m */; };
+		BA05A7CA1A80FDE90040ED7E /* NewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C41A80FDE90040ED7E /* NewsListCell.m */; };
+		BA05A7CB1A80FDE90040ED7E /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */; };
 		BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6901A5FF44700B4E453 /* UserManager.m */; };
 		BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1DB6921A5FF87400B4E453 /* Security.framework */; };
-		BA92DE0D1A6BE0000072DEA1 /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA92DE0C1A6BE0000072DEA1 /* NewsListViewController.m */; };
-		BA92DE101A6BE2060072DEA1 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = BA92DE0F1A6BE2060072DEA1 /* News.m */; };
-		BA92DE131A6C0A370072DEA1 /* NewsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA92DE121A6C0A370072DEA1 /* NewsItemCell.m */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
 		BAD5D70B1A52E2780009CC5F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6E61A52E03C0009CC5F /* Info.plist */; };
-		BAD5D70C1A52E2BD0009CC5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,24 +34,23 @@
 /* Begin PBXFileReference section */
 		90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSonRails.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FABE1F2DF8E5C107F17CBF6 /* Pods-iOSonRails.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSonRails.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSonRails/Pods-iOSonRails.release.xcconfig"; sourceTree = "<group>"; };
-		BA02E34E1A602FC900C99A1E /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
-		BA14522B1A6CFB9400E5BF2F /* AppStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppStore.png; sourceTree = SOURCE_ROOT; };
-		BA1DB6851A5FDB6C00B4E453 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
-		BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		BA05A7B81A80FDE90040ED7E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BA05A7B91A80FDE90040ED7E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BA05A7BB1A80FDE90040ED7E /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		BA05A7BE1A80FDE90040ED7E /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		BA05A7C01A80FDE90040ED7E /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		BA05A7C11A80FDE90040ED7E /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		BA05A7C31A80FDE90040ED7E /* NewsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListCell.h; sourceTree = "<group>"; };
+		BA05A7C41A80FDE90040ED7E /* NewsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListCell.m; sourceTree = "<group>"; };
+		BA05A7C51A80FDE90040ED7E /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
+		BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
 		BA1DB68F1A5FF44700B4E453 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = ThirdPartyLibs/Keychain/UserManager.h; sourceTree = "<group>"; };
 		BA1DB6901A5FF44700B4E453 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = ThirdPartyLibs/Keychain/UserManager.m; sourceTree = "<group>"; };
 		BA1DB6921A5FF87400B4E453 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		BA92DE0B1A6BE0000072DEA1 /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
-		BA92DE0C1A6BE0000072DEA1 /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
-		BA92DE0E1A6BE2060072DEA1 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
-		BA92DE0F1A6BE2060072DEA1 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
-		BA92DE111A6C0A370072DEA1 /* NewsItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsItemCell.h; sourceTree = "<group>"; };
-		BA92DE121A6C0A370072DEA1 /* NewsItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItemCell.m; sourceTree = "<group>"; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BAD5D6E91A52E03C0009CC5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BAD5D6F21A52E03C0009CC5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BAD5D6FB1A52E03C0009CC5F /* iOSonRailsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSonRailsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D7001A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +78,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA05A7B71A80FDE90040ED7E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BA05A7B81A80FDE90040ED7E /* AppDelegate.h */,
+				BA05A7B91A80FDE90040ED7E /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BA05A7BA1A80FDE90040ED7E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BA05A7BB1A80FDE90040ED7E /* HTTPClient.h */,
+				BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		BA05A7BD1A80FDE90040ED7E /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				BA05A7BE1A80FDE90040ED7E /* Macro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		BA05A7BF1A80FDE90040ED7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA05A7C01A80FDE90040ED7E /* News.h */,
+				BA05A7C11A80FDE90040ED7E /* News.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA05A7C21A80FDE90040ED7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA05A7C31A80FDE90040ED7E /* NewsListCell.h */,
+				BA05A7C41A80FDE90040ED7E /* NewsListCell.m */,
+				BA05A7C51A80FDE90040ED7E /* NewsListViewController.h */,
+				BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BAD5D6D91A52E03C0009CC5F = {
 			isa = PBXGroup;
 			children = (
@@ -103,22 +147,15 @@
 		BAD5D6E41A52E03C0009CC5F /* iOSonRails */ = {
 			isa = PBXGroup;
 			children = (
-				BAD5D6E91A52E03C0009CC5F /* AppDelegate.h */,
-				BAD5D6EA1A52E03C0009CC5F /* AppDelegate.m */,
+				BA05A7B71A80FDE90040ED7E /* AppDelegate */,
+				BA05A7BA1A80FDE90040ED7E /* Helper */,
+				BA05A7BD1A80FDE90040ED7E /* Macro */,
+				BA05A7BF1A80FDE90040ED7E /* Model */,
+				BA05A7C21A80FDE90040ED7E /* View */,
 				BAD5D6F21A52E03C0009CC5F /* Images.xcassets */,
 				BAD5D6E51A52E03C0009CC5F /* Supporting Files */,
-				BA1DB6851A5FDB6C00B4E453 /* HTTPClient.h */,
-				BA1DB6861A5FDB6C00B4E453 /* HTTPClient.m */,
 				BA1DB68F1A5FF44700B4E453 /* UserManager.h */,
 				BA1DB6901A5FF44700B4E453 /* UserManager.m */,
-				BA02E34E1A602FC900C99A1E /* Macro.h */,
-				BA92DE0B1A6BE0000072DEA1 /* NewsListViewController.h */,
-				BA92DE0C1A6BE0000072DEA1 /* NewsListViewController.m */,
-				BA92DE111A6C0A370072DEA1 /* NewsItemCell.h */,
-				BA92DE121A6C0A370072DEA1 /* NewsItemCell.m */,
-				BA14522B1A6CFB9400E5BF2F /* AppStore.png */,
-				BA92DE0E1A6BE2060072DEA1 /* News.h */,
-				BA92DE0F1A6BE2060072DEA1 /* News.m */,
 			);
 			path = iOSonRails;
 			sourceTree = "<group>";
@@ -251,7 +288,6 @@
 			files = (
 				BAD5D70B1A52E2780009CC5F /* Info.plist in Resources */,
 				BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */,
-				BA14522C1A6CFB9500E5BF2F /* AppStore.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,13 +338,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1DB6871A5FDB6C00B4E453 /* HTTPClient.m in Sources */,
+				BA05A7C91A80FDE90040ED7E /* News.m in Sources */,
 				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
-				BA92DE101A6BE2060072DEA1 /* News.m in Sources */,
-				BAD5D70C1A52E2BD0009CC5F /* AppDelegate.m in Sources */,
-				BA92DE131A6C0A370072DEA1 /* NewsItemCell.m in Sources */,
+				BA05A7CA1A80FDE90040ED7E /* NewsListCell.m in Sources */,
 				BAD5D6E81A52E03C0009CC5F /* main.m in Sources */,
-				BA92DE0D1A6BE0000072DEA1 /* NewsListViewController.m in Sources */,
+				BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */,
+				BA05A7CB1A80FDE90040ED7E /* NewsListViewController.m in Sources */,
+				BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

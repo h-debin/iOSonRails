@@ -12,7 +12,7 @@
 #import "UserManager.h"
 #import "Macro.h"
 #import "News.h"
-#import "NewsItemCell.h"
+#import "NewsListCell.h"
 
 @interface NewsListViewController()
 
@@ -41,7 +41,7 @@
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
     //[self.tableView showPlaceHolderWithLineColor:[UIColor redColor]];
-    //[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     /*
     __weak NewsListViewController *weakSelf = self;
@@ -89,12 +89,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NewsItemCell *cell = [[NewsItemCell alloc] initWithNews:self.newsList[indexPath.row]];
+    NSLog(@"index: %ld", (long)indexPath.row);
+    News *news = self.newsList[indexPath.row];
+    NSLog(@"news: %@", news.title);
+    NewsListCell *cell = [NewsListCell initWithNews:self.newsList[indexPath.row]];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 210;
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

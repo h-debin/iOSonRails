@@ -15,7 +15,8 @@
     if (self) {
         self.title = aDict[@"title"];
         self.link = aDict[@"link"];
-        self.image = aDict[@"image"];
+//        self.image = aDict[@"image"];
+        self.image = aDict[@"picture"];
         self.video = aDict[@"video"];
         self.category = aDict[@"category"];
         self.pubDate = aDict[@"pub_date"];
