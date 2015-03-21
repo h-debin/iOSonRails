@@ -15275,3 +15275,11 @@ Processing by Api::V1::NewsController#index as */*
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."device_uuid" = 'EB1BEA58-233B-4DA8-A26A-22D548A70650' AND "users"."token" = 'b0e69ff1fbc76cf60424dbff313f00d1' LIMIT 1[0m
   [1m[35mNews Load (6.6ms)[0m  SELECT "news".* FROM "news"
 Completed 200 OK in 214ms (Views: 107.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/v1/news" for 127.0.0.1 at 2015-03-20 17:45:23 +0800
+Processing by Api::V1::NewsController#index as */*
+  Parameters: {"uuid"=>"EB1BEA58-233B-4DA8-A26A-22D548A70650", "token"=>"b0e69ff1fbc76cf60424dbff313f00d1", "news"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."device_uuid" = 'EB1BEA58-233B-4DA8-A26A-22D548A70650' AND "users"."token" = 'b0e69ff1fbc76cf60424dbff313f00d1' LIMIT 1[0m
+  [1m[35mNews Load (7.4ms)[0m  SELECT "news".* FROM "news"
+Completed 200 OK in 204ms (Views: 122.0ms | ActiveRecord: 10.1ms)

@@ -12,6 +12,7 @@
 #import "UserManager.h"
 #import "Macro.h"
 #import "NewsListViewController.h"
+#import "NavViewController.h"
 
 
 @interface AppDelegate ()
@@ -46,7 +47,7 @@
     [view addSubview:label];
     viewController.view = view;
     
-    self.window.rootViewController = [[NewsListViewController alloc] init];
+    self.window.rootViewController = [[NavViewController alloc] init];
     [self.window makeKeyAndVisible];
     
     return YES;
