@@ -48,7 +48,7 @@
      */
     UILabel *emotionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,  HEIGHT_IMAGE - 10, 45, HEIGHT_TITLE - 40)];
     emotionLabel.text = category;
-    emotionLabel.backgroundColor = [UIColor whiteColor];
+    emotionLabel.backgroundColor = [self getEmotionLabelBackgroundColorByCategory:category];
     UIFont *fontOfEmotionLabel = [UIFont boldSystemFontOfSize:10.0f];
     emotionLabel.font = fontOfEmotionLabel;
     [emotionLabel showPlaceHolderWithLineColor:[UIColor redColor]];
@@ -75,6 +75,26 @@
     cell.contentView.backgroundColor = [UIColor colorWithWhite:0.996 alpha:1.000];
     
     return cell;
+}
+
++ (UIColor *)getEmotionLabelBackgroundColorByCategory:(NSString *)category {
+    if ([category isEqualToString:@"今日最好"]) {
+        return [UIColor greenColor];
+    } else if ([category isEqualToString:@"今日最乐"]) {
+        return [UIColor yellowColor];
+    } else if ([category isEqualToString:@"今日最惧"]) {
+        return [UIColor grayColor];
+    } else if ([category isEqualToString:@"今日最哀"]) {
+        return [UIColor lightGrayColor];
+    } else if ([category isEqualToString:@"今日最怒"]) {
+       return [UIColor redColor];
+    } else if ([category isEqualToString:@"今日最惊"]) {
+        return [UIColor purpleColor];
+    } else if ([category isEqualToString:@"今日最恶"]) {
+        return [UIColor blackColor];
+    } else {
+        return [UIColor clearColor];
+    }
 }
 
 - (void)awakeFromNib {

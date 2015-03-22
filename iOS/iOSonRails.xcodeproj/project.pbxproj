@@ -16,6 +16,7 @@
 		BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A571ABD929F00D046F3 /* NavViewController.m */; };
 		BA146A5B1ABDAE3C00D046F3 /* NavListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A5A1ABDAE3C00D046F3 /* NavListCell.m */; };
 		BA146A5E1ABEAAD700D046F3 /* NavSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A5D1ABEAAD600D046F3 /* NavSubView.m */; };
+		BA146A601ABF157D00D046F3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */; };
 		BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6901A5FF44700B4E453 /* UserManager.m */; };
 		BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1DB6921A5FF87400B4E453 /* Security.framework */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
@@ -54,6 +55,7 @@
 		BA146A5A1ABDAE3C00D046F3 /* NavListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavListCell.m; sourceTree = "<group>"; };
 		BA146A5C1ABEAAD600D046F3 /* NavSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavSubView.h; sourceTree = "<group>"; };
 		BA146A5D1ABEAAD600D046F3 /* NavSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavSubView.m; sourceTree = "<group>"; };
+		BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		BA1DB68F1A5FF44700B4E453 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		BA1DB6901A5FF44700B4E453 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		BA1DB6921A5FF87400B4E453 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA146A601ABF157D00D046F3 /* CoreMotion.framework in Frameworks */,
 				BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */,
 				8B2DDD87A53DAD120976EFE6 /* libPods-iOSonRails.a in Frameworks */,
 			);
@@ -222,6 +225,7 @@
 		DA02936B6D1617D528B45F3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */,
 				90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */,
 			);
 			name = Frameworks;

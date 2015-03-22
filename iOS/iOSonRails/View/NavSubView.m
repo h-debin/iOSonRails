@@ -45,9 +45,10 @@
     /*
      * set emotion category label
      */
-    UILabel *emotionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,  HEIGHT_IMAGE - 10, 45, HEIGHT_TITLE - 40)];
+    UILabel *emotionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,  HEIGHT_IMAGE - 50, 15, HEIGHT_TITLE)];
     emotionLabel.text = category;
-    emotionLabel.backgroundColor = [UIColor whiteColor];
+    emotionLabel.numberOfLines = 4;
+    emotionLabel.backgroundColor = [self getEmotionLabelBackgroundColorByCategory:category];
     UIFont *fontOfEmotionLabel = [UIFont boldSystemFontOfSize:10.0f];
     emotionLabel.font = fontOfEmotionLabel;
     [emotionLabel showPlaceHolderWithLineColor:[UIColor redColor]];
@@ -55,7 +56,7 @@
     /*
      * set title
      */
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, HEIGHT_IMAGE - HEIGHT_TITLE, WIDTH_TITLE - 50, HEIGHT_TITLE)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, HEIGHT_IMAGE - HEIGHT_TITLE, WIDTH_TITLE - 50, HEIGHT_TITLE)];
     //titleLabel.backgroundColor = [UIColor redColor];
     titleLabel.text = title;
     titleLabel.numberOfLines = 2;
@@ -74,6 +75,26 @@
     cell.contentView.backgroundColor = [UIColor colorWithWhite:0.996 alpha:1.000];
     
     return cell;
+}
+
++ (UIColor *)getEmotionLabelBackgroundColorByCategory:(NSString *)category {
+    if ([category isEqualToString:@"今日最好"]) {
+        return [UIColor greenColor];
+    } else if ([category isEqualToString:@"今日最乐"]) {
+        return [UIColor yellowColor];
+    } else if ([category isEqualToString:@"今日最惧"]) {
+        return [UIColor grayColor];
+    } else if ([category isEqualToString:@"今日最哀"]) {
+        return [UIColor lightGrayColor];
+    } else if ([category isEqualToString:@"今日最怒"]) {
+        return [UIColor redColor];
+    } else if ([category isEqualToString:@"今日最惊"]) {
+        return [UIColor purpleColor];
+    } else if ([category isEqualToString:@"今日最恶"]) {
+        return [UIColor blackColor];
+    } else {
+        return [UIColor clearColor];
+    }
 }
 
 - (void)awakeFromNib {
