@@ -7,14 +7,16 @@
 //
 
 #import "NavViewController.h"
-#import "NavListCell.h"
+#import "NavSubView.h"
 #import "News.h"
 
 @interface NavViewController ()
 
-@property UITableView *tableView;
 @property NSArray *topNewsList;
 @property NSArray *categorys;
+
+@property NSMutableArray *views;
+@property int index;
 
 @end
 
@@ -22,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     
     
@@ -54,58 +57,59 @@
                                                     @"picture": @""
                                                     }];
     self.topNewsList = @[new0, new1, new2, new3, new4, new5, new6];
-    self.categorys = @[@"今日最好", @"今日乐", @"今日最哀", @"今日最惧", @"今日最恶", @"今日最怒", @"今日最惊"];
+    self.categorys = @[@"今日最好", @"今日最乐", @"今日最哀", @"今日最惧", @"今日最恶", @"今日最怒", @"今日最惊"];
     
-    [self setupTableView];
+    self.views = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 7; i++) {
+        News *news = self.topNewsList[i];
+        NavSubView *view = [NavSubView initWithEmotionCategory: self.categorys[i]
+                                                    coverImage: news.image
+                                                         title: news.title];
+        [self.views addObject:view];
+    }
+    [self setViewWithIndex:0];
     // Do any additional setup after loading the view.
+    
 }
 
-- (void)setupTableView {
-    self.tableView = [[UITableView alloc]
-                      initWithFrame: CGRectMake(0,
-                                                0,
-                                                CGRectGetWidth([[UIScreen mainScreen] bounds]),
-                                                CGRectGetHeight([[UIScreen mainScreen] bounds])
-                                                )
-                      style:UITableViewStylePlain
-                      ];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    [self.view addSubview:self.tableView];
-    //[self.tableView showPlaceHolderWithLineColor:[UIColor redColor]];
-    //[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+- (void)setViewWithIndex:(int)index {
+    if ((index >= 0) && (index < 6)) {
+        self.view = self.views[index];
+        self.index = index;
+    }
+    
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    
+    // Adding the swipe gesture on image view
+    [self.view addGestureRecognizer:swipeLeft];
+    [self.view addGestureRecognizer:swipeRight];
+}
+
+
+- (void) handleSwipe:(UISwipeGestureRecognizer *)swipe {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
+        if ((self.index >= 0) && (self.index < 6)) {
+            int index = self.index - 1;
+            [self setViewWithIndex:index];
+        }
+    }
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
+        if ((self.index >= 0) && (self.index < 6)) {
+            int index = self.index + 1;
+            [self setViewWithIndex:index];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 7;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"index: %ld", (long)indexPath.row);
-    News *news = self.topNewsList[indexPath.row];
-    return [NavListCell initWithEmotionCategory:self.categorys[indexPath.row]
-                                                      coverImage:news.image
-                                                           title:news.title];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150;
-}
-
-- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-}
-
 
 /*
 #pragma mark - Navigation

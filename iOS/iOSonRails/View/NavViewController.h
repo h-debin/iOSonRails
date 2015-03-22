@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NavViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface NavViewController: UIViewController
 
 @end

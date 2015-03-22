@@ -6,13 +6,12 @@
 //  Copyright (c) 2015 minghe. All rights reserved.
 //
 
-#import "NavListCell.h"
+#import "NavSubView.h"
 #import "MMPlaceHolder.h"
-#import "News.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 
 
-@implementation NavListCell
+@implementation NavSubView
 
 + (id)initWithEmotionCategory:(NSString *)category coverImage:(NSString *)coverImage title:(NSString *)title {
     float WIDTH_IMAGE = [[UIScreen mainScreen] bounds].size.width;
@@ -82,8 +81,6 @@
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
