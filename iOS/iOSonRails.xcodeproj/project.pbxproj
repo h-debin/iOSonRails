@@ -11,7 +11,7 @@
 		BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7B91A80FDE90040ED7E /* AppDelegate.m */; };
 		BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */; };
 		BA05A7C91A80FDE90040ED7E /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C11A80FDE90040ED7E /* News.m */; };
-		BA05A7CA1A80FDE90040ED7E /* NewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C41A80FDE90040ED7E /* NewsListCell.m */; };
+		BA05A7CA1A80FDE90040ED7E /* CommonNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C41A80FDE90040ED7E /* CommonNewsCell.m */; };
 		BA05A7CB1A80FDE90040ED7E /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */; };
 		BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A571ABD929F00D046F3 /* NavViewController.m */; };
 		BA146A5E1ABEAAD700D046F3 /* NavSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A5D1ABEAAD600D046F3 /* NavSubView.m */; };
@@ -26,6 +26,7 @@
 		BA8F30F91AC01A9A00C6A1B3 /* JuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30EE1AC01A9A00C6A1B3 /* JuViewController.m */; };
 		BA8F30FA1AC01A9A00C6A1B3 /* LeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30F11AC01A9A00C6A1B3 /* LeViewController.m */; };
 		BA8F30FB1AC01A9A00C6A1B3 /* NuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30F41AC01A9A00C6A1B3 /* NuViewController.m */; };
+		BA8F30FE1AC0645D00C6A1B3 /* TopNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30FD1AC0645D00C6A1B3 /* TopNewsCell.m */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
@@ -52,8 +53,8 @@
 		BA05A7BE1A80FDE90040ED7E /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		BA05A7C01A80FDE90040ED7E /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		BA05A7C11A80FDE90040ED7E /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
-		BA05A7C31A80FDE90040ED7E /* NewsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListCell.h; sourceTree = "<group>"; };
-		BA05A7C41A80FDE90040ED7E /* NewsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListCell.m; sourceTree = "<group>"; };
+		BA05A7C31A80FDE90040ED7E /* CommonNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonNewsCell.h; sourceTree = "<group>"; };
+		BA05A7C41A80FDE90040ED7E /* CommonNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonNewsCell.m; sourceTree = "<group>"; };
 		BA05A7C51A80FDE90040ED7E /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
 		BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
 		BA146A561ABD929F00D046F3 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
@@ -79,6 +80,8 @@
 		BA8F30F11AC01A9A00C6A1B3 /* LeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeViewController.m; sourceTree = "<group>"; };
 		BA8F30F31AC01A9A00C6A1B3 /* NuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuViewController.h; sourceTree = "<group>"; };
 		BA8F30F41AC01A9A00C6A1B3 /* NuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuViewController.m; sourceTree = "<group>"; };
+		BA8F30FC1AC0645D00C6A1B3 /* TopNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNewsCell.h; sourceTree = "<group>"; };
+		BA8F30FD1AC0645D00C6A1B3 /* TopNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNewsCell.m; sourceTree = "<group>"; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -175,8 +178,10 @@
 		BA146A611AC0002A00D046F3 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
-				BA05A7C31A80FDE90040ED7E /* NewsListCell.h */,
-				BA05A7C41A80FDE90040ED7E /* NewsListCell.m */,
+				BA8F30FC1AC0645D00C6A1B3 /* TopNewsCell.h */,
+				BA8F30FD1AC0645D00C6A1B3 /* TopNewsCell.m */,
+				BA05A7C31A80FDE90040ED7E /* CommonNewsCell.h */,
+				BA05A7C41A80FDE90040ED7E /* CommonNewsCell.m */,
 				BA05A7C51A80FDE90040ED7E /* NewsListViewController.h */,
 				BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */,
 			);
@@ -468,9 +473,10 @@
 				BA8F30F81AC01A9A00C6A1B3 /* JingViewController.m in Sources */,
 				BA8F30F51AC01A9A00C6A1B3 /* AIViewController.m in Sources */,
 				BA8F30FA1AC01A9A00C6A1B3 /* LeViewController.m in Sources */,
+				BA8F30FE1AC0645D00C6A1B3 /* TopNewsCell.m in Sources */,
 				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
 				BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */,
-				BA05A7CA1A80FDE90040ED7E /* NewsListCell.m in Sources */,
+				BA05A7CA1A80FDE90040ED7E /* CommonNewsCell.m in Sources */,
 				BAD5D6E81A52E03C0009CC5F /* main.m in Sources */,
 				BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */,
 				BA8F30F61AC01A9A00C6A1B3 /* EViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "HaoViewController.h"
 #import "LeViewController.h"
+#import "NewsListViewController.h"
 #import "NuViewController.h"
 #import "NavSubView.h"
 #import "News.h"
@@ -41,13 +42,16 @@
                                          coverImage: new0.image
                                               title: new0.title];
     
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
 
-    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:swipeRight];
-    [self.view addGestureRecognizer:swipeLeft];
+    [swipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
+    [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
+    [self.view addGestureRecognizer:swipeUp];
+    [self.view addGestureRecognizer:swipeDown];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -116,7 +120,7 @@
 }
 
 - (void) handleSwipe:(UISwipeGestureRecognizer *)swipe {
-    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionDown) {
         LeViewController *leViewController = [[LeViewController alloc] init];
         [self presentViewController:leViewController
                            animated:YES
@@ -126,7 +130,7 @@
          ];
     }
     
-    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
         NuViewController *nuViewController = [[NuViewController alloc] init];
         [self presentViewController:nuViewController
                            animated:YES
@@ -144,6 +148,13 @@
          * go to news list accord category
          */
         NSLog(@"tapped it %d", 0);
+        NewsListViewController *newsListController = [[NewsListViewController alloc] init];
+        [self presentViewController:newsListController
+                           animated:YES
+                         completion:^{
+                             NSLog(@"Present Done");
+                         }
+         ];
     }
 }
 

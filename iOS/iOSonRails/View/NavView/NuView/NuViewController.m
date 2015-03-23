@@ -41,13 +41,13 @@
                                          coverImage: new0.image
                                               title: new0.title];
     
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
 
-    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:swipeRight];
-    [self.view addGestureRecognizer:swipeLeft];
+    [swipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
+    [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
+    [self.view addGestureRecognizer:swipeUp];
+    [self.view addGestureRecognizer:swipeDown];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -116,7 +116,7 @@
 }
 
 - (void) handleSwipe:(UISwipeGestureRecognizer *)swipe {
-    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionDown) {
         HaoViewController *haoViewController = [[HaoViewController alloc] init];
         [self presentViewController:haoViewController
                            animated:YES
@@ -126,7 +126,7 @@
          ];
     }
     
-    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
         EViewController *eViewController = [[EViewController alloc] init];
         [self presentViewController:eViewController
                            animated:YES
