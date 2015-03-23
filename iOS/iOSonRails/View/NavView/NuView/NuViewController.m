@@ -6,19 +6,21 @@
 //  Copyright (c) 2015 minghe. All rights reserved.
 //
 
+// * hao -> le -> jing -> ai -> ju -> e -> nu
 #import <CoreMotion/CoreMotion.h>
+#import "NuViewController.h"
 #import "HaoViewController.h"
-#import "LeViewController.h"
+#import "EViewController.h"
 #import "NavSubView.h"
 #import "News.h"
 
-@interface HaoViewController ()
+@interface NuViewController ()
 
 @property (strong,nonatomic) CMMotionManager *motionManager;
 
 @end
 
-@implementation HaoViewController
+@implementation NuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,12 +32,12 @@
     /*
      * TODO: should get from Server via REST API
      */
-    News *new0 = [[News alloc] initWithDictionary:@{@"title": @"缅甸总统：果敢冲突是内部事务 中国无法解决",
-                                                    @"link": @"http://news.163.com/15/0321/10/AL7N01GH0001121M.html",
-                                                    @"picture": @"http://img3.cache.netease.com/cnews/2015/3/21/20150321102847189e4.jpg"
+    News *new0 = [[News alloc] initWithDictionary:@{@"title": @"中缅边境事件进展：缅方赔遇难者7万元消息不实",
+                                                    @"link": @"http://news.163.com/15/0320/15/AL5LQ6AS0001124J.html",
+                                                    @"picture": @"http://img4.cache.netease.com/photo/0001/2015-03-21/900x600_AL7OUVCN00AP0001.jpg"
                                                     }];
     
-    self.view = [NavSubView initWithEmotionCategory:@"今日最好"
+    self.view = [NavSubView initWithEmotionCategory:@"今日最怒"
                                          coverImage: new0.image
                                               title: new0.title];
     
@@ -115,8 +117,8 @@
 
 - (void) handleSwipe:(UISwipeGestureRecognizer *)swipe {
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
-        LeViewController *leViewController = [[LeViewController alloc] init];
-        [self presentViewController:leViewController
+        HaoViewController *haoViewController = [[HaoViewController alloc] init];
+        [self presentViewController:haoViewController
                            animated:YES
                          completion:^{
                              NSLog(@"Present Done");
@@ -125,8 +127,8 @@
     }
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
-        LeViewController *leViewController = [[LeViewController alloc] init];
-        [self presentViewController:leViewController
+        EViewController *eViewController = [[EViewController alloc] init];
+        [self presentViewController:eViewController
                            animated:YES
                          completion:^{
                              NSLog(@"Present Done");

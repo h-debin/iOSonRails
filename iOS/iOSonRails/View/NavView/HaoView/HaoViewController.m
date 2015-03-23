@@ -6,18 +6,21 @@
 //  Copyright (c) 2015 minghe. All rights reserved.
 //
 
+// * hao -> le -> jing -> ai -> ju -> e -> nu
 #import <CoreMotion/CoreMotion.h>
+#import "HaoViewController.h"
 #import "LeViewController.h"
+#import "NuViewController.h"
 #import "NavSubView.h"
 #import "News.h"
 
-@interface LeViewController ()
+@interface HaoViewController ()
 
 @property (strong,nonatomic) CMMotionManager *motionManager;
 
 @end
 
-@implementation LeViewController
+@implementation HaoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,14 +32,22 @@
     /*
      * TODO: should get from Server via REST API
      */
-    News *new0 = [[News alloc] initWithDictionary:@{@"title": @"中缅边境事件进展：缅方赔遇难者7万元消息不实",
-                                                    @"link": @"http://news.163.com/15/0320/15/AL5LQ6AS0001124J.html",
-                                                    @"picture": @"http://img4.cache.netease.com/photo/0001/2015-03-21/900x600_AL7OUVCN00AP0001.jpg"
+    News *new0 = [[News alloc] initWithDictionary:@{@"title": @"缅甸总统：果敢冲突是内部事务 中国无法解决",
+                                                    @"link": @"http://news.163.com/15/0321/10/AL7N01GH0001121M.html",
+                                                    @"picture": @"http://img3.cache.netease.com/cnews/2015/3/21/20150321102847189e4.jpg"
                                                     }];
     
-    self.view = [NavSubView initWithEmotionCategory:@"今日最乐"
+    self.view = [NavSubView initWithEmotionCategory:@"今日最好"
                                          coverImage: new0.image
                                               title: new0.title];
+    
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];
+    [self.view addGestureRecognizer:swipeLeft];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -106,13 +117,23 @@
 
 - (void) handleSwipe:(UISwipeGestureRecognizer *)swipe {
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
- //       self.index = self.index - 1;
-//        [self setViewWithIndex:self.index];
+        LeViewController *leViewController = [[LeViewController alloc] init];
+        [self presentViewController:leViewController
+                           animated:YES
+                         completion:^{
+                             NSLog(@"Present Done");
+                         }
+         ];
     }
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
-  //      self.index = self.index + 1;
-   //     [self setViewWithIndex:self.index];
+        NuViewController *nuViewController = [[NuViewController alloc] init];
+        [self presentViewController:nuViewController
+                           animated:YES
+                         completion:^{
+                             NSLog(@"Present Done");
+                         }
+         ];
     }
 }
 

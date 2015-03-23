@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NavViewController: UIViewController
+@interface EViewController: UIViewController
 
 @end
