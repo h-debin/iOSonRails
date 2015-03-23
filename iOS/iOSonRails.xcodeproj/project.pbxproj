@@ -14,9 +14,11 @@
 		BA05A7CA1A80FDE90040ED7E /* NewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C41A80FDE90040ED7E /* NewsListCell.m */; };
 		BA05A7CB1A80FDE90040ED7E /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */; };
 		BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A571ABD929F00D046F3 /* NavViewController.m */; };
-		BA146A5B1ABDAE3C00D046F3 /* NavListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A5A1ABDAE3C00D046F3 /* NavListCell.m */; };
 		BA146A5E1ABEAAD700D046F3 /* NavSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A5D1ABEAAD600D046F3 /* NavSubView.m */; };
 		BA146A601ABF157D00D046F3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */; };
+		BA146A651AC0080600D046F3 /* HaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A641AC0080600D046F3 /* HaoViewController.m */; };
+		BA146A691AC00A4700D046F3 /* LeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A681AC00A4700D046F3 /* LeViewController.m */; };
+		BA146A6B1AC0111800D046F3 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA146A6A1AC0111800D046F3 /* main.storyboard */; };
 		BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6901A5FF44700B4E453 /* UserManager.m */; };
 		BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1DB6921A5FF87400B4E453 /* Security.framework */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
@@ -51,11 +53,14 @@
 		BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
 		BA146A561ABD929F00D046F3 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
 		BA146A571ABD929F00D046F3 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
-		BA146A591ABDAE3C00D046F3 /* NavListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavListCell.h; sourceTree = "<group>"; };
-		BA146A5A1ABDAE3C00D046F3 /* NavListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavListCell.m; sourceTree = "<group>"; };
 		BA146A5C1ABEAAD600D046F3 /* NavSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavSubView.h; sourceTree = "<group>"; };
 		BA146A5D1ABEAAD600D046F3 /* NavSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavSubView.m; sourceTree = "<group>"; };
 		BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		BA146A631AC0080600D046F3 /* HaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaoViewController.h; sourceTree = "<group>"; };
+		BA146A641AC0080600D046F3 /* HaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaoViewController.m; sourceTree = "<group>"; };
+		BA146A671AC00A4700D046F3 /* LeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeViewController.h; sourceTree = "<group>"; };
+		BA146A681AC00A4700D046F3 /* LeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeViewController.m; sourceTree = "<group>"; };
+		BA146A6A1AC0111800D046F3 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		BA1DB68F1A5FF44700B4E453 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		BA1DB6901A5FF44700B4E453 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		BA1DB6921A5FF87400B4E453 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -128,11 +133,8 @@
 		BA05A7C21A80FDE90040ED7E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA146A611AC0002A00D046F3 /* ListView */,
 				BA146A551ABD49A300D046F3 /* NavView */,
-				BA05A7C31A80FDE90040ED7E /* NewsListCell.h */,
-				BA05A7C41A80FDE90040ED7E /* NewsListCell.m */,
-				BA05A7C51A80FDE90040ED7E /* NewsListViewController.h */,
-				BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,14 +142,43 @@
 		BA146A551ABD49A300D046F3 /* NavView */ = {
 			isa = PBXGroup;
 			children = (
-				BA146A591ABDAE3C00D046F3 /* NavListCell.h */,
-				BA146A5A1ABDAE3C00D046F3 /* NavListCell.m */,
+				BA146A661AC009DF00D046F3 /* LeView */,
+				BA146A621AC0079000D046F3 /* HaoView */,
 				BA146A5C1ABEAAD600D046F3 /* NavSubView.h */,
 				BA146A5D1ABEAAD600D046F3 /* NavSubView.m */,
 				BA146A561ABD929F00D046F3 /* NavViewController.h */,
 				BA146A571ABD929F00D046F3 /* NavViewController.m */,
 			);
 			name = NavView;
+			sourceTree = "<group>";
+		};
+		BA146A611AC0002A00D046F3 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				BA05A7C31A80FDE90040ED7E /* NewsListCell.h */,
+				BA05A7C41A80FDE90040ED7E /* NewsListCell.m */,
+				BA05A7C51A80FDE90040ED7E /* NewsListViewController.h */,
+				BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */,
+			);
+			name = ListView;
+			sourceTree = "<group>";
+		};
+		BA146A621AC0079000D046F3 /* HaoView */ = {
+			isa = PBXGroup;
+			children = (
+				BA146A631AC0080600D046F3 /* HaoViewController.h */,
+				BA146A641AC0080600D046F3 /* HaoViewController.m */,
+			);
+			name = HaoView;
+			sourceTree = "<group>";
+		};
+		BA146A661AC009DF00D046F3 /* LeView */ = {
+			isa = PBXGroup;
+			children = (
+				BA146A671AC00A4700D046F3 /* LeViewController.h */,
+				BA146A681AC00A4700D046F3 /* LeViewController.m */,
+			);
+			name = LeView;
 			sourceTree = "<group>";
 		};
 		BAD5D6D91A52E03C0009CC5F = {
@@ -208,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD5D7001A52E03C0009CC5F /* Info.plist */,
+				BA146A6A1AC0111800D046F3 /* main.storyboard */,
 				BA1DB6921A5FF87400B4E453 /* Security.framework */,
 			);
 			path = "Supporting Files";
@@ -322,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA146A6B1AC0111800D046F3 /* main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,13 +399,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA05A7C91A80FDE90040ED7E /* News.m in Sources */,
+				BA146A651AC0080600D046F3 /* HaoViewController.m in Sources */,
 				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
 				BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */,
+				BA146A691AC00A4700D046F3 /* LeViewController.m in Sources */,
 				BA05A7CA1A80FDE90040ED7E /* NewsListCell.m in Sources */,
 				BAD5D6E81A52E03C0009CC5F /* main.m in Sources */,
 				BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */,
 				BA05A7CB1A80FDE90040ED7E /* NewsListViewController.m in Sources */,
-				BA146A5B1ABDAE3C00D046F3 /* NavListCell.m in Sources */,
 				BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */,
 				BA146A5E1ABEAAD700D046F3 /* NavSubView.m in Sources */,
 			);

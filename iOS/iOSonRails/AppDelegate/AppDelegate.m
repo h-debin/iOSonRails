@@ -13,6 +13,7 @@
 #import "Macro.h"
 #import "NewsListViewController.h"
 #import "NavViewController.h"
+#import "HaoViewController.h"
 
 
 @interface AppDelegate ()
@@ -47,7 +48,7 @@
     [view addSubview:label];
     viewController.view = view;
     
-    self.window.rootViewController = [[NavViewController alloc] init];
+    self.window.rootViewController = [[HaoViewController alloc] init];
     [self.window makeKeyAndVisible];
     
     return YES;
