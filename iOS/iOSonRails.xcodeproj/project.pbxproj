@@ -27,6 +27,7 @@
 		BA8F30FA1AC01A9A00C6A1B3 /* LeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30F11AC01A9A00C6A1B3 /* LeViewController.m */; };
 		BA8F30FB1AC01A9A00C6A1B3 /* NuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30F41AC01A9A00C6A1B3 /* NuViewController.m */; };
 		BA8F30FE1AC0645D00C6A1B3 /* TopNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30FD1AC0645D00C6A1B3 /* TopNewsCell.m */; };
+		BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
@@ -82,6 +83,8 @@
 		BA8F30F41AC01A9A00C6A1B3 /* NuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuViewController.m; sourceTree = "<group>"; };
 		BA8F30FC1AC0645D00C6A1B3 /* TopNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNewsCell.h; sourceTree = "<group>"; };
 		BA8F30FD1AC0645D00C6A1B3 /* TopNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNewsCell.m; sourceTree = "<group>"; };
+		BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
+		BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 			children = (
 				BA146A611AC0002A00D046F3 /* ListView */,
 				BA146A551ABD49A300D046F3 /* NavView */,
+				BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */,
+				BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,6 +475,7 @@
 			files = (
 				BA05A7C91A80FDE90040ED7E /* News.m in Sources */,
 				BA8F30FB1AC01A9A00C6A1B3 /* NuViewController.m in Sources */,
+				BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */,
 				BA8F30F81AC01A9A00C6A1B3 /* JingViewController.m in Sources */,
 				BA8F30F51AC01A9A00C6A1B3 /* AIViewController.m in Sources */,
 				BA8F30FA1AC01A9A00C6A1B3 /* LeViewController.m in Sources */,
