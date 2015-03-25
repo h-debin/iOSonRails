@@ -11,15 +11,6 @@
 
 @implementation JuViewController
 
-+ (JuViewController *)sharedInstance {
-    static JuViewController *sharedInstance = nil;
-    @synchronized(self) {
-        if (!sharedInstance)
-            sharedInstance = [[JuViewController alloc] init];
-        return sharedInstance;
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

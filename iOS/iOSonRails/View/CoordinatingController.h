@@ -11,6 +11,6 @@
 @interface CoordinatingController : NSObject
 
 + (CoordinatingController *) sharedInstance;
-- (IBAction) presentViewControllerByType:(int )type;
+- (IBAction) presentViewControllerByType:(int )type fromObject:(id)object;
 
 @end

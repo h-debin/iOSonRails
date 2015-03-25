@@ -32,50 +32,48 @@
         if (sharedInstance == nil) {
             sharedInstance = [[self alloc] init];
              //* hao -> le -> jing -> ai -> ju -> e -> nu
-            sharedInstance.viewControllers = [NSArray arrayWithObjects: [HaoViewController sharedInstance],
-                                              [LeViewController sharedInstance],
-                                              [JingViewController sharedInstance],
-                                              [AiViewController sharedInstance],
-                                              [JuViewController sharedInstance],
-                                              [EViewController sharedInstance],
-                                              [NuViewController sharedInstance],
-                                              nil];
-            sharedInstance.activeViewController = sharedInstance.viewControllers[0];
         }
     }
     return sharedInstance;
 }
 
-- (IBAction) presentViewControllerByType:(int )type {
-    int targetControllerIndex;
-    for (int i = 0; i < [self.viewControllers count]; i++) {
-        if (self.viewControllers[i] == self.activeViewController) {
-            if (type == 0) {
-                targetControllerIndex = abs((i - 1) %7);
-            } else if (type == 1) {
-                targetControllerIndex = abs((i + 1) %7);
-            }
-            break;
-        }
-    }
-    
+- (IBAction) presentViewControllerByType:(int )type fromObject:(id)object {
     id active = self.activeViewController;
-    UIViewController *vc = self.viewControllers[targetControllerIndex];
-    if (vc.isViewLoaded && vc.view.window) {
-        NSLog(@"it loaded already");
-    } else {
-        NSLog(@"it loaded no");
+    
+// * hao -> le -> jing -> ai -> ju -> e -> nu
+    UIViewController *targetViewController;
+    switch (type) {
+        case 0:
+            targetViewController = [[HaoViewController alloc] init];
+            break;
+        case 1:
+            targetViewController = [[LeViewController alloc] init];
+            break;
+        case 2:
+            targetViewController = [[JingViewController alloc] init];
+            break;
+        case 3:
+            targetViewController = [[AiViewController alloc] init];
+            break;
+        case 4:
+            targetViewController = [[JuViewController alloc] init];
+            break;
+        case 5:
+            targetViewController = [[EViewController alloc] init];
+            break;
+        case 6:
+            targetViewController = [[NuViewController alloc] init];
+            break;
+        default:
+            break;
     }
-    UIViewController *targetViewController = self.viewControllers[targetControllerIndex];
-        [self.viewControllers[targetControllerIndex] dismissViewControllerAnimated:NO completion:nil];
-    if (targetViewController.presentedViewController == nil) {
-    [self.activeViewController presentViewController:self.viewControllers[targetControllerIndex]
+    active = self.activeViewController;
+    [object presentViewController:targetViewController
                                                 animated:YES
                                           completion:^{
-                                              NSLog(@"present done%@ -> %@", active, self.viewControllers[targetControllerIndex]);
+                                              NSLog(@"present done%@ -> %@", active, targetViewController);
                                           }];
-    self.activeViewController = self.viewControllers[targetControllerIndex];
-    }
+    //self.activeViewController = targetViewController;
 }
 
 @end

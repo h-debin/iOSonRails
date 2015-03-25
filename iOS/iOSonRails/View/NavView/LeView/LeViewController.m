@@ -11,15 +11,6 @@
 
 @implementation LeViewController
 
-+ (LeViewController *)sharedInstance {
-    static LeViewController *sharedInstance = nil;
-    @synchronized(self) {
-        if (!sharedInstance)
-            sharedInstance = [[LeViewController alloc] init];
-        return sharedInstance;
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

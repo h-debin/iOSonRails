@@ -48,7 +48,7 @@
     [view addSubview:label];
     viewController.view = view;
     
-    self.window.rootViewController = [HaoViewController sharedInstance];
+    self.window.rootViewController = [[HaoViewController alloc] init];
     [self.window makeKeyAndVisible];
     
     return YES;

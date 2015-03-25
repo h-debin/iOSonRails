@@ -11,15 +11,6 @@
 
 @implementation JingViewController
 
-+ (JingViewController *)sharedInstance {
-    static JingViewController *sharedInstance = nil;
-    @synchronized(self) {
-        if (!sharedInstance)
-            sharedInstance = [[JingViewController alloc] init];
-        return sharedInstance;
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

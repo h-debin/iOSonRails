@@ -11,15 +11,6 @@
 
 @implementation NuViewController
 
-+ (NuViewController *)sharedInstance {
-    static NuViewController *sharedInstance = nil;
-    @synchronized(self) {
-        if (!sharedInstance)
-            sharedInstance = [[NuViewController alloc] init];
-        return sharedInstance;
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

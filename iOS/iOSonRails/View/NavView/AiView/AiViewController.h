@@ -11,6 +11,5 @@
 
 @interface AiViewController: NavViewController
 
-+ (AiViewController *)sharedInstance;
 
 @end

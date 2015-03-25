@@ -11,6 +11,5 @@
 
 @interface EViewController: NavViewController
 
-+ (EViewController *)sharedInstance;
 
 @end

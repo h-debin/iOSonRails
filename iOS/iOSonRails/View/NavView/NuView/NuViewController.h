@@ -11,6 +11,4 @@
 
 @interface NuViewController: NavViewController
 
-+ (NuViewController *) sharedInstance;
-
 @end

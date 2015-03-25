@@ -11,6 +11,5 @@
 
 @interface HaoViewController: NavViewController
 
-+ (HaoViewController *)sharedInstance;
 
 @end

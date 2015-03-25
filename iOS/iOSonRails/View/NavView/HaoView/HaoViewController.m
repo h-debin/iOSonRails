@@ -12,15 +12,6 @@
 
 @implementation HaoViewController
 
-+ (HaoViewController *)sharedInstance {
-    static HaoViewController *sharedInstance = nil;
-    @synchronized(self) {
-        if (!sharedInstance)
-            sharedInstance = [[HaoViewController alloc] init];
-        return sharedInstance;
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

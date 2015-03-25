@@ -11,6 +11,4 @@
 
 @interface LeViewController: NavViewController
 
-+ (LeViewController *) sharedInstance;
-
 @end

@@ -13,15 +13,6 @@
 
 @implementation AiViewController
 
-+ (AiViewController *)sharedInstance {
-    static AiViewController *sharedInstance = nil;
-    @synchronized(self) {
-        if (!sharedInstance)
-            sharedInstance = [[AiViewController alloc] init];
-        return sharedInstance;
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,7 +23,7 @@
      * TODO: should get from Server via REST API
      */
     self.coverCategory = @"今日最哀";
-    self.coverImage = @"http://img3.cache.netease.com/cnews/2015/3/21/20150321102847189e4.jpg";
+    self.coverImage = @"http://ww1.sinaimg.cn/bmiddle/6e1068adjw1eqiftsskwlj20hs0hsabx.jpg";
     self.coverTitle = @"缅甸总统：果敢冲突是内部事务 中国无法解决";
     
     self.motionManager = [[CMMotionManager alloc] init];//一般在viewDidLoad中进行

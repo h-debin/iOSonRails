@@ -11,6 +11,4 @@
 
 @interface JuViewController: NavViewController
 
-+ (JuViewController *) sharedInstance;
-
 @end
