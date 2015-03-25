@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavViewController.h"
 
-@interface HaoViewController: UIViewController
+@interface HaoViewController: NavViewController
+
++ (HaoViewController *)sharedInstance;
 
 @end

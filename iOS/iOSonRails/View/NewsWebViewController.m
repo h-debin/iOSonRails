@@ -7,10 +7,12 @@
 //
 
 #import "NewsWebViewController.h"
+#import "MMPlaceHolder.h"
 
 @interface NewsWebViewController ()
 
 @property UIWebView *webView;
+@property UIButton *backButton;
 
 @end
 
@@ -25,6 +27,10 @@
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, deviceWidth, deviceHeight)];
     self.webView.delegate = self;
     
+    self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    self.backButton.titleLabel.text = @"back";
+    self.backButton.backgroundColor = [UIColor redColor];
+    
     NSString *url= @" ";
     if (self.link) {
          url= self.link;
@@ -35,6 +41,8 @@
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
     [self.webView loadRequest:nsrequest];
     [self.view addSubview:self.webView];
+    [self.view addSubview:self.backButton];
+    [self.backButton showPlaceHolderWithLineColor:[UIColor redColor]];
 }
 
 - (void)didReceiveMemoryWarning {

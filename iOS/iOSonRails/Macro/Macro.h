@@ -13,4 +13,15 @@
 #define NEWS_URL "http://api.minghe.me/api/v1/news"
 #define TOKEN_REQUEST_URL "http://api.minghe.me/api/v1/request_access_token"
 
+typedef enum
+{
+    HAO,
+    LE,
+    JING,
+    AI,
+    JU,
+    E,
+    NU
+} EMOTION_TYPE;
+
 #endif

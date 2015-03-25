@@ -28,6 +28,7 @@
 		BA8F30FB1AC01A9A00C6A1B3 /* NuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30F41AC01A9A00C6A1B3 /* NuViewController.m */; };
 		BA8F30FE1AC0645D00C6A1B3 /* TopNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30FD1AC0645D00C6A1B3 /* TopNewsCell.m */; };
 		BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */; };
+		BA8F31051AC2A2F600C6A1B3 /* CoordinatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31041AC2A2F600C6A1B3 /* CoordinatingController.m */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
@@ -83,8 +84,10 @@
 		BA8F30F41AC01A9A00C6A1B3 /* NuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuViewController.m; sourceTree = "<group>"; };
 		BA8F30FC1AC0645D00C6A1B3 /* TopNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNewsCell.h; sourceTree = "<group>"; };
 		BA8F30FD1AC0645D00C6A1B3 /* TopNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNewsCell.m; sourceTree = "<group>"; };
-		BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
-		BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
+		BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsWebViewController.h; path = ../NewsWebViewController.h; sourceTree = "<group>"; };
+		BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsWebViewController.m; path = ../NewsWebViewController.m; sourceTree = "<group>"; };
+		BA8F31031AC2A2F600C6A1B3 /* CoordinatingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinatingController.h; sourceTree = "<group>"; };
+		BA8F31041AC2A2F600C6A1B3 /* CoordinatingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinatingController.m; sourceTree = "<group>"; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -154,10 +157,11 @@
 		BA05A7C21A80FDE90040ED7E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA8F31021AC251EB00C6A1B3 /* NewsWebView */,
 				BA146A611AC0002A00D046F3 /* ListView */,
 				BA146A551ABD49A300D046F3 /* NavView */,
-				BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */,
-				BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */,
+				BA8F31031AC2A2F600C6A1B3 /* CoordinatingController.h */,
+				BA8F31041AC2A2F600C6A1B3 /* CoordinatingController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +169,8 @@
 		BA146A551ABD49A300D046F3 /* NavView */ = {
 			isa = PBXGroup;
 			children = (
+				BA146A561ABD929F00D046F3 /* NavViewController.h */,
+				BA146A571ABD929F00D046F3 /* NavViewController.m */,
 				BA8F30E01AC01A9A00C6A1B3 /* AiView */,
 				BA8F30E31AC01A9A00C6A1B3 /* Eview */,
 				BA8F30E61AC01A9A00C6A1B3 /* HaoView */,
@@ -174,8 +180,6 @@
 				BA8F30F21AC01A9A00C6A1B3 /* NuView */,
 				BA146A5C1ABEAAD600D046F3 /* NavSubView.h */,
 				BA146A5D1ABEAAD600D046F3 /* NavSubView.m */,
-				BA146A561ABD929F00D046F3 /* NavViewController.h */,
-				BA146A571ABD929F00D046F3 /* NavViewController.m */,
 			);
 			path = NavView;
 			sourceTree = "<group>";
@@ -254,6 +258,16 @@
 				BA8F30F41AC01A9A00C6A1B3 /* NuViewController.m */,
 			);
 			path = NuView;
+			sourceTree = "<group>";
+		};
+		BA8F31021AC251EB00C6A1B3 /* NewsWebView */ = {
+			isa = PBXGroup;
+			children = (
+				BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */,
+				BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */,
+			);
+			name = NewsWebView;
+			path = NavView;
 			sourceTree = "<group>";
 		};
 		BAD5D6D91A52E03C0009CC5F = {
@@ -487,6 +501,7 @@
 				BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */,
 				BA8F30F61AC01A9A00C6A1B3 /* EViewController.m in Sources */,
 				BA05A7CB1A80FDE90040ED7E /* NewsListViewController.m in Sources */,
+				BA8F31051AC2A2F600C6A1B3 /* CoordinatingController.m in Sources */,
 				BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */,
 				BA8F30F91AC01A9A00C6A1B3 /* JuViewController.m in Sources */,
 				BA146A5E1ABEAAD700D046F3 /* NavSubView.m in Sources */,

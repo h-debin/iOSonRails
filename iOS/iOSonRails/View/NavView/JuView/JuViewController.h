@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavViewController.h"
 
-@interface JuViewController: UIViewController
+@interface JuViewController: NavViewController
+
++ (JuViewController *) sharedInstance;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavViewController.h"
 
-@interface EViewController: UIViewController
+@interface EViewController: NavViewController
+
++ (EViewController *)sharedInstance;
 
 @end

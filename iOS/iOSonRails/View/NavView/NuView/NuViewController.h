@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavViewController.h"
 
-@interface NuViewController: UIViewController
+@interface NuViewController: NavViewController
+
++ (NuViewController *) sharedInstance;
 
 @end

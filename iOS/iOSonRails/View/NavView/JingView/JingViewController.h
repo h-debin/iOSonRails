@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavViewController.h"
 
-@interface JingViewController: UIViewController
+@interface JingViewController: NavViewController
+
++ (JingViewController *) sharedInstance;
 
 @end
