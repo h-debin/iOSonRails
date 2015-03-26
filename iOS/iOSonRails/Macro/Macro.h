@@ -24,4 +24,12 @@ typedef enum
     NU
 } EMOTION_TYPE;
 
+#define HAO_LABEL "今日最好"
+#define LE_LABEL "今日最乐"
+#define JING_LABEL "今日最惊"
+#define AI_LABEL "今日最哀"
+#define JU_LABEL "今日最惧"
+#define E_LABEL "今日最恶"
+#define NU_LABEL "今日最怒"
+
 #endif
