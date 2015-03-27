@@ -145,11 +145,12 @@
     [self.navBar removeFromSuperview];
     [self.view addSubview:self.contentView];
     [self addRightLeftGestrueRecognizers];
-    NSLog(@"back clicked");
+    [self addTapGestrueRecognizers];
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)sender {
     [self removeRightLeftGestrueRecognizers];
+    [self removeTapGestrueRecofnizers];
     
     if (sender.state == UIGestureRecognizerStateEnded) {
         NewsWebViewController *newsWebViewController = [[NewsWebViewController alloc] init];
@@ -169,11 +170,27 @@
         self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
         self.backButton.titleLabel.text = @"back";
         self.backButton.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];;
+        UIImage *backButtonImage = [UIImage imageNamed:@"back_24dp.png"];
+        UIImageView *imageView= [[UIImageView alloc] initWithFrame:CGRectMake(10, 50 - 24, 24, 24)];
+        imageView.image = backButtonImage;
+        [imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        imageView.tintColor = [UIColor lightGrayColor];
+        //[imageView showPlaceHolderWithLineColor:[UIColor blueColor]];
+        [self.backButton addSubview:imageView];
+        //[self.backButton setImage:backButtonImage forState:UIControlStateNormal];
         [self.backButton addTarget:self action:@selector(backToNav) forControlEvents:UIControlEventTouchUpInside];
+        //[self.backButton showPlaceHolderWithLineColor:[UIColor redColor]];
         
         self.shareButton = [[UIButton alloc] initWithFrame:CGRectMake(deviceWidth - 50, 0, 50, 50)];
         self.shareButton.titleLabel.text = @"back";
         self.shareButton.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];
+        UIImage *shareImage = [UIImage imageNamed:@"wechat_share.png"];
+        UIImageView *shareImageView= [[UIImageView alloc] initWithFrame:CGRectMake(0, 50 - 24, 24, 24)];
+        shareImageView.image = shareImage;
+        [shareImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        shareImageView.tintColor = [UIColor lightGrayColor];
+        //[imageView showPlaceHolderWithLineColor:[UIColor blueColor]];
+        [self.shareButton addSubview:shareImageView];
         [self.shareButton addTarget:self action:@selector(backToNav) forControlEvents:UIControlEventTouchUpInside];
         
         

@@ -30,6 +30,10 @@
 		BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */; };
 		BA8F31051AC2A2F600C6A1B3 /* CoordinatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31041AC2A2F600C6A1B3 /* CoordinatingController.m */; };
 		BA8F310B1AC53D4600C6A1B3 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F310A1AC53D4600C6A1B3 /* Color.m */; };
+		BA8F310E1AC5635300C6A1B3 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F310D1AC5635300C6A1B3 /* back.png */; };
+		BA8F31101AC5647000C6A1B3 /* back_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F310F1AC5647000C6A1B3 /* back_24dp.png */; };
+		BA8F31121AC56A0300C6A1B3 /* share_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F31111AC56A0300C6A1B3 /* share_24dp.png */; };
+		BA8F31141AC5A47C00C6A1B3 /* wechat_share.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
@@ -91,6 +95,10 @@
 		BA8F31041AC2A2F600C6A1B3 /* CoordinatingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinatingController.m; sourceTree = "<group>"; };
 		BA8F31091AC53D4600C6A1B3 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		BA8F310A1AC53D4600C6A1B3 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
+		BA8F310D1AC5635300C6A1B3 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		BA8F310F1AC5647000C6A1B3 /* back_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_24dp.png; sourceTree = "<group>"; };
+		BA8F31111AC56A0300C6A1B3 /* share_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_24dp.png; sourceTree = "<group>"; };
+		BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat_share.png; sourceTree = "<group>"; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -283,6 +291,17 @@
 			name = Color.h;
 			sourceTree = "<group>";
 		};
+		BA8F310C1AC5635300C6A1B3 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */,
+				BA8F31111AC56A0300C6A1B3 /* share_24dp.png */,
+				BA8F310F1AC5647000C6A1B3 /* back_24dp.png */,
+				BA8F310D1AC5635300C6A1B3 /* back.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		BAD5D6D91A52E03C0009CC5F = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +325,7 @@
 		BAD5D6E41A52E03C0009CC5F /* iOSonRails */ = {
 			isa = PBXGroup;
 			children = (
+				BA8F310C1AC5635300C6A1B3 /* Image */,
 				BA05A7B71A80FDE90040ED7E /* AppDelegate */,
 				BA05A7BA1A80FDE90040ED7E /* Helper */,
 				BA05A7BD1A80FDE90040ED7E /* Macro */,
@@ -447,8 +467,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8F31121AC56A0300C6A1B3 /* share_24dp.png in Resources */,
 				BAD5D70B1A52E2780009CC5F /* Info.plist in Resources */,
 				BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */,
+				BA8F31141AC5A47C00C6A1B3 /* wechat_share.png in Resources */,
+				BA8F31101AC5647000C6A1B3 /* back_24dp.png in Resources */,
+				BA8F310E1AC5635300C6A1B3 /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
