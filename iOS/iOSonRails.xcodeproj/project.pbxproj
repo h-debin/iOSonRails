@@ -169,6 +169,8 @@
 		BA146A551ABD49A300D046F3 /* NavView */ = {
 			isa = PBXGroup;
 			children = (
+				BA146A5C1ABEAAD600D046F3 /* NavSubView.h */,
+				BA146A5D1ABEAAD600D046F3 /* NavSubView.m */,
 				BA146A561ABD929F00D046F3 /* NavViewController.h */,
 				BA146A571ABD929F00D046F3 /* NavViewController.m */,
 				BA8F30E01AC01A9A00C6A1B3 /* AiView */,
@@ -178,8 +180,6 @@
 				BA8F30EC1AC01A9A00C6A1B3 /* JuView */,
 				BA8F30EF1AC01A9A00C6A1B3 /* LeView */,
 				BA8F30F21AC01A9A00C6A1B3 /* NuView */,
-				BA146A5C1ABEAAD600D046F3 /* NavSubView.h */,
-				BA146A5D1ABEAAD600D046F3 /* NavSubView.m */,
 			);
 			path = NavView;
 			sourceTree = "<group>";
