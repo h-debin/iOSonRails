@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 #import "CoordinatingController.h"
-#import "NewsListViewController.h"
 #import "NewsWebViewController.h"
 #import "NavSubView.h"
 #import "Macro.h"

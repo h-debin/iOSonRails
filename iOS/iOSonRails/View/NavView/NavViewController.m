@@ -7,13 +7,17 @@
 //
 
 #import "NavViewController.h"
+#import "Color.h"
 #import "MMPlaceHolder.h"
 
 @interface NavViewController ()
 
 @property UIView *contentView;
 @property UIWebView *webView;
+
+@property UIView *navBar;
 @property UIButton *backButton;
+@property UIButton *shareButton;
 @property NSArray *EMOTION_TYPE_TOP;
 @property NSArray *EMOTION_TYPE_NORMAL;
 
@@ -35,26 +39,6 @@
                                               title: news.title];
     [self.view addSubview:self.contentView];
     
-    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    
-    [swipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
-    [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
-    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:swipeUp];
-    [self.view addGestureRecognizer:swipeDown];
-    [self.view addGestureRecognizer:swipeLeft];
-    [self.view addGestureRecognizer:swipeRight];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [self.view addGestureRecognizer:tap];
-    
-    
-    
     [self startAccelerometer];
     
     //viewDidAppear中加入
@@ -64,6 +48,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveNotification:)
                                                  name:UIApplicationWillEnterForegroundNotification object:nil];
+    [self addRightLeftGestrueRecognizers];
+    [self addUpDownGestrueRecognizers];
+    [self addTapGestrueRecognizers];
 }
 
 -(void)startAccelerometer
@@ -155,12 +142,15 @@
 
 - (void) backToNav {
     [self.webView removeFromSuperview];
-    [self.backButton removeFromSuperview];
+    [self.navBar removeFromSuperview];
     [self.view addSubview:self.contentView];
+    [self addRightLeftGestrueRecognizers];
     NSLog(@"back clicked");
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)sender {
+    [self removeRightLeftGestrueRecognizers];
+    
     if (sender.state == UIGestureRecognizerStateEnded) {
         NewsWebViewController *newsWebViewController = [[NewsWebViewController alloc] init];
         News *news = self.news[self.activeNewsIndex];
@@ -173,11 +163,23 @@
         self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, deviceWidth, deviceHeight)];
         self.webView.delegate = self;
         
+        self.navBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, deviceWidth, 50)];
+        self.navBar.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];
+        
         self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
         self.backButton.titleLabel.text = @"back";
-        self.backButton.backgroundColor = [UIColor redColor];
+        self.backButton.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];;
         [self.backButton addTarget:self action:@selector(backToNav) forControlEvents:UIControlEventTouchUpInside];
-            
+        
+        self.shareButton = [[UIButton alloc] initWithFrame:CGRectMake(deviceWidth - 50, 0, 50, 50)];
+        self.shareButton.titleLabel.text = @"back";
+        self.shareButton.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];
+        [self.shareButton addTarget:self action:@selector(backToNav) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        [self.navBar addSubview:self.backButton];
+        [self.navBar addSubview:self.shareButton];
+        
         NSString *url= @" ";
         if (news.link) {
              url=news.link;
@@ -188,15 +190,8 @@
         NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
         [self.webView loadRequest:nsrequest];
         [self.view addSubview:self.webView];
-        [self.view addSubview:self.backButton];
-        [self.backButton showPlaceHolderWithLineColor:[UIColor redColor]];
-    //[self.view addSubview:newsWebViewController.view];
-        //[self presentViewController:newsWebViewController
-         //                  animated:YES
-          //               completion:^{
-           //                  NSLog(@"Present Done");
-            //             }
-        // ];
+        [self.view addSubview:self.navBar];
+//        [self.navBar showPlaceHolderWithLineColor:[UIColor redColor]];
     }
 }
 
@@ -240,6 +235,103 @@
     return YES;
 }
 
+- (void) clearGestureRecognizers {
+    int numberOfGenstureRecognizer = [self.view.gestureRecognizers count];
+    for (int i = 0; i < numberOfGenstureRecognizer; i++) {
+        [self.view removeGestureRecognizer:self.view.gestureRecognizers[i]];
+    }
+}
+
+- (void) addUpDownGestrueRecognizers {
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    [swipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
+    [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
+    
+    [self.view addGestureRecognizer:swipeUp];
+    [self.view addGestureRecognizer:swipeDown];
+}
+
+- (void) removeUpGestrueRecognizers {
+    int numberOfGenstureRecognizer = [self.view.gestureRecognizers count];
+    for (int i = 0; i < numberOfGenstureRecognizer; i++) {
+
+        if ([self.view.gestureRecognizers[i] isKindOfClass:[UISwipeGestureRecognizer class]]) {
+            UISwipeGestureRecognizer *genstrue = self.view.gestureRecognizers[i];
+            if (genstrue.direction == UISwipeGestureRecognizerDirectionUp) {
+                [self.view removeGestureRecognizer:self.view.gestureRecognizers[i]];
+                numberOfGenstureRecognizer = numberOfGenstureRecognizer - 1;
+            }
+        }
+    }
+}
+
+- (void) removeDownGestrueRecognizers {
+    int numberOfGenstureRecognizer = [self.view.gestureRecognizers count];
+    for (int i = 0; i < numberOfGenstureRecognizer; i++) {
+
+        if ([self.view.gestureRecognizers[i] isKindOfClass:[UISwipeGestureRecognizer class]]) {
+            UISwipeGestureRecognizer *genstrue = self.view.gestureRecognizers[i];
+            if (genstrue.direction == UISwipeGestureRecognizerDirectionDown) {
+                [self.view removeGestureRecognizer:self.view.gestureRecognizers[i]];
+                numberOfGenstureRecognizer = numberOfGenstureRecognizer - 1;
+            }
+        }
+    }
+}
+
+- (void) removeUpDownGestrueRecognizers {
+    int numberOfGenstureRecognizer = [self.view.gestureRecognizers count];
+    for (int i = 0; i < numberOfGenstureRecognizer; i++) {
+
+        if ([self.view.gestureRecognizers[i] isKindOfClass:[UISwipeGestureRecognizer class]]) {
+            UISwipeGestureRecognizer *genstrue = self.view.gestureRecognizers[i];
+            if (genstrue.direction == UISwipeGestureRecognizerDirectionUp || genstrue.direction == UISwipeGestureRecognizerDirectionDown) {
+                [self.view removeGestureRecognizer:self.view.gestureRecognizers[i]];
+                numberOfGenstureRecognizer = numberOfGenstureRecognizer - 1;
+            }
+        }
+    }
+}
+
+- (void) addRightLeftGestrueRecognizers {
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeLeft];
+    [self.view addGestureRecognizer:swipeRight];
+}
+
+- (void) removeRightLeftGestrueRecognizers {
+    int numberOfGenstureRecognizer = [self.view.gestureRecognizers count];
+    for (int i = 0; i < numberOfGenstureRecognizer; i++) {
+        if ([self.view.gestureRecognizers[i] isKindOfClass:[UISwipeGestureRecognizer class]]) {
+            UISwipeGestureRecognizer *genstrue = self.view.gestureRecognizers[i];
+            if (genstrue.direction == UISwipeGestureRecognizerDirectionLeft || genstrue.direction == UISwipeGestureRecognizerDirectionRight) {
+                [self.view removeGestureRecognizer:self.view.gestureRecognizers[i]];
+                numberOfGenstureRecognizer = numberOfGenstureRecognizer - 1;
+            }
+        }
+    }
+}
+- (void) addTapGestrueRecognizers {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void) removeTapGestrueRecofnizers {
+    int numberOfGenstureRecognizer = [self.view.gestureRecognizers count];
+    for (int i = 0; i < numberOfGenstureRecognizer; i++) {
+        if ([self.view.gestureRecognizers[i] isKindOfClass:[UITapGestureRecognizer class]]) {
+            [self.view removeGestureRecognizer:self.view.gestureRecognizers[i]];
+            numberOfGenstureRecognizer = numberOfGenstureRecognizer - 1;
+        }
+    }
+}
+
+
+
 /*
  #pragma mark - Navigation
  
@@ -249,5 +341,6 @@
  // Pass the selected object to the new view controller.
  }
  */
+
 
 @end

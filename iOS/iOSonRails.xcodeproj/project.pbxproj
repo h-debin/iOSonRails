@@ -29,6 +29,7 @@
 		BA8F30FE1AC0645D00C6A1B3 /* TopNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F30FD1AC0645D00C6A1B3 /* TopNewsCell.m */; };
 		BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */; };
 		BA8F31051AC2A2F600C6A1B3 /* CoordinatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31041AC2A2F600C6A1B3 /* CoordinatingController.m */; };
+		BA8F310B1AC53D4600C6A1B3 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F310A1AC53D4600C6A1B3 /* Color.m */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
@@ -88,6 +89,8 @@
 		BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsWebViewController.m; path = ../NewsWebViewController.m; sourceTree = "<group>"; };
 		BA8F31031AC2A2F600C6A1B3 /* CoordinatingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinatingController.h; sourceTree = "<group>"; };
 		BA8F31041AC2A2F600C6A1B3 /* CoordinatingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinatingController.m; sourceTree = "<group>"; };
+		BA8F31091AC53D4600C6A1B3 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		BA8F310A1AC53D4600C6A1B3 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 		BA05A7BA1A80FDE90040ED7E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				BA8F31081AC53D1D00C6A1B3 /* Color.h */,
 				BA05A7BB1A80FDE90040ED7E /* HTTPClient.h */,
 				BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */,
 			);
@@ -268,6 +272,15 @@
 			);
 			name = NewsWebView;
 			path = NavView;
+			sourceTree = "<group>";
+		};
+		BA8F31081AC53D1D00C6A1B3 /* Color.h */ = {
+			isa = PBXGroup;
+			children = (
+				BA8F31091AC53D4600C6A1B3 /* Color.h */,
+				BA8F310A1AC53D4600C6A1B3 /* Color.m */,
+			);
+			name = Color.h;
 			sourceTree = "<group>";
 		};
 		BAD5D6D91A52E03C0009CC5F = {
@@ -504,6 +517,7 @@
 				BA8F31051AC2A2F600C6A1B3 /* CoordinatingController.m in Sources */,
 				BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */,
 				BA8F30F91AC01A9A00C6A1B3 /* JuViewController.m in Sources */,
+				BA8F310B1AC53D4600C6A1B3 /* Color.m in Sources */,
 				BA146A5E1ABEAAD700D046F3 /* NavSubView.m in Sources */,
 				BA8F30F71AC01A9A00C6A1B3 /* HaoViewController.m in Sources */,
 			);

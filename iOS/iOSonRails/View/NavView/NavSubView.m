@@ -26,7 +26,7 @@
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_CONTAINER_VIEW, HEIGH_CONTAINER_VIEW)];
     //containerView.layer.borderWidth = 1.0;
     containerView.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    [containerView showPlaceHolderWithLineColor:[UIColor blueColor]];
+    //[containerView showPlaceHolderWithLineColor:[UIColor blueColor]];
 
 
     /* ++
@@ -37,17 +37,17 @@
         [imageView setImageWithURL:[NSURL URLWithString:coverImage]
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
      }
-    [imageView showPlaceHolderWithLineColor:[UIColor yellowColor]];
+    //[imageView showPlaceHolderWithLineColor:[UIColor yellowColor]];
     /*
      * set emotion category label
      */
     UILabel *emotionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,  HEIGHT_IMAGE - 50, 15, HEIGHT_TITLE)];
     emotionLabel.text = category;
     emotionLabel.numberOfLines = 4;
-    emotionLabel.backgroundColor = [self getEmotionLabelBackgroundColorByCategory:category];
+    //emotionLabel.backgroundColor = [self getEmotionLabelBackgroundColorByCategory:category];
     UIFont *fontOfEmotionLabel = [UIFont boldSystemFontOfSize:10.0f];
     emotionLabel.font = fontOfEmotionLabel;
-    [emotionLabel showPlaceHolderWithLineColor:[UIColor redColor]];
+//    [emotionLabel showPlaceHolderWithLineColor:[UIColor redColor]];
 
     /*
      * set title
@@ -61,7 +61,7 @@
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textColor = [UIColor whiteColor];
     //titleLabel.textAlignment = NSTextAlignmentCenter;
-    [titleLabel showPlaceHolderWithLineColor:[UIColor greenColor]];
+    //[titleLabel showPlaceHolderWithLineColor:[UIColor greenColor]];
     
     [containerView addSubview:imageView];
     [containerView addSubview:emotionLabel];
