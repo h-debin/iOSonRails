@@ -7,16 +7,19 @@ namespace :db do
     db.execute( "select * from news" ) do |row|
       news = News.new(title: row[1],
               description: row[2],
-              link: row[3],
               pub_date: DateTime.parse(row[4]),
-              category: row[5],
-              picture: row[6],
-              le: row[7],
-              hao: row[8],
-              nu: row[9],
-              ju: row[10],
-              e: row[11],
-              jing: row[12])
+              link: row[5],
+              category: row[6],
+              picture: row[7],
+              le: row[8],
+              hao: row[9],
+              nu: row[10],
+              ai: row[11],
+              ju: row[12],
+              e: row[13],
+              jing: row[14],
+              emotion_type: row[15],
+              main_emotion_value: row[16])
       if news.save
         print "+"
       else

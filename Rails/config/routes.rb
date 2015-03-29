@@ -58,6 +58,13 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :news, only: [:index, :show]
       match '/request_access_token', to:'user#create', via: [:post]
+#      match 'news/hao', to:'news#hao', via:[:get]
+#      match 'news/le', to:'news#le', via:[:get]
+#      match 'news/jing', to:'news#jing', via:[:get]
+#      match 'news/ai', to:'news#ai', via:[:get]
+#      match 'news/ju', to:'news#ju', via:[:get]
+#      match 'news/e', to:'news#e', via:[:get]
+#      match 'news/nu', to:'news#nu', via:[:get]
     end
   end
 end

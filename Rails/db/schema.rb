@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319144101) do
+ActiveRecord::Schema.define(version: 20150329070237) do
 
   create_table "news", force: true do |t|
     t.text     "title"
@@ -21,15 +21,17 @@ ActiveRecord::Schema.define(version: 20150319144101) do
     t.text     "link"
     t.text     "category"
     t.text     "picture"
-    t.text     "le"
-    t.text     "hao"
-    t.text     "nu"
-    t.text     "ai"
-    t.text     "ju"
-    t.text     "e"
-    t.text     "jing"
+    t.integer  "le"
+    t.integer  "hao"
+    t.integer  "nu"
+    t.integer  "ai"
+    t.integer  "ju"
+    t.integer  "e"
+    t.integer  "jing"
     t.time     "created_at"
     t.time     "updated_at"
+    t.text     "emotion_type"
+    t.integer  "main_emotion_value"
   end
 
   create_table "users", force: true do |t|
