@@ -34,10 +34,14 @@
      ++ */
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_IMAGE, HEIGHT_IMAGE)];
     if (![coverImage isEqual:[NSNull null]]) {
-        [imageView setImageWithURL:[NSURL URLWithString:coverImage]
-                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-     }
-    //[imageView showPlaceHolderWithLineColor:[UIColor yellowColor]];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:coverImage]
+                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL){
+                                if(error != nil) {
+                                    NSLog(@"image set error for cover since %@ with %@", [error localizedDescription], imageURL);
+                                }
+        }];
+    }
+    [imageView showPlaceHolderWithLineColor:[UIColor yellowColor]];
     /*
      * set emotion category label
      */

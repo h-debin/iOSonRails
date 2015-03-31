@@ -10,6 +10,7 @@
 #import "DeviceInfo.h"
 #import "Macro.h"
 #import "CoreData+MagicalRecord.h"
+#import "HaoViewController.h"
 #import "News.h"
 #import "HTTPClient.h"
 #import "MMPlaceHolder.h"
@@ -37,6 +38,11 @@
     [self.view addSubview:self.activityView];
     
     [self.activityView startAnimating];
+                                   
+}
+
+- (void) stopLoaderIndicator {
+    [self.activityView stopAnimating];
 }
 
 - (void) loadDataFromServer {
@@ -89,8 +95,6 @@
                                        } else {
                                            NSLog(@"already have");
                                        }
-                                       //News *tmp = [[News alloc] initWithDictionary:JSON[i]];
-                                       //[self.news[typeName] addObject:tmp];
                                    }
                                }
                                failure:^(NSError *error){
@@ -100,6 +104,12 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+                                   HaoViewController *haoViewController = [[HaoViewController alloc] init];
+                                   [self presentViewController:haoViewController
+                                                      animated:YES
+                                                    completion:^() {
+                                                        NSLog(@"go to haoview already");
+                                                    }];
     
 }
 
