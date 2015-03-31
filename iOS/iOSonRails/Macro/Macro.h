@@ -32,4 +32,5 @@ typedef enum
 #define E_LABEL "今日最恶"
 #define NU_LABEL "今日最怒"
 
+
 #endif

@@ -22,14 +22,14 @@
        */
     self.news = [[NSMutableArray alloc] init];
     News *n1 = [[News alloc] init];
-    n1.title = @"马兴瑞兼任深圳书记 级别首次高于省会广州";
-    n1.link = @"http://news.163.com/15/0326/20/ALLLMN790001124J.html";
-    n1.image = @"http://img1.cache.netease.com/catchpic/B/B8/B860BDDC03916BF1AA3122B825F31ECA.jpg";
+    //n1.title = @"马兴瑞兼任深圳书记 级别首次高于省会广州";
+   // n1.link = @"http://news.163.com/15/0326/20/ALLLMN790001124J.html";
+    //n1.image = @"http://img1.cache.netease.com/catchpic/B/B8/B860BDDC03916BF1AA3122B825F31ECA.jpg";
     
     News *n2 = [[News alloc] init];
-    n2.title = @"杨洁篪前往新加坡驻华使馆吊唁李光耀逝世";
-    n2.link = @"http://news.163.com/15/0326/14/ALL23H0S000146BE.html";
-    n2.image = @"http://img6.cache.netease.com/cnews/2015/3/26/2015032614573436dc0_550.jpg";
+//    n2.title = @"杨洁篪前往新加坡驻华使馆吊唁李光耀逝世";
+//    n2.link = @"http://news.163.com/15/0326/14/ALL23H0S000146BE.html";
+ //   n2.image = @"http://img6.cache.netease.com/cnews/2015/3/26/2015032614573436dc0_550.jpg";
     
     [self.news addObject:n1];
     [self.news addObject:n2];

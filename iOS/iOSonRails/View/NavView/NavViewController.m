@@ -33,11 +33,13 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    if ([self.news count] > 0) {
     News *news = self.news[self.activeNewsIndex];
     self.contentView = [NavSubView initWithEmotionCategory:self.EMOTION_TYPE_TOP[self.type]
-                                         coverImage: news.image
-                                              title: news.title];
+                                         coverImage: news.newsPicture
+                                              title: news.newsTitle];
     [self.view addSubview:self.contentView];
+    }
     
     [self startAccelerometer];
     
@@ -117,8 +119,8 @@
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
         News *tmp = [self nextNews];
-        self.coverImage = tmp.image;
-        self.coverTitle = tmp.title;
+        self.coverImage = tmp.newsPicture;
+        self.coverTitle = tmp.newsTitle;
         if (self.activeNewsIndex != 0) {
             self.contentView = [NavSubView initWithEmotionCategory:self.EMOTION_TYPE_NORMAL[self.type] coverImage:self.coverImage title:self.coverTitle];
         } else {
@@ -129,8 +131,8 @@
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
         News *tmp = [self previousNews];
-        self.coverImage = tmp.image;
-        self.coverTitle = tmp.title;
+        self.coverImage = tmp.newsPicture;
+        self.coverTitle = tmp.newsTitle;
         if (self.activeNewsIndex != 0) {
             self.contentView = [NavSubView initWithEmotionCategory:self.EMOTION_TYPE_NORMAL[self.type] coverImage:self.coverImage title:self.coverTitle];
         } else {
@@ -155,7 +157,7 @@
     if (sender.state == UIGestureRecognizerStateEnded) {
         NewsWebViewController *newsWebViewController = [[NewsWebViewController alloc] init];
         News *news = self.news[self.activeNewsIndex];
-        newsWebViewController.link = news.link;
+        newsWebViewController.link = news.newsLink;
         [self.contentView removeFromSuperview];
         
         
@@ -198,8 +200,8 @@
         [self.navBar addSubview:self.shareButton];
         
         NSString *url= @" ";
-        if (news.link) {
-             url=news.link;
+        if (news.newsLink) {
+             url=news.newsLink;
         } else {
             url = @"http://www.baidu.com";
         }

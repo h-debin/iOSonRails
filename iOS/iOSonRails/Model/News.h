@@ -1,23 +1,29 @@
 //
 //  News.h
-//  iOSonRails
+//  
 //
-//  Created by huangmh on 1/18/15.
-//  Copyright (c) 2015 minghe. All rights reserved.
+//  Created by huangmh on 3/31/15.
+//
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "CoreData+MagicalRecord.h"
 
-@interface News : NSObject
 
-@property NSString *title;
-@property NSString *link;
-@property NSString *image;
-@property NSString *video;
-@property NSString *category;
-@property NSString *pubDate;
-@property NSString *site;
+@interface News : NSManagedObject
 
-- (id)initWithDictionary:(NSDictionary *)aDict;
+@property (nonatomic, retain) NSString * newsTitle;
+@property (nonatomic, retain) NSString * newsDescription;
+@property (nonatomic, retain) NSString * newsGuid;
+@property (nonatomic, retain) NSString * newsLink;
+@property (nonatomic, retain) NSDate * newsPubDate;
+@property (nonatomic, retain) NSString * newsCategory;
+@property (nonatomic, retain) NSString * newsPicture;
+@property (nonatomic, retain) NSString * newsEmotionType;
+@property (nonatomic, retain) NSNumber * newsMainEmotionValue;
+
+- (id )initWithDictionary:(NSDictionary *)aDict;
++ (BOOL)isTitleExist:(NSString *)title;
 
 @end

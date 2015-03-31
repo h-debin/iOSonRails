@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "AFNetworking.h"
 #import "HTTPClient.h"
+#import "StartViewController.h"
+#import "CoreData+MagicalRecord.h"
 #import "UserManager.h"
 #import "Macro.h"
 #import "NewsListViewController.h"
@@ -24,6 +26,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    /*
+     * setup CoreData, we're using MagicalRecord here
+     */
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model.sqlite"];
+    
+    
     /**
      init URL Cache
      */
@@ -48,7 +56,7 @@
     [view addSubview:label];
     viewController.view = view;
     
-    self.window.rootViewController = [[HaoViewController alloc] init];
+    self.window.rootViewController = [[StartViewController alloc] init];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -74,6 +82,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [MagicalRecord cleanUp];
 }
 
 @end

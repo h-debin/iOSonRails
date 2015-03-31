@@ -10,7 +10,6 @@
 		8B2DDD87A53DAD120976EFE6 /* libPods-iOSonRails.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */; };
 		BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7B91A80FDE90040ED7E /* AppDelegate.m */; };
 		BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */; };
-		BA05A7C91A80FDE90040ED7E /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C11A80FDE90040ED7E /* News.m */; };
 		BA05A7CA1A80FDE90040ED7E /* CommonNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C41A80FDE90040ED7E /* CommonNewsCell.m */; };
 		BA05A7CB1A80FDE90040ED7E /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7C61A80FDE90040ED7E /* NewsListViewController.m */; };
 		BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A571ABD929F00D046F3 /* NavViewController.m */; };
@@ -34,6 +33,11 @@
 		BA8F31101AC5647000C6A1B3 /* back_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F310F1AC5647000C6A1B3 /* back_24dp.png */; };
 		BA8F31121AC56A0300C6A1B3 /* share_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F31111AC56A0300C6A1B3 /* share_24dp.png */; };
 		BA8F31141AC5A47C00C6A1B3 /* wechat_share.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */; };
+		BAA0BBF91ACA4E7100DB702A /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA0BBF81ACA4E7100DB702A /* StartViewController.m */; };
+		BAA0BBFC1ACA507800DB702A /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA0BBFB1ACA507800DB702A /* DeviceInfo.m */; };
+		BAD1940A1ACAEE4500389AA1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD194091ACAEE4500389AA1 /* CoreData.framework */; };
+		BAD1940D1ACAEEFA00389AA1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAD1940B1ACAEEFA00389AA1 /* Model.xcdatamodeld */; };
+		BAD194101ACAF2B800389AA1 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD1940F1ACAF2B800389AA1 /* News.m */; };
 		BAD5D6E81A52E03C0009CC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D6E71A52E03C0009CC5F /* main.m */; };
 		BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD5D6F21A52E03C0009CC5F /* Images.xcassets */; };
 		BAD5D7021A52E03C0009CC5F /* iOSonRailsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */; };
@@ -58,8 +62,6 @@
 		BA05A7BB1A80FDE90040ED7E /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		BA05A7BE1A80FDE90040ED7E /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
-		BA05A7C01A80FDE90040ED7E /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
-		BA05A7C11A80FDE90040ED7E /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		BA05A7C31A80FDE90040ED7E /* CommonNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonNewsCell.h; sourceTree = "<group>"; };
 		BA05A7C41A80FDE90040ED7E /* CommonNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonNewsCell.m; sourceTree = "<group>"; };
 		BA05A7C51A80FDE90040ED7E /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 		BA8F310F1AC5647000C6A1B3 /* back_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_24dp.png; sourceTree = "<group>"; };
 		BA8F31111AC56A0300C6A1B3 /* share_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_24dp.png; sourceTree = "<group>"; };
 		BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat_share.png; sourceTree = "<group>"; };
+		BAA0BBF71ACA4E7100DB702A /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		BAA0BBF81ACA4E7100DB702A /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		BAA0BBFA1ACA507800DB702A /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		BAA0BBFB1ACA507800DB702A /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		BAD194091ACAEE4500389AA1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BAD1940C1ACAEEFA00389AA1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BAD1940E1ACAF2B800389AA1 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		BAD1940F1ACAF2B800389AA1 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD1940A1ACAEE4500389AA1 /* CoreData.framework in Frameworks */,
 				BA146A601ABF157D00D046F3 /* CoreMotion.framework in Frameworks */,
 				BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */,
 				8B2DDD87A53DAD120976EFE6 /* libPods-iOSonRails.a in Frameworks */,
@@ -153,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				BA05A7BE1A80FDE90040ED7E /* Macro.h */,
+				BAA0BBFA1ACA507800DB702A /* DeviceInfo.h */,
+				BAA0BBFB1ACA507800DB702A /* DeviceInfo.m */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -160,8 +173,9 @@
 		BA05A7BF1A80FDE90040ED7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BA05A7C01A80FDE90040ED7E /* News.h */,
-				BA05A7C11A80FDE90040ED7E /* News.m */,
+				BAD1940B1ACAEEFA00389AA1 /* Model.xcdatamodeld */,
+				BAD1940E1ACAF2B800389AA1 /* News.h */,
+				BAD1940F1ACAF2B800389AA1 /* News.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +188,8 @@
 				BA146A551ABD49A300D046F3 /* NavView */,
 				BA8F31031AC2A2F600C6A1B3 /* CoordinatingController.h */,
 				BA8F31041AC2A2F600C6A1B3 /* CoordinatingController.m */,
+				BAA0BBF71ACA4E7100DB702A /* StartViewController.h */,
+				BAA0BBF81ACA4E7100DB702A /* StartViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -379,6 +395,7 @@
 		DA02936B6D1617D528B45F3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAD194091ACAEE4500389AA1 /* CoreData.framework */,
 				BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */,
 				90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */,
 			);
@@ -524,11 +541,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA05A7C91A80FDE90040ED7E /* News.m in Sources */,
+				BAD1940D1ACAEEFA00389AA1 /* Model.xcdatamodeld in Sources */,
 				BA8F30FB1AC01A9A00C6A1B3 /* NuViewController.m in Sources */,
 				BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */,
+				BAA0BBFC1ACA507800DB702A /* DeviceInfo.m in Sources */,
+				BAA0BBF91ACA4E7100DB702A /* StartViewController.m in Sources */,
 				BA8F30F81AC01A9A00C6A1B3 /* JingViewController.m in Sources */,
 				BA8F30F51AC01A9A00C6A1B3 /* AIViewController.m in Sources */,
+				BAD194101ACAF2B800389AA1 /* News.m in Sources */,
 				BA8F30FA1AC01A9A00C6A1B3 /* LeViewController.m in Sources */,
 				BA8F30FE1AC0645D00C6A1B3 /* TopNewsCell.m in Sources */,
 				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
@@ -733,6 +753,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BAD1940B1ACAEEFA00389AA1 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BAD1940C1ACAEEFA00389AA1 /* Model.xcdatamodel */,
+			);
+			currentVersion = BAD1940C1ACAEEFA00389AA1 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BAD5D6DA1A52E03C0009CC5F /* Project object */;
 }

@@ -28,18 +28,18 @@
     containerView.layer.backgroundColor = [UIColor clearColor].CGColor;
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_IMAGE, HEIGHT_IMAGE)];
-    if (![news.image isEqual:[NSNull null]]) {
-        [imageView setImageWithURL:[NSURL URLWithString:news.image]
+    if (![news.newsPicture isEqual:[NSNull null]]) {
+        [imageView setImageWithURL:[NSURL URLWithString:news.newsPicture]
                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     } else {
         [imageView setImageWithURL:[NSURL URLWithString:@"http://g.hiphotos.baidu.com/image/pic/item/9358d109b3de9c825755d3856e81800a19d84383.jpg"]
                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-        NSLog(@"image is empty %@ -> %@", news.image, news.title);
+        NSLog(@"image is empty %@ -> %@", news.newsPicture, news.newsTitle);
     }
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, HEIGHT_IMAGE - HEIGHT_TITLE, WIDTH_TITLE - 50, HEIGHT_TITLE)];
     //titleLabel.backgroundColor = [UIColor redColor];
-    titleLabel.text = news.title;
+    titleLabel.text = news.newsTitle;
     titleLabel.numberOfLines = 2;
     UIFont *fontOfTitle = [UIFont boldSystemFontOfSize: 20.0f];
     titleLabel.font = fontOfTitle;
@@ -48,7 +48,7 @@
     //titleLabel.textAlignment = NSTextAlignmentCenter;
     
     UILabel *pubDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH_TITLE - 50,  HEIGHT_IMAGE - 50, 15, HEIGHT_TITLE)];
-    pubDateLabel.text = news.pubDate;
+    pubDateLabel.text = news.newsPubDate;
     pubDateLabel.numberOfLines = 1;
     UIFont *fontOfPubDateLabel = [UIFont boldSystemFontOfSize:10.0f];
     pubDateLabel.font = fontOfPubDateLabel;

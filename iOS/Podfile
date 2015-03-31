@@ -8,6 +8,7 @@ target 'iOSonRails' do
   pod 'SDWebImage', '~>3.6'
   pod 'UICKeyChainStore'
   pod 'MMPlaceHolder'
+  pod 'MagicalRecord'
 end
 
 target 'iOSonRailsTests' do

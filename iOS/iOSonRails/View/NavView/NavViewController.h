@@ -10,6 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "CoordinatingController.h"
 #import "NewsWebViewController.h"
+#import "HTTPClient.h"
 #import "NavSubView.h"
 #import "Macro.h"
 #import "News.h"
