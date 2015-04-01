@@ -17,19 +17,11 @@
     self.type = JU;
     self.from = AI;
     self.to = E;
-    /*
-     * TODO: should get from Server via REST API
-     */
-    self.news = [[NSMutableArray alloc] init];
-    News *n1 = [[News alloc] init];
-    
-    News *n2 = [[News alloc] init];
-    
-    [self.news addObject:n1];
-    [self.news addObject:n2];
     
     self.motionManager = [[CMMotionManager alloc] init];//一般在viewDidLoad中进行
     self.motionManager.accelerometerUpdateInterval = .1;//加速仪更新频率，以秒为单位
+    
+    self.news = [[NSArray alloc] initWithArray:[News newsWithEmotionType:self.type]];
 }
 
 @end

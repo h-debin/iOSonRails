@@ -25,5 +25,6 @@
 
 - (id )initWithDictionary:(NSDictionary *)aDict;
 + (BOOL)isTitleExist:(NSString *)title;
++ (NSArray *) newsWithEmotionType:(int )type;
 
 @end

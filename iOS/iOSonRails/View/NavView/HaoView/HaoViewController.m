@@ -23,12 +23,7 @@
     self.motionManager = [[CMMotionManager alloc] init];//一般在viewDidLoad中进行
     self.motionManager.accelerometerUpdateInterval = .1;//加速仪更新频率，以秒为单位
     
-    [self loadDataFromCoreData];
-}
-
-- (void) loadDataFromCoreData {
-    NSArray *newsList = [News MR_findByAttribute:@"newsEmotionType" withValue:@"好"];
-    self.news = [[NSMutableArray alloc] initWithArray:newsList];
+    self.news = [[NSArray alloc] initWithArray:[News newsWithEmotionType:self.type]];
 }
 
 @end

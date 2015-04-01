@@ -27,7 +27,7 @@
 @property NSString *coverTitle;
 @property NSString *coverCategory;
 
-@property NSMutableArray *news;
+@property NSArray *news;
 @property int activeNewsIndex;
 
 @end

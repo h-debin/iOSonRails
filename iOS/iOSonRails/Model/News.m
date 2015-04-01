@@ -62,4 +62,29 @@
     }
 }
 
++ (NSArray *) newsWithEmotionType:(int )type {
+    return [News MR_findByAttribute:@"newsEmotionType" withValue:[self getNewsKeyWithType:type]];
+}
+
++ (NSString *) getNewsKeyWithType:(int )type {
+    switch (type) {
+        case 0:
+            return @"好";
+        case 1:
+            return @"乐";
+        case 2:
+            return @"惊";
+        case 3:
+            return @"哀";
+        case 4:
+            return @"惧";
+        case 5:
+            return @"恶";
+        case 6:
+            return @"怒";
+        default:
+            return @"";
+    }
+}
+
 @end
