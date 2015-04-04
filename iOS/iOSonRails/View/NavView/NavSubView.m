@@ -42,31 +42,24 @@
                                 }
         }];
     }
-    [imageView showPlaceHolderWithLineColor:[UIColor yellowColor]];
-    /*
-     * set emotion category label
-     */
-    UILabel *emotionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,  HEIGHT_IMAGE - 50, 15, HEIGHT_TITLE)];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    UILabel *emotionLabel = [[UILabel alloc] initWithFrame:CGRectMake(2,  HEIGHT_IMAGE - 45, 15, 15)];
     emotionLabel.text = category;
     emotionLabel.numberOfLines = 4;
-    //emotionLabel.backgroundColor = [self getEmotionLabelBackgroundColorByCategory:category];
     UIFont *fontOfEmotionLabel = [UIFont boldSystemFontOfSize:10.0f];
     emotionLabel.font = fontOfEmotionLabel;
-//    [emotionLabel showPlaceHolderWithLineColor:[UIColor redColor]];
+    emotionLabel.layer.masksToBounds = YES;
+    emotionLabel.layer.cornerRadius = 8;
+    emotionLabel.backgroundColor = [UIColor redColor];
 
-    /*
-     * set title
-     */
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, HEIGHT_IMAGE - HEIGHT_TITLE, WIDTH_TITLE - 50, HEIGHT_TITLE)];
-    //titleLabel.backgroundColor = [UIColor redColor];
     titleLabel.text = title;
     titleLabel.numberOfLines = 2;
     UIFont *fontOfTitle = [UIFont boldSystemFontOfSize: 20.0f];
     titleLabel.font = fontOfTitle;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textColor = [UIColor whiteColor];
-    //titleLabel.textAlignment = NSTextAlignmentCenter;
-    //[titleLabel showPlaceHolderWithLineColor:[UIColor greenColor]];
     
     [containerView addSubview:imageView];
     [containerView addSubview:emotionLabel];

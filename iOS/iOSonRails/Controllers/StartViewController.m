@@ -7,10 +7,9 @@
 //
 
 #import "StartViewController.h"
-#import "DeviceInfo.h"
 #import "Macro.h"
 #import "CoreData+MagicalRecord.h"
-#import "HaoViewController.h"
+#import "NavViewController.h"
 #import "News.h"
 #import "HTTPClient.h"
 #import "MMPlaceHolder.h"

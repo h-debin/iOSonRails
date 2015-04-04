@@ -13,28 +13,6 @@
 #define NEWS_URL "http://api.minghe.me/api/v1/news"
 #define TOKEN_REQUEST_URL "http://api.minghe.me/api/v1/request_access_token"
 
-typedef enum
-{
-    HAO,
-    LE,
-    JING,
-    AI,
-    JU,
-    E,
-    NU
-} EMOTION_TYPE;
-
-#define HAO_LABEL "今日最好"
-#define LE_LABEL "今日最乐"
-#define JING_LABEL "今日最惊"
-#define AI_LABEL "今日最哀"
-#define JU_LABEL "今日最惧"
-#define E_LABEL "今日最恶"
-#define NU_LABEL "今日最怒"
-
-#ifndef Constants_h
-#define Constants_h
-
 // 宽度和高度
 #define SCREEN_WIDTH                    [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT                   [[UIScreen mainScreen] bounds].size.height
@@ -62,10 +40,17 @@ typedef enum
 #define UIColorFromRGB(r,g,b)               UIColorFromRGBA(r,g,b,1.0)
 
 // 打印
+/*
 #ifdef DEBUG
 #   define DLog(fmt, ...)                NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
 #   define DLog(...)
+#endif
+*/
+#ifdef DEBUG
+#   define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#   define NSLog(...)
 #endif
 
 #define LOG_BOUNDS(view)                 DLog(@"%@ bounds: %@", view, NSStringFromRect([view bounds]))
@@ -113,5 +98,3 @@ VIEW_RADIUS(view, radius); \
 
 #endif
 
-
-#endif

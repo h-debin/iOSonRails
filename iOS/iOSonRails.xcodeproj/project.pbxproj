@@ -23,7 +23,6 @@
 		BA8F31101AC5647000C6A1B3 /* back_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F310F1AC5647000C6A1B3 /* back_24dp.png */; };
 		BA8F31121AC56A0300C6A1B3 /* share_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F31111AC56A0300C6A1B3 /* share_24dp.png */; };
 		BA8F31141AC5A47C00C6A1B3 /* wechat_share.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */; };
-		BAA0BBFC1ACA507800DB702A /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA0BBFB1ACA507800DB702A /* DeviceInfo.m */; };
 		BAC0832C1AD040AE00708ACA /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC0832B1AD040AE00708ACA /* StartViewController.m */; };
 		BAD1940A1ACAEE4500389AA1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD194091ACAEE4500389AA1 /* CoreData.framework */; };
 		BAD1940D1ACAEEFA00389AA1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAD1940B1ACAEEFA00389AA1 /* Model.xcdatamodeld */; };
@@ -71,8 +70,6 @@
 		BA8F310F1AC5647000C6A1B3 /* back_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_24dp.png; sourceTree = "<group>"; };
 		BA8F31111AC56A0300C6A1B3 /* share_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_24dp.png; sourceTree = "<group>"; };
 		BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat_share.png; sourceTree = "<group>"; };
-		BAA0BBFA1ACA507800DB702A /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
-		BAA0BBFB1ACA507800DB702A /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		BAC0832A1AD040AE00708ACA /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		BAC0832B1AD040AE00708ACA /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		BAD194091ACAEE4500389AA1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -126,7 +123,7 @@
 				BA1DB68F1A5FF44700B4E453 /* UserManager.h */,
 				BA1DB6901A5FF44700B4E453 /* UserManager.m */,
 				BA96BD831ACC2F190042ADDB /* HTTP */,
-				BA8F31081AC53D1D00C6A1B3 /* Color.h */,
+				BA8F31081AC53D1D00C6A1B3 /* Color */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -135,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				BA05A7BE1A80FDE90040ED7E /* Macro.h */,
-				BAA0BBFA1ACA507800DB702A /* DeviceInfo.h */,
-				BAA0BBFB1ACA507800DB702A /* DeviceInfo.m */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -180,13 +175,13 @@
 			path = NewsWebView;
 			sourceTree = "<group>";
 		};
-		BA8F31081AC53D1D00C6A1B3 /* Color.h */ = {
+		BA8F31081AC53D1D00C6A1B3 /* Color */ = {
 			isa = PBXGroup;
 			children = (
 				BA8F31091AC53D4600C6A1B3 /* Color.h */,
 				BA8F310A1AC53D4600C6A1B3 /* Color.m */,
 			);
-			path = Color.h;
+			path = Color;
 			sourceTree = "<group>";
 		};
 		BA8F310C1AC5635300C6A1B3 /* Image */ = {
@@ -445,7 +440,6 @@
 				BAC0832C1AD040AE00708ACA /* StartViewController.m in Sources */,
 				BAD1940D1ACAEEFA00389AA1 /* Model.xcdatamodeld in Sources */,
 				BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */,
-				BAA0BBFC1ACA507800DB702A /* DeviceInfo.m in Sources */,
 				BAD194101ACAF2B800389AA1 /* News.m in Sources */,
 				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
 				BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */,
