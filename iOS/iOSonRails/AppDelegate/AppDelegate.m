@@ -14,7 +14,6 @@
 #import "UserManager.h"
 #import "Macro.h"
 #import "NavViewController.h"
-#import "HaoViewController.h"
 
 
 @interface AppDelegate ()

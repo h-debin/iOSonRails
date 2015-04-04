@@ -7,6 +7,7 @@
 //
 
 #import "NavSubView.h"
+#import "Macro.h"
 #import "MMPlaceHolder.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 
@@ -14,10 +15,10 @@
 @implementation NavSubView
 
 + (id)initWithEmotionCategory:(NSString *)category coverImage:(NSString *)coverImage title:(NSString *)title {
-    float WIDTH_IMAGE = [[UIScreen mainScreen] bounds].size.width;
+    float WIDTH_IMAGE = SCREEN_WIDTH;
     float WIDTH_TITLE = WIDTH_IMAGE;
 
-    float HEIGHT_IMAGE = [[UIScreen mainScreen] bounds].size.height;
+    float HEIGHT_IMAGE = SCREEN_HEIGHT;
     static float HEIGHT_TITLE = 50;
 
     float WIDTH_CONTAINER_VIEW = WIDTH_IMAGE;

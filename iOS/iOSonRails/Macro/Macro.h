@@ -37,7 +37,7 @@ typedef enum
 
 // 宽度和高度
 #define SCREEN_WIDTH                    [[UIScreen mainScreen] bounds].size.width
-#define SCRENN_HEIGHT                   [[UIScreen mainScreen] bounds].size.height
+#define SCREEN_HEIGHT                   [[UIScreen mainScreen] bounds].size.height
 #define STATUS_BAR_HEIGHT               (20.f)
 #define NAVIGATION_BAR_HEIGHT           (44.f)
 #define TAB_BAR_HEIGHT                  (49.f)
