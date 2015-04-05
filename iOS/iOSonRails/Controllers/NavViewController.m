@@ -45,6 +45,14 @@
     if ([self.news count] > 0) {
         News *news = self.news[self.activeNewsIndex];
         self.contentView = [[CommonView alloc] initWithNews:news];
+        [UIView transitionWithView:self.view
+                          duration:0.75
+                           options: UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{
+                            [self.contentView removeFromSuperview];
+                        }
+                        completion:nil];
+        
         [self.view addSubview:self.contentView];
     }
     
@@ -90,6 +98,14 @@
         self.emotion = [self.emotion next];
         self.news = [[NSArray alloc] initWithArray:[News newsWithEmotion:self.emotion]];
         if ([self.news count] > 0) {
+            [UIView transitionWithView:self.view
+                              duration:0.75
+                               options: UIViewAnimationOptionTransitionFlipFromBottom
+                            animations:^{
+                                [self.contentView removeFromSuperview];
+                            }
+                            completion:nil];
+            
             News *news = self.news[self.activeNewsIndex];
             self.contentView = [[CommonView alloc] initWithNews:news];
             [self.view addSubview:self.contentView];
@@ -104,6 +120,13 @@
         self.emotion = [self.emotion previous];
         self.news = [[NSArray alloc] initWithArray:[News newsWithEmotion:self.emotion]];
         if ([self.news count] > 0) {
+            [UIView transitionWithView:self.view
+                              duration:0.75
+                               options: UIViewAnimationOptionTransitionFlipFromTop
+                            animations:^{
+                                [self.contentView removeFromSuperview];
+                            }
+                            completion:nil];
             News *news = self.news[self.activeNewsIndex];
             self.contentView = [[CommonView alloc] initWithNews:news];
             [self.view addSubview:self.contentView];
@@ -122,27 +145,11 @@
     }
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
-        News *tmp = [self nextNews];
-        self.coverImage = tmp.newsPicture;
-        self.coverTitle = tmp.newsTitle;
-        if (self.activeNewsIndex != 0) {
-            self.contentView = [[CommonView alloc] initWithNews:tmp];
-        } else {
-            self.contentView = [[CommonView alloc] initWithNews:tmp];
-        }
-        [self.view addSubview:self.contentView];
+        [self showNextNews];
     }
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
-        News *tmp = [self previousNews];
-        self.coverImage = tmp.newsPicture;
-        self.coverTitle = tmp.newsTitle;
-        if (self.activeNewsIndex != 0) {
-            self.contentView = [[CommonView alloc] initWithNews:tmp];
-        } else {
-            self.contentView = [[CommonView alloc] initWithNews:tmp];
-        }
-        [self.view addSubview:self.contentView];
+        [self showPreviousNews];
     }
 }
 
@@ -161,6 +168,48 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) showNextNews {
+    [UIView transitionWithView:self.view
+                      duration:0.75
+                       options: UIViewAnimationOptionTransitionFlipFromRight
+                    animations:^{
+                        [self.contentView removeFromSuperview];
+                    }
+                    completion:nil];
+    
+    News *tmp = [self nextNews];
+    self.coverImage = tmp.newsPicture;
+    self.coverTitle = tmp.newsTitle;
+    if (self.activeNewsIndex != 0) {
+        self.contentView = [[CommonView alloc] initWithNews:tmp];
+    } else {
+        self.contentView = [[CommonView alloc] initWithNews:tmp];
+    }
+    
+    [self.view addSubview:self.contentView];
+}
+
+- (void) showPreviousNews {
+    [UIView transitionWithView:self.view
+                      duration:0.75
+                       options: UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                        [self.contentView removeFromSuperview];
+                    }
+                    completion:nil];
+    
+    News *tmp = [self previousNews];
+    self.coverImage = tmp.newsPicture;
+    self.coverTitle = tmp.newsTitle;
+    if (self.activeNewsIndex != 0) {
+        self.contentView = [[CommonView alloc] initWithNews:tmp];
+    } else {
+        self.contentView = [[CommonView alloc] initWithNews:tmp];
+    }
+    
+    [self.view addSubview:self.contentView];
 }
 
 - (News *)nextNews {
