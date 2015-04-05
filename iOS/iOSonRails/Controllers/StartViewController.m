@@ -19,14 +19,17 @@
 @property UIActivityIndicatorView *activityView;
 
 @property NSMutableDictionary *news;
+@property int doneDataRequestCount;
 
 @end
 
 @implementation StartViewController
 
 - (void) viewDidLoad {
+    self.doneDataRequestCount = 0;
+    [self addObserver:self forKeyPath:@"doneDataRequestCount" options:NSKeyValueObservingOptionNew context:nil];
+    //[self addObserver:sakura forKeyPath:@"ownedClowCards" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     [self startLoaderIndicator];
-    
     [self loadDataFromServer];
 }
 
@@ -89,26 +92,34 @@
                                                } else {
                                                    NSLog(@"saving error -> %@ ", [error localizedDescription]);
                                                }
-                                               
                                            }];
                                        } else {
                                            NSLog(@"already have");
                                        }
                                    }
+                                   self.doneDataRequestCount = self.doneDataRequestCount + 1;
                                }
                                failure:^(NSError *error){
+                                   self.doneDataRequestCount = self.doneDataRequestCount + 1;
                                    NSLog(@"%@", [error localizedDescription]);
                                }];
     
 }
 
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqual:@"doneDataRequestCount"]) {
+        if (self.doneDataRequestCount == 7) {
+            MainViewController *mainViewController = [[MainViewController alloc] initWithEmotion:[Emotion haoEmotion]];
+            [self presentViewController:mainViewController
+                               animated:YES
+                             completion:^() {
+                                 NSLog(@"go to nav view already");
+                             }];
+        }
+    }
+}
+
 - (void) viewDidAppear:(BOOL)animated {
-    MainViewController *mainViewController = [[MainViewController alloc] initWithEmotion:[Emotion haoEmotion]];
-    [self presentViewController:mainViewController
-                       animated:YES
-                     completion:^() {
-                         NSLog(@"go to nav view already");
-                     }];
 }
 
 @end
