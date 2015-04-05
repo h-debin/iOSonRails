@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "News.h"
 
+
 @interface CommonView : UIView
 
 - (id )initWithNews:(News *)news;

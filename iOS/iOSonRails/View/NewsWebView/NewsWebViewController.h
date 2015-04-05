@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "News.h"
+
+@class NewsWebViewController;
+@protocol NewsWebViewControllerDelegate <NSObject>
+-(void) newsWebViewControllerSwippedRight:(NewsWebViewController *)newsWebViewController;
+@end
 
 @interface NewsWebViewController : UIViewController <UIWebViewDelegate>
 
+@property (nonatomic, weak) id<NewsWebViewControllerDelegate> delegate;
+
 @property NSString *link;
+
+- (id ) initWithNews:(News *)news;
 
 @end

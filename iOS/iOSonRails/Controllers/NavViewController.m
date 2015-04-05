@@ -8,9 +8,10 @@
 
 #import "NavViewController.h"
 #import "MMPlaceHolder.h"
+#import "NewsWebViewController.h"
 #import "Color.h"
 
-@interface NavViewController ()
+@interface NavViewController ()<NewsWebViewControllerDelegate>
 
 @property UIView *contentView;
 @property UIWebView *webView;
@@ -158,59 +159,10 @@
     [self removeTapGestrueRecofnizers];
     
     if (sender.state == UIGestureRecognizerStateEnded) {
-        NewsWebViewController *newsWebViewController = [[NewsWebViewController alloc] init];
         News *news = self.news[self.activeNewsIndex];
-        newsWebViewController.link = news.newsLink;
-        [self.contentView removeFromSuperview];
-        
-        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        self.webView.delegate = self;
-        
-        self.navBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
-        self.navBar.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];
-        
-        self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-        self.backButton.titleLabel.text = @"back";
-        self.backButton.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];;
-        UIImage *backButtonImage = [UIImage imageNamed:@"back_24dp.png"];
-        UIImageView *imageView= [[UIImageView alloc] initWithFrame:CGRectMake(10, 50 - 24, 24, 24)];
-        imageView.image = backButtonImage;
-        [imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        imageView.tintColor = [UIColor lightGrayColor];
-        //[imageView showPlaceHolderWithLineColor:[UIColor blueColor]];
-        [self.backButton addSubview:imageView];
-        //[self.backButton setImage:backButtonImage forState:UIControlStateNormal];
-        [self.backButton addTarget:self action:@selector(backToNav) forControlEvents:UIControlEventTouchUpInside];
-        //[self.backButton showPlaceHolderWithLineColor:[UIColor redColor]];
-        
-        self.shareButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 50, 0, 50, 50)];
-        self.shareButton.titleLabel.text = @"back";
-        self.shareButton.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];
-        UIImage *shareImage = [UIImage imageNamed:@"wechat_share.png"];
-        UIImageView *shareImageView= [[UIImageView alloc] initWithFrame:CGRectMake(0, 50 - 24, 24, 24)];
-        shareImageView.image = shareImage;
-        [shareImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        shareImageView.tintColor = [UIColor lightGrayColor];
-        //[imageView showPlaceHolderWithLineColor:[UIColor blueColor]];
-        [self.shareButton addSubview:shareImageView];
-        [self.shareButton addTarget:self action:@selector(backToNav) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        [self.navBar addSubview:self.backButton];
-        [self.navBar addSubview:self.shareButton];
-        
-        NSString *url= @" ";
-        if (news.newsLink) {
-             url=news.newsLink;
-        } else {
-            url = @"http://www.baidu.com";
-        }
-        NSURL *nsurl=[NSURL URLWithString:url];
-        NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
-        [self.webView loadRequest:nsrequest];
-        [self.view addSubview:self.webView];
-        [self.view addSubview:self.navBar];
-//        [self.navBar showPlaceHolderWithLineColor:[UIColor redColor]];
+        NewsWebViewController *newsWebViewController = [[NewsWebViewController alloc] initWithNews:news];
+        newsWebViewController.delegate = self;
+        [self presentViewController:newsWebViewController animated:YES completion:nil];
     }
 }
 
@@ -228,16 +180,6 @@
 - (News *)previousNews {
     self.activeNewsIndex = abs(self.activeNewsIndex - 1) % [self.news count];
     return self.news[self.activeNewsIndex];
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    NSLog(@"Web View loading start");
-}
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"Web View loading done");
-}
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"Web View loading error: %@", [error localizedDescription]);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -379,6 +321,10 @@
             [self startAccelerometer];
         });
     }
+}
+
+- (void)newsWebViewControllerSwippedRight:(NewsWebViewController *)newsWebViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

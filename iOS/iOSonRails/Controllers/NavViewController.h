@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
-#import "NewsWebViewController.h"
 #import "HTTPClient.h"
 #import "CommonView.h"
 #import "Macro.h"

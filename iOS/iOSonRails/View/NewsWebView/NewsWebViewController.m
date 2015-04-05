@@ -7,6 +7,7 @@
 //
 
 #import "NewsWebViewController.h"
+#import "Macro.h"
 #import "MMPlaceHolder.h"
 
 @interface NewsWebViewController ()
@@ -14,26 +15,30 @@
 @property UIWebView *webView;
 @property UIButton *backButton;
 
+@property News *news;
+//@property UIWebView *webWView;
+
 @end
 
 @implementation NewsWebViewController
 
+- (id ) initWithNews:(News *)news {
+    if (self == [super init]) {
+        self.news = news;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    float deviceWidth = [[UIScreen mainScreen] bounds].size.width;
-    float deviceHeight = [[UIScreen mainScreen] bounds].size.height;
-    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, deviceWidth, deviceHeight)];
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     self.webView.delegate = self;
     
-    self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    self.backButton.titleLabel.text = @"back";
-    self.backButton.backgroundColor = [UIColor redColor];
-    
     NSString *url= @" ";
-    if (self.link) {
-         url= self.link;
+    if (self.news.newsLink) {
+         url=self.news.newsLink;
     } else {
         url = @"http://www.baidu.com";
     }
@@ -41,8 +46,9 @@
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
     [self.webView loadRequest:nsrequest];
     [self.view addSubview:self.webView];
-    [self.view addSubview:self.backButton];
-    [self.backButton showPlaceHolderWithLineColor:[UIColor redColor]];
+    
+    [self addRightGestrureRecognizer];
+    [self addLeftGestrureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,8 +80,48 @@
     return YES;
 }
 
+- (void) addRightLeftGestrueRecognizers {
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeLeft];
+    [self.view addGestureRecognizer:swipeRight];
+}
 
+- (void) addRightGestrureRecognizer {
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];
+}
 
+- (void) addLeftGestrureRecognizer {
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
+}
+
+- (void) handleSwipe:(UISwipeGestureRecognizer *)swipe {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
+        [self shareToSocial];
+    }
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self backToNewsList];
+    }
+}
+
+- (void) shareToSocial {
+    NSLog(@"Back to social");
+}
+
+- (void ) backToNewsList {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(newsWebViewControllerSwippedRight:)]) {
+        [self.delegate newsWebViewControllerSwippedRight:self];
+    } else {
+        NSLog(@"no delegate");
+    }
+}
 
 
 /*
