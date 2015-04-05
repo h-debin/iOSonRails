@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 minghe. All rights reserved.
 //
 
-#import "NavViewController.h"
+#import "MainViewController.h"
 #import "MMPlaceHolder.h"
 #import "NewsWebViewController.h"
 #import "Color.h"
 
-@interface NavViewController ()<NewsWebViewControllerDelegate>
+@interface MainViewController ()<NewsWebViewControllerDelegate>
 
 @property UIView *contentView;
 @property UIWebView *webView;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation NavViewController
+@implementation MainViewController
 
 - (id ) initWithEmotion:(Emotion *)emotion {
     if (self == [super init]) {
@@ -179,7 +179,9 @@
                     }
                     completion:nil];
     
-    News *tmp = [self nextNews];
+    // get next news
+    self.activeNewsIndex = (self.activeNewsIndex + 1) % ([self.news count]);
+    News *tmp = self.news[self.activeNewsIndex];
     self.coverImage = tmp.newsPicture;
     self.coverTitle = tmp.newsTitle;
     if (self.activeNewsIndex != 0) {
@@ -200,7 +202,9 @@
                     }
                     completion:nil];
     
-    News *tmp = [self previousNews];
+    //get previous news
+    self.activeNewsIndex = abs(self.activeNewsIndex - 1) % [self.news count];
+    News *tmp = self.news[self.activeNewsIndex];
     self.coverImage = tmp.newsPicture;
     self.coverTitle = tmp.newsTitle;
     if (self.activeNewsIndex != 0) {
@@ -212,23 +216,11 @@
     [self.view addSubview:self.contentView];
 }
 
-- (News *)nextNews {
-    self.activeNewsIndex = (self.activeNewsIndex + 1) % ([self.news count]);
-    return self.news[self.activeNewsIndex % ([self.news count])];
-}
-
-- (News *)previousNews {
-    self.activeNewsIndex = abs(self.activeNewsIndex - 1) % [self.news count];
-    return self.news[self.activeNewsIndex];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 }
 
@@ -256,7 +248,6 @@
 - (void) removeUpGestrueRecognizers {
     int numberOfGenstureRecognizer = [self.view.gestureRecognizers count];
     for (int i = 0; i < numberOfGenstureRecognizer; i++) {
-
         if ([self.view.gestureRecognizers[i] isKindOfClass:[UISwipeGestureRecognizer class]]) {
             UISwipeGestureRecognizer *genstrue = self.view.gestureRecognizers[i];
             if (genstrue.direction == UISwipeGestureRecognizerDirectionUp) {
@@ -367,13 +358,4 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 @end

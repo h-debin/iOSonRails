@@ -10,7 +10,7 @@
 		8B2DDD87A53DAD120976EFE6 /* libPods-iOSonRails.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */; };
 		BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7B91A80FDE90040ED7E /* AppDelegate.m */; };
 		BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */; };
-		BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A571ABD929F00D046F3 /* NavViewController.m */; };
+		BA146A581ABD929F00D046F3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A571ABD929F00D046F3 /* MainViewController.m */; };
 		BA146A5E1ABEAAD700D046F3 /* CommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A5D1ABEAAD600D046F3 /* CommonView.m */; };
 		BA146A601ABF157D00D046F3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */; };
 		BA146A6B1AC0111800D046F3 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA146A6A1AC0111800D046F3 /* main.storyboard */; };
@@ -51,8 +51,8 @@
 		BA05A7BB1A80FDE90040ED7E /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		BA05A7BE1A80FDE90040ED7E /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
-		BA146A561ABD929F00D046F3 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
-		BA146A571ABD929F00D046F3 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
+		BA146A561ABD929F00D046F3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		BA146A571ABD929F00D046F3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		BA146A5C1ABEAAD600D046F3 /* CommonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonView.h; sourceTree = "<group>"; };
 		BA146A5D1ABEAAD600D046F3 /* CommonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonView.m; sourceTree = "<group>"; };
 		BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -198,8 +198,8 @@
 		BA96BD821ACC2E4C0042ADDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BA146A561ABD929F00D046F3 /* NavViewController.h */,
-				BA146A571ABD929F00D046F3 /* NavViewController.m */,
+				BA146A561ABD929F00D046F3 /* MainViewController.h */,
+				BA146A571ABD929F00D046F3 /* MainViewController.m */,
 				BAC0832A1AD040AE00708ACA /* StartViewController.h */,
 				BAC0832B1AD040AE00708ACA /* StartViewController.m */,
 			);
@@ -442,7 +442,7 @@
 				BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */,
 				BAD194101ACAF2B800389AA1 /* News.m in Sources */,
 				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
-				BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */,
+				BA146A581ABD929F00D046F3 /* MainViewController.m in Sources */,
 				BAD5D6E81A52E03C0009CC5F /* main.m in Sources */,
 				BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */,
 				BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */,

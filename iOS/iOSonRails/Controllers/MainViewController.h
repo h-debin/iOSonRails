@@ -14,7 +14,7 @@
 #import "Emotion.h"
 #import "News.h"
 
-@interface NavViewController: UIViewController <UIWebViewDelegate>
+@interface MainViewController: UIViewController <UIWebViewDelegate>
 
 @property Emotion *emotion;
 
