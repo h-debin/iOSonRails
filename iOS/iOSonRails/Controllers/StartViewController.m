@@ -30,20 +30,15 @@
 - (void) viewDidLoad {
     self.doneDataRequestCount = 0;
     [self addObserver:self forKeyPath:@"doneDataRequestCount" options:NSKeyValueObservingOptionNew context:nil];
-    //[self addObserver:sakura forKeyPath:@"ownedClowCards" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    [self prepareIndicator];
     [self startLoaderIndicator];
     [self loadDataFromServer];
 }
 
-- (void) startLoaderIndicator {
-    //self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    //self.activityView.center = self.view.center;
-    //[self.activityView showPlaceHolderWithLineColor:[UIColor redColor]];
-    //[self.view addSubview:self.activityView];
+- (void) prepareIndicator {
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    
     self.indicatorView = [[MONActivityIndicatorView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT/2, SCREEN_WIDTH, 20)];
-    self.indicatorView.center =CGPointMake(SCREEN_WIDTH/2 + 17, SCREEN_HEIGHT/2);
+    self.indicatorView.center = CGPointMake(SCREEN_WIDTH/2 + 17, SCREEN_HEIGHT/2);
     self.indicatorView.delegate = self;
     self.indicatorView.numberOfCircles = 7;
     self.indicatorView.radius = 5;
@@ -51,12 +46,14 @@
     self.indicatorView.duration = 0.5;
     self.indicatorView.delay = 0.5;
     [self.view addSubview:self.indicatorView];
+}
+
+- (void) startLoaderIndicator {
     [self.indicatorView startAnimating];
 }
 
 - (void) stopLoaderIndicator {
     [self.indicatorView stopAnimating];
-    //[self.activityView stopAnimating];
 }
 
 - (void) loadDataFromServer {
