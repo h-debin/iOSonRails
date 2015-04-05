@@ -9,7 +9,7 @@
 #import "StartViewController.h"
 #import "Macro.h"
 #import "CoreData+MagicalRecord.h"
-#import "NavViewController.h"
+#import "MainViewController.h"
 #import "News.h"
 #import "HTTPClient.h"
 #import "MMPlaceHolder.h"
@@ -103,8 +103,8 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    NavViewController *navViewController = [[NavViewController alloc] initWithEmotion:[Emotion haoEmotion]];
-    [self presentViewController:navViewController
+    MainViewController *mainViewController = [[MainViewController alloc] initWithEmotion:[Emotion haoEmotion]];
+    [self presentViewController:mainViewController
                        animated:YES
                      completion:^() {
                          NSLog(@"go to nav view already");

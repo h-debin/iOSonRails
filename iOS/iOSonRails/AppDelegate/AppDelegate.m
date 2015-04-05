@@ -13,7 +13,7 @@
 #import "CoreData+MagicalRecord.h"
 #import "UserManager.h"
 #import "Macro.h"
-#import "NavViewController.h"
+#import "MainViewController.h"
 
 
 @interface AppDelegate ()
