@@ -43,9 +43,7 @@
     
     if ([self.news count] > 0) {
         News *news = self.news[self.activeNewsIndex];
-        self.contentView = [NavSubView initWithEmotionCategory:self.emotion.type
-                                                    coverImage: news.newsPicture
-                                                         title: news.newsTitle];
+        self.contentView = [[CommonView alloc] initWithNews:news];
         [self.view addSubview:self.contentView];
     }
     
@@ -92,9 +90,7 @@
         self.news = [[NSArray alloc] initWithArray:[News newsWithEmotion:self.emotion]];
         if ([self.news count] > 0) {
             News *news = self.news[self.activeNewsIndex];
-            self.contentView = [NavSubView initWithEmotionCategory:self.emotion.type
-                                                        coverImage: news.newsPicture
-                                                             title: news.newsTitle];
+            self.contentView = [[CommonView alloc] initWithNews:news];
             [self.view addSubview:self.contentView];
             break;
         }
@@ -108,9 +104,7 @@
         self.news = [[NSArray alloc] initWithArray:[News newsWithEmotion:self.emotion]];
         if ([self.news count] > 0) {
             News *news = self.news[self.activeNewsIndex];
-            self.contentView = [NavSubView initWithEmotionCategory:self.emotion.type
-                                                        coverImage: news.newsPicture
-                                                             title: news.newsTitle];
+            self.contentView = [[CommonView alloc] initWithNews:news];
             [self.view addSubview:self.contentView];
             break;
         }
@@ -131,9 +125,9 @@
         self.coverImage = tmp.newsPicture;
         self.coverTitle = tmp.newsTitle;
         if (self.activeNewsIndex != 0) {
-            self.contentView = [NavSubView initWithEmotionCategory:self.emotion.type coverImage:self.coverImage title:self.coverTitle];
+            self.contentView = [[CommonView alloc] initWithNews:tmp];
         } else {
-            self.contentView = [NavSubView initWithEmotionCategory:self.emotion.type coverImage:self.coverImage title:self.coverTitle];
+            self.contentView = [[CommonView alloc] initWithNews:tmp];
         }
         [self.view addSubview:self.contentView];
     }
@@ -143,9 +137,9 @@
         self.coverImage = tmp.newsPicture;
         self.coverTitle = tmp.newsTitle;
         if (self.activeNewsIndex != 0) {
-            self.contentView = [NavSubView initWithEmotionCategory:self.emotion.type coverImage:self.coverImage title:self.coverTitle];
+            self.contentView = [[CommonView alloc] initWithNews:tmp];
         } else {
-            self.contentView = [NavSubView initWithEmotionCategory:self.emotion.type coverImage:self.coverImage title:self.coverTitle];
+            self.contentView = [[CommonView alloc] initWithNews:tmp];
         }
         [self.view addSubview:self.contentView];
     }

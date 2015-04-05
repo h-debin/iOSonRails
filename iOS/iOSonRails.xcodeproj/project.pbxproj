@@ -11,7 +11,7 @@
 		BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7B91A80FDE90040ED7E /* AppDelegate.m */; };
 		BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */; };
 		BA146A581ABD929F00D046F3 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A571ABD929F00D046F3 /* NavViewController.m */; };
-		BA146A5E1ABEAAD700D046F3 /* NavSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A5D1ABEAAD600D046F3 /* NavSubView.m */; };
+		BA146A5E1ABEAAD700D046F3 /* CommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA146A5D1ABEAAD600D046F3 /* CommonView.m */; };
 		BA146A601ABF157D00D046F3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */; };
 		BA146A6B1AC0111800D046F3 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA146A6A1AC0111800D046F3 /* main.storyboard */; };
 		BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6901A5FF44700B4E453 /* UserManager.m */; };
@@ -53,8 +53,8 @@
 		BA05A7BE1A80FDE90040ED7E /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		BA146A561ABD929F00D046F3 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
 		BA146A571ABD929F00D046F3 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
-		BA146A5C1ABEAAD600D046F3 /* NavSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavSubView.h; sourceTree = "<group>"; };
-		BA146A5D1ABEAAD600D046F3 /* NavSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavSubView.m; sourceTree = "<group>"; };
+		BA146A5C1ABEAAD600D046F3 /* CommonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonView.h; sourceTree = "<group>"; };
+		BA146A5D1ABEAAD600D046F3 /* CommonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonView.m; sourceTree = "<group>"; };
 		BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		BA146A6A1AC0111800D046F3 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		BA1DB68F1A5FF44700B4E453 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
@@ -160,8 +160,8 @@
 		BA146A551ABD49A300D046F3 /* NavView */ = {
 			isa = PBXGroup;
 			children = (
-				BA146A5C1ABEAAD600D046F3 /* NavSubView.h */,
-				BA146A5D1ABEAAD600D046F3 /* NavSubView.m */,
+				BA146A5C1ABEAAD600D046F3 /* CommonView.h */,
+				BA146A5D1ABEAAD600D046F3 /* CommonView.m */,
 			);
 			path = NavView;
 			sourceTree = "<group>";
@@ -448,7 +448,7 @@
 				BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */,
 				BA8F310B1AC53D4600C6A1B3 /* Color.m in Sources */,
 				BA5BF8E51ACC406A00857632 /* Emotion.m in Sources */,
-				BA146A5E1ABEAAD700D046F3 /* NavSubView.m in Sources */,
+				BA146A5E1ABEAAD700D046F3 /* CommonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

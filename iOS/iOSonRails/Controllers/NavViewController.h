@@ -10,7 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "NewsWebViewController.h"
 #import "HTTPClient.h"
-#import "NavSubView.h"
+#import "CommonView.h"
 #import "Macro.h"
 #import "Emotion.h"
 #import "News.h"
