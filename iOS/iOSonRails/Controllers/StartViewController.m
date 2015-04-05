@@ -10,6 +10,7 @@
 #import "Macro.h"
 #import "CoreData+MagicalRecord.h"
 #import "MainViewController.h"
+#import "Reachability.h"
 #import "News.h"
 #import "MONActivityIndicatorView.h"
 #import "HTTPClient.h"
@@ -30,9 +31,36 @@
 - (void) viewDidLoad {
     self.doneDataRequestCount = 0;
     [self addObserver:self forKeyPath:@"doneDataRequestCount" options:NSKeyValueObservingOptionNew context:nil];
-    [self prepareIndicator];
-    [self startLoaderIndicator];
-    [self loadDataFromServer];
+    
+    Reachability *reach = [Reachability reachabilityWithHostname:@"google.com"];
+    if ([reach isReachable]) {
+        [self prepareIndicator];
+        [self startLoaderIndicator];
+        [self loadDataFromServer];
+        /*
+        if ([reach isReachableViaWiFi]) {
+            // On WiFi
+        }
+         */
+    } else {
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"网络连接出错啦"
+                                                          message:@"检查一下你的网络连接是否正常"
+                                                         delegate:nil
+                                                cancelButtonTitle:@"确认"
+                                                otherButtonTitles:nil];
+        
+        [message show];
+        
+        [reach setReachableBlock:^(Reachability *reachblock)
+         {
+             // Now reachable
+         }];
+        
+        [reach setUnreachableBlock:^(Reachability*reach)
+         {
+             // Now unreachable
+         }];
+    }
 }
 
 - (void) prepareIndicator {

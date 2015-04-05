@@ -11,6 +11,8 @@
 
 @interface HTTPClient : NSObject
 
+@property BOOL networkOn;
+
 + (id)sharedHTTPClient;
 
 - (void)get:(NSString *)url
