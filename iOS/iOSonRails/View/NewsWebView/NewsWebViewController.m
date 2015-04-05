@@ -10,7 +10,7 @@
 #import "Macro.h"
 #import "MMPlaceHolder.h"
 
-@interface NewsWebViewController ()
+@interface NewsWebViewController () <UIGestureRecognizerDelegate>
 
 @property UIWebView *webView;
 @property UIButton *backButton;
@@ -45,10 +45,11 @@
     NSURL *nsurl=[NSURL URLWithString:url];
     NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
     [self.webView loadRequest:nsrequest];
-    [self.view addSubview:self.webView];
     
     [self addRightGestrureRecognizer];
     [self addLeftGestrureRecognizer];
+    
+    [self.view addSubview:self.webView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,13 +67,11 @@
     NSLog(@"Web View loading error: %@", [error localizedDescription]);
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 }
 
@@ -92,12 +91,14 @@
 - (void) addRightGestrureRecognizer {
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    swipeRight.delegate = self;
     [self.view addGestureRecognizer:swipeRight];
 }
 
 - (void) addLeftGestrureRecognizer {
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    swipeLeft.delegate = self;
     [self.view addGestureRecognizer:swipeLeft];
 }
 
@@ -109,6 +110,10 @@
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
         [self backToNewsList];
     }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
 
 - (void) shareToSocial {

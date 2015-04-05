@@ -146,16 +146,7 @@
     }
 }
 
-- (void) backToNav {
-    [self.webView removeFromSuperview];
-    [self.navBar removeFromSuperview];
-    [self.view addSubview:self.contentView];
-    [self addRightLeftGestrueRecognizers];
-    [self addTapGestrueRecognizers];
-}
-
 - (void)handleTap:(UITapGestureRecognizer *)sender {
-    [self removeRightLeftGestrueRecognizers];
     [self removeTapGestrueRecofnizers];
     
     if (sender.state == UIGestureRecognizerStateEnded) {
