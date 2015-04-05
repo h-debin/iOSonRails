@@ -24,6 +24,7 @@ PODS:
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
   - MMPlaceHolder (1.6)
+  - MONActivityIndicatorView (0.0.1)
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - MagicalRecord
   - MMPlaceHolder
+  - MONActivityIndicatorView
   - SDWebImage (~> 3.6)
   - SVPullToRefresh
   - UICKeyChainStore
@@ -42,6 +44,7 @@ SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MMPlaceHolder: 8fe70118604dfd117155ff3f6e8492965e338443
+  MONActivityIndicatorView: 728965121e59cef32c1bc4676f6868e35f3c8c61
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SVPullToRefresh: d5161ebc833a38b465364412e5e307ca80bbb190
   UICKeyChainStore: 779de9c089920a79d8755e7ba887e51c745819a8

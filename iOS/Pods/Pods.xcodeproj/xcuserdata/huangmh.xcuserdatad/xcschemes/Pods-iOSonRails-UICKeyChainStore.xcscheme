@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C34AE89352D058057A8FD5CB"
+               BlueprintIdentifier = "AA73208E6BF1E52FC7F8979D"
                BuildableName = "libPods-iOSonRails-UICKeyChainStore.a"
                BlueprintName = "Pods-iOSonRails-UICKeyChainStore"
                ReferencedContainer = "container:Pods.xcodeproj">

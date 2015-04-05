@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-iOSonRails-MONActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-iOSonRails-MagicalRecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>290F9A1DFC127579977CD7F8</key>
+		<key>15521D41F527407D4C39DA66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3092D1F8958F6FFED1E7C0E8</key>
+		<key>45061CAE885C10C69B1DFE40</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37DF526C2C85E5E03FE76064</key>
+		<key>61C49B16A7DA50156A161083</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C9B8FAB7AD376CC80C6F4E8</key>
+		<key>7318820BD90814F73E44D14C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7F3DED1C1607059CD18101A</key>
+		<key>77744164F5E455E83B8120B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C34AE89352D058057A8FD5CB</key>
+		<key>7DED0AA05898BE87A2AB88E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5789F35FB2B1A09C00A9FC8</key>
+		<key>9D7FD845EA53A4D24D8AB5B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA73208E6BF1E52FC7F8979D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

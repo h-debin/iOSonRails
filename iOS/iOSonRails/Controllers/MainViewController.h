@@ -1,5 +1,5 @@
 //
-//  NavViewController.h
+//  MainViewController.h
 //  iOSonRails
 //
 //  Created by huangmh on 3/21/15.

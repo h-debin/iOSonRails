@@ -11,13 +11,15 @@
 #import "CoreData+MagicalRecord.h"
 #import "MainViewController.h"
 #import "News.h"
+#import "MONActivityIndicatorView.h"
 #import "HTTPClient.h"
 #import "MMPlaceHolder.h"
 
-@interface StartViewController ()
+@interface StartViewController () <MONActivityIndicatorViewDelegate>
 
 @property UIActivityIndicatorView *activityView;
 
+@property MONActivityIndicatorView *indicatorView;
 @property NSMutableDictionary *news;
 @property int doneDataRequestCount;
 
@@ -34,17 +36,27 @@
 }
 
 - (void) startLoaderIndicator {
-    self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityView.center = self.view.center;
-    [self.activityView showPlaceHolderWithLineColor:[UIColor redColor]];
-    [self.view addSubview:self.activityView];
+    //self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    //self.activityView.center = self.view.center;
+    //[self.activityView showPlaceHolderWithLineColor:[UIColor redColor]];
+    //[self.view addSubview:self.activityView];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     
-    [self.activityView startAnimating];
-                                   
+    self.indicatorView = [[MONActivityIndicatorView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT/2, SCREEN_WIDTH, 20)];
+    self.indicatorView.center =CGPointMake(SCREEN_WIDTH/2 + 17, SCREEN_HEIGHT/2);
+    self.indicatorView.delegate = self;
+    self.indicatorView.numberOfCircles = 7;
+    self.indicatorView.radius = 5;
+    self.indicatorView.internalSpacing = 3;
+    self.indicatorView.duration = 0.5;
+    self.indicatorView.delay = 0.5;
+    [self.view addSubview:self.indicatorView];
+    [self.indicatorView startAnimating];
 }
 
 - (void) stopLoaderIndicator {
-    [self.activityView stopAnimating];
+    [self.indicatorView stopAnimating];
+    //[self.activityView stopAnimating];
 }
 
 - (void) loadDataFromServer {
@@ -109,6 +121,7 @@
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqual:@"doneDataRequestCount"]) {
         if (self.doneDataRequestCount == 7) {
+            [self stopLoaderIndicator];
             MainViewController *mainViewController = [[MainViewController alloc] initWithEmotion:[Emotion haoEmotion]];
             [self presentViewController:mainViewController
                                animated:YES
@@ -120,6 +133,39 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+}
+
+#pragma mark -
+#pragma mark - Centering Indicator View
+
+- (void)placeAtTheCenterWithView:(UIView *)view {
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0f
+                                                           constant:0.0f]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:view
+                                                          attribute:NSLayoutAttributeCenterY
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterY
+                                                         multiplier:1.0f
+                                                           constant:0.0f]];
+}
+
+#pragma mark -
+#pragma mark - MONActivityIndicatorViewDelegate Methods
+
+- (UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView
+      circleBackgroundColorAtIndex:(NSUInteger)index {
+    CGFloat red   = (arc4random() % 256)/255.0;
+    CGFloat green = (arc4random() % 256)/255.0;
+    CGFloat blue  = (arc4random() % 256)/255.0;
+    CGFloat alpha = 1.0f;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 @end

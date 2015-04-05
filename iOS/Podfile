@@ -9,6 +9,7 @@ target 'iOSonRails' do
   pod 'UICKeyChainStore'
   pod 'MMPlaceHolder'
   pod 'MagicalRecord'
+  pod 'MONActivityIndicatorView'
 end
 
 target 'iOSonRailsTests' do
