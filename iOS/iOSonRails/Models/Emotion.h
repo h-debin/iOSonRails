@@ -13,6 +13,7 @@
 
 @property NSString *type;
 
++ (NSArray *) allEmotions;
 +(Emotion *) haoEmotion;
 +(Emotion *) leEmotion;
 +(Emotion *) aiEmotion;

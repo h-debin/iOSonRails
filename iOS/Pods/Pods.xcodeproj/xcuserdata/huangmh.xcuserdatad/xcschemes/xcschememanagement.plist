@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-iOSonRails-Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-iOSonRails-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>15521D41F527407D4C39DA66</key>
+		<key>5A6C61C622572B239AC722B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45061CAE885C10C69B1DFE40</key>
+		<key>744BD556D638FB8AA3E37024</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61C49B16A7DA50156A161083</key>
+		<key>96C2C1AEAFFE6E7391138231</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7318820BD90814F73E44D14C</key>
+		<key>9B58970919D600E958CDD077</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77744164F5E455E83B8120B9</key>
+		<key>B2AC496B2728F4B9EB95D63D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DED0AA05898BE87A2AB88E6</key>
+		<key>C0F84A57FEC08C7165DDCEEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D7FD845EA53A4D24D8AB5B2</key>
+		<key>C99F71028FE013FCE3F0320C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA73208E6BF1E52FC7F8979D</key>
+		<key>D08F8F984A7F5CE06EB89A75</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4133E8F011CEAD1A5C5E3D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

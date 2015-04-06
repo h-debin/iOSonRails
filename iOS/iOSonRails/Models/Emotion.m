@@ -22,6 +22,18 @@
     return self;
 }
 
++ (NSArray *) allEmotions {
+    return [[NSArray alloc] initWithObjects:
+            [self haoEmotion],
+            [self leEmotion],
+            [self aiEmotion],
+            [self juEmotion],
+            [self jingEmotion],
+            [self nuEmotion],
+            [self eEmotion],
+            nil];
+}
+
 + (Emotion *) haoEmotion {
     return [[self alloc] initWithType:@"好"];
 }

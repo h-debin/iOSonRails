@@ -10,6 +10,7 @@ target 'iOSonRails' do
   pod 'MMPlaceHolder'
   pod 'MagicalRecord'
   pod 'MONActivityIndicatorView'
+  pod 'Reachability', '~> 3.2'
 end
 
 target 'iOSonRailsTests' do

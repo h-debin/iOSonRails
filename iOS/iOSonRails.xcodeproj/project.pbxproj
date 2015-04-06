@@ -16,8 +16,10 @@
 		BA146A6B1AC0111800D046F3 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA146A6A1AC0111800D046F3 /* main.storyboard */; };
 		BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1DB6901A5FF44700B4E453 /* UserManager.m */; };
 		BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1DB6921A5FF87400B4E453 /* Security.framework */; };
-		BA3CD7BA1AD19359008F44F7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3CD7B81AD19359008F44F7 /* Reachability.m */; };
-		BA3CD7BB1AD19359008F44F7 /* Reachability.podspec in Resources */ = {isa = PBXBuildFile; fileRef = BA3CD7B91AD19359008F44F7 /* Reachability.podspec */; };
+		BA3CD7C01AD29C56008F44F7 /* app_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA3CD7BD1AD29C55008F44F7 /* app_icon.jpg */; };
+		BA3CD7C11AD29C56008F44F7 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA3CD7BE1AD29C55008F44F7 /* app_icon.png */; };
+		BA3CD7C21AD29C56008F44F7 /* app_icon@58.png in Resources */ = {isa = PBXBuildFile; fileRef = BA3CD7BF1AD29C55008F44F7 /* app_icon@58.png */; };
+		BA3CD7C51AD2C2B6008F44F7 /* NetworkChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3CD7C41AD2C2B6008F44F7 /* NetworkChecker.m */; };
 		BA5BF8E51ACC406A00857632 /* Emotion.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5BF8E41ACC406A00857632 /* Emotion.m */; };
 		BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */; };
 		BA8F310B1AC53D4600C6A1B3 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F310A1AC53D4600C6A1B3 /* Color.m */; };
@@ -62,9 +64,11 @@
 		BA1DB68F1A5FF44700B4E453 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		BA1DB6901A5FF44700B4E453 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		BA1DB6921A5FF87400B4E453 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		BA3CD7B71AD19359008F44F7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		BA3CD7B81AD19359008F44F7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		BA3CD7B91AD19359008F44F7 /* Reachability.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Reachability.podspec; sourceTree = "<group>"; };
+		BA3CD7BD1AD29C55008F44F7 /* app_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_icon.jpg; sourceTree = "<group>"; };
+		BA3CD7BE1AD29C55008F44F7 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		BA3CD7BF1AD29C55008F44F7 /* app_icon@58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@58.png"; sourceTree = "<group>"; };
+		BA3CD7C31AD2C2B6008F44F7 /* NetworkChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkChecker.h; sourceTree = "<group>"; };
+		BA3CD7C41AD2C2B6008F44F7 /* NetworkChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkChecker.m; sourceTree = "<group>"; };
 		BA5BF8E31ACC406A00857632 /* Emotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotion.h; sourceTree = "<group>"; };
 		BA5BF8E41ACC406A00857632 /* Emotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emotion.m; sourceTree = "<group>"; };
 		BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
@@ -125,10 +129,9 @@
 		BA05A7BA1A80FDE90040ED7E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				BA3CD7B61AD19359008F44F7 /* Reachability */,
 				BA1DB68F1A5FF44700B4E453 /* UserManager.h */,
 				BA1DB6901A5FF44700B4E453 /* UserManager.m */,
-				BA96BD831ACC2F190042ADDB /* HTTP */,
+				BA96BD831ACC2F190042ADDB /* Network */,
 				BA8F31081AC53D1D00C6A1B3 /* Color */,
 			);
 			path = Helper;
@@ -172,15 +175,16 @@
 			path = NavView;
 			sourceTree = "<group>";
 		};
-		BA3CD7B61AD19359008F44F7 /* Reachability */ = {
+		BA3CD7BC1AD29C55008F44F7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				BA3CD7B71AD19359008F44F7 /* Reachability.h */,
-				BA3CD7B81AD19359008F44F7 /* Reachability.m */,
-				BA3CD7B91AD19359008F44F7 /* Reachability.podspec */,
+				BA3CD7BD1AD29C55008F44F7 /* app_icon.jpg */,
+				BA3CD7BE1AD29C55008F44F7 /* app_icon.png */,
+				BA3CD7BF1AD29C55008F44F7 /* app_icon@58.png */,
 			);
-			path = Reachability;
-			sourceTree = "<group>";
+			name = icons;
+			path = Image/icons;
+			sourceTree = SOURCE_ROOT;
 		};
 		BA8F31021AC251EB00C6A1B3 /* NewsWebView */ = {
 			isa = PBXGroup;
@@ -222,12 +226,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		BA96BD831ACC2F190042ADDB /* HTTP */ = {
+		BA96BD831ACC2F190042ADDB /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				BA05A7BB1A80FDE90040ED7E /* HTTPClient.h */,
 				BA05A7BC1A80FDE90040ED7E /* HTTPClient.m */,
+				BA3CD7C31AD2C2B6008F44F7 /* NetworkChecker.h */,
+				BA3CD7C41AD2C2B6008F44F7 /* NetworkChecker.m */,
 			);
+			name = Network;
 			path = HTTP;
 			sourceTree = "<group>";
 		};
@@ -262,6 +269,7 @@
 				BA05A7BF1A80FDE90040ED7E /* Models */,
 				BA05A7C21A80FDE90040ED7E /* View */,
 				BAD5D6F21A52E03C0009CC5F /* Images.xcassets */,
+				BA3CD7BC1AD29C55008F44F7 /* icons */,
 				BAD5D6E51A52E03C0009CC5F /* Supporting Files */,
 			);
 			path = iOSonRails;
@@ -398,9 +406,11 @@
 			files = (
 				BA8F31121AC56A0300C6A1B3 /* share_24dp.png in Resources */,
 				BAD5D70B1A52E2780009CC5F /* Info.plist in Resources */,
-				BA3CD7BB1AD19359008F44F7 /* Reachability.podspec in Resources */,
 				BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */,
+				BA3CD7C21AD29C56008F44F7 /* app_icon@58.png in Resources */,
+				BA3CD7C01AD29C56008F44F7 /* app_icon.jpg in Resources */,
 				BA8F31141AC5A47C00C6A1B3 /* wechat_share.png in Resources */,
+				BA3CD7C11AD29C56008F44F7 /* app_icon.png in Resources */,
 				BA8F31101AC5647000C6A1B3 /* back_24dp.png in Resources */,
 				BA8F310E1AC5635300C6A1B3 /* back.png in Resources */,
 			);
@@ -454,11 +464,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3CD7BA1AD19359008F44F7 /* Reachability.m in Sources */,
 				BAC0832C1AD040AE00708ACA /* StartViewController.m in Sources */,
 				BAD1940D1ACAEEFA00389AA1 /* Model.xcdatamodeld in Sources */,
 				BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */,
 				BAD194101ACAF2B800389AA1 /* News.m in Sources */,
+				BA3CD7C51AD2C2B6008F44F7 /* NetworkChecker.m in Sources */,
 				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
 				BA146A581ABD929F00D046F3 /* MainViewController.m in Sources */,
 				BAD5D6E81A52E03C0009CC5F /* main.m in Sources */,

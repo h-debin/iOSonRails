@@ -10,7 +10,8 @@
 #define iOSonRails_Macro_h
 
 //#define NEWS_URL "http://127.0.0.1:3000/api/v1/news/"
-#define NEWS_URL "http://api.minghe.me/api/v1/news"
+#define SERVER_HOST "api.minghe.me"
+#define API_URL "http://api.minghe.me/api/v1/news"
 #define TOKEN_REQUEST_URL "http://api.minghe.me/api/v1/request_access_token"
 
 // Width, Height

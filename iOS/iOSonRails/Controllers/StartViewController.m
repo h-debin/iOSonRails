@@ -10,7 +10,7 @@
 #import "Macro.h"
 #import "CoreData+MagicalRecord.h"
 #import "MainViewController.h"
-#import "Reachability.h"
+#import "NetworkChecker.h"
 #import "News.h"
 #import "MONActivityIndicatorView.h"
 #import "HTTPClient.h"
@@ -32,19 +32,13 @@
     self.doneDataRequestCount = 0;
     [self addObserver:self forKeyPath:@"doneDataRequestCount" options:NSKeyValueObservingOptionNew context:nil];
     
-    Reachability *reach = [Reachability reachabilityWithHostname:@"baidu.com"];
-    if ([reach isReachable]) {
+    if ([NetworkChecker isReachable:@SERVER_HOST]) {
         //cleanup the old data
         [self cleanAndResetupDB];
         
         [self prepareIndicator];
         [self startLoaderIndicator];
         [self loadDataFromServer];
-        /*
-        if ([reach isReachableViaWiFi]) {
-            // On WiFi
-        }
-         */
     } else {
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"网络连接出错啦"
                                                           message:@"检查一下你的网络连接是否正常"
@@ -53,14 +47,6 @@
                                                 otherButtonTitles:nil];
         
         [message show];
-        
-        [reach setReachableBlock:^(Reachability *reachblock) {
-             // Now reachable
-         }];
-        
-        [reach setUnreachableBlock:^(Reachability*reach) {
-             // Now unreachable
-         }];
     }
 }
 
@@ -87,38 +73,15 @@
 
 - (void) loadDataFromServer {
     self.news = [[NSMutableDictionary alloc] init];
-    for(int i = 0; i < 7; i++) {
-        NSString *typeKey = [self getNewsKeyWithType:i];
-        self.news[typeKey] = [[NSMutableArray alloc] init];
-        [self requestNewsWithType:i];
+    NSArray *emotions = [Emotion allEmotions];
+    for(int i = 0; i < [emotions count]; i++) {
+        [self requestNewsWithEmotion:emotions[i]];
     }
 }
 
-- (NSString *) getNewsKeyWithType:(int )type {
-    switch (type) {
-        case 0:
-            return @"好";
-        case 1:
-            return @"乐";
-        case 2:
-            return @"惊";
-        case 3:
-            return @"哀";
-        case 4:
-            return @"惧";
-        case 5:
-            return @"恶";
-        case 6:
-            return @"怒";
-        default:
-            return @"";
-    }
-}
-
-- (void) requestNewsWithType:(int )type {
-    NSString *typeName = [self getNewsKeyWithType:type];
+- (void) requestNewsWithEmotion:(Emotion *)emotion {
     [[HTTPClient sharedHTTPClient] get:@"http://api.minghe.me/api/v1/news"
-                             parameter:@{@"emotion_type": typeName}
+                             parameter:@{@"emotion_type": emotion.type}
                                success:^(id JSON) {
                                    for(int i = 0; i < [JSON count]; i++) {
                                        if(![News isTitleExist:JSON[i][@"title"]]) {

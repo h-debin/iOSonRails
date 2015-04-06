@@ -113,7 +113,7 @@
         if ([self.news count] > 0) {
             [UIView transitionWithView:self.view
                               duration:0.75
-                               options: UIViewAnimationOptionTransitionFlipFromBottom
+                               options: UIViewAnimationOptionTransitionFlipFromTop
                             animations:^{
                                 [self.contentView removeFromSuperview];
                             }
