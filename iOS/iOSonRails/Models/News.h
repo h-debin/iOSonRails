@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSString * newsPicture;
 @property (nonatomic, retain) NSString * newsEmotionType;
 @property (nonatomic, retain) NSNumber * newsMainEmotionValue;
+@property (nonatomic, retain) NSDate * newsCreatedAt;
 
 - (id )initWithDictionary:(NSDictionary *)aDict;
 + (BOOL)isTitleExist:(NSString *)title;

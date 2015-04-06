@@ -17,12 +17,7 @@
 @interface MainViewController: UIViewController <UIWebViewDelegate>
 
 @property Emotion *emotion;
-
 @property (strong,nonatomic) CMMotionManager *motionManager;
-
-@property NSString *coverImage;
-@property NSString *coverTitle;
-@property NSString *coverCategory;
 
 @property NSArray *news;
 @property int activeNewsIndex;

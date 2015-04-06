@@ -50,6 +50,10 @@
         self.newsPubDate = aDict[@"pub_date"];
     }
     
+    if([aDict[@"created_at"] isKindOfClass:[NSDate class]]) {
+        self.newsCreatedAt = aDict[@"created_at"];
+    }
+    
     return self;
 }
 
@@ -68,7 +72,7 @@
 
 + (NSArray *) newsWithEmotion:(Emotion *)emotion {
   //return [News MR_findByAttribute:@"newsEmotionType" withValue:emotion.type];
-    return [News MR_findByAttribute:@"newsEmotionType" withValue:emotion.type andOrderBy:@"newsPubDate" ascending:NO];
+    return [News MR_findByAttribute:@"newsEmotionType" withValue:emotion.type andOrderBy:@"newsCreatedAt" ascending:YES];
 }
 
 + (NSString *) getNewsKeyWithType:(int )type {

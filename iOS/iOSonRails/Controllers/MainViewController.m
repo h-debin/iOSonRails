@@ -15,12 +15,8 @@
 @interface MainViewController ()<NewsWebViewControllerDelegate, MONActivityIndicatorViewDelegate>
 
 @property UIView *contentView;
-@property UIWebView *webView;
-
-@property UIView *navBar;
-@property UIButton *backButton;
-@property UIButton *shareButton;
-
+@property MONActivityIndicatorView *indicatorView;
+@property BOOL requestDone;
 
 @end
 
@@ -29,7 +25,9 @@
 - (id ) initWithEmotion:(Emotion *)emotion {
     if (self == [super init]) {
         self.emotion = emotion;
+        self.requestDone = NO;
         self.news = [[NSArray alloc] initWithArray:[News newsWithEmotion:self.emotion]];
+        [self addObserver:self forKeyPath:@"requestDone" options:NSKeyValueObservingOptionNew context:nil];
     }
     
     return self;
@@ -46,13 +44,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self prepareIndicator];
     
     self.motionManager = [[CMMotionManager alloc] init];
     self.motionManager.accelerometerUpdateInterval = .1;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
     if ([self.news count] > 0) {
         News *news = self.news[self.activeNewsIndex];
         self.contentView = [[CommonView alloc] initWithNews:news];
@@ -158,11 +156,21 @@
     }
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [self showNextNews];
+        if (self.activeNewsIndex == [self.news count] - 1) {
+            NSLog(@"reuest new news appendto tail");
+            [self requestNewsWithEmotion:self.emotion];
+        } else {
+            [self showNextNews];
+        }
     }
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self showPreviousNews];
+        if (self.activeNewsIndex == 0) {
+            NSLog(@"reuest new news appendto top");
+            [self requestNewsWithEmotion:self.emotion];
+        } else {
+            [self showPreviousNews];
+        }
     }
 }
 
@@ -195,8 +203,6 @@
     // get next news
     self.activeNewsIndex = (self.activeNewsIndex + 1) % ([self.news count]);
     News *tmp = self.news[self.activeNewsIndex];
-    self.coverImage = tmp.newsPicture;
-    self.coverTitle = tmp.newsTitle;
     if (self.activeNewsIndex != 0) {
         self.contentView = [[CommonView alloc] initWithNews:tmp];
     } else {
@@ -218,8 +224,6 @@
     //get previous news
     self.activeNewsIndex = abs(self.activeNewsIndex - 1) % [self.news count];
     News *tmp = self.news[self.activeNewsIndex];
-    self.coverImage = tmp.newsPicture;
-    self.coverTitle = tmp.newsTitle;
     if (self.activeNewsIndex != 0) {
         self.contentView = [[CommonView alloc] initWithNews:tmp];
     } else {
@@ -274,7 +278,6 @@
 - (void) removeDownGestrueRecognizers {
     int numberOfGenstureRecognizer = [self.view.gestureRecognizers count];
     for (int i = 0; i < numberOfGenstureRecognizer; i++) {
-
         if ([self.view.gestureRecognizers[i] isKindOfClass:[UISwipeGestureRecognizer class]]) {
             UISwipeGestureRecognizer *genstrue = self.view.gestureRecognizers[i];
             if (genstrue.direction == UISwipeGestureRecognizerDirectionDown) {
@@ -371,7 +374,113 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void) requestNewsWithEmotion:(Emotion *)emotion {
+    [self startLoaderIndicator];
+    [[HTTPClient sharedHTTPClient] get:@"http://api.minghe.me/api/v1/news"
+                             parameter:@{@"emotion_type": emotion.type}
+                               success:^(id JSON) {
+                                   for(int i = 0; i < [JSON count]; i++) {
+                                       if(![News isTitleExist:JSON[i][@"title"]]) {
+                                           News *tmpNews = [News MR_createEntity];
+                                           tmpNews = [tmpNews initWithDictionary:JSON[i]];
+                                           [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion: ^(BOOL success, NSError *error) {
+                                               if(success) {
+                                                   NSLog(@"saved OK");
+                                               } else {
+                                                   NSLog(@"saving error -> %@ ", [error localizedDescription]);
+                                               }
+                                           }];
+                                       } else {
+                                           NSLog(@"already have");
+                                       }
+                                   }
+                                   self.requestDone = YES;
+                               }
+                               failure:^(NSError *error){
+                                   [self stopLoaderIndicator];
+                                   NSLog(@"%@", [error localizedDescription]);
+                               }];
+    
+}
 
+- (void) prepareIndicator {
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.indicatorView = [[MONActivityIndicatorView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT/2, SCREEN_WIDTH, 20)];
+    self.indicatorView.center = CGPointMake(SCREEN_WIDTH/2 + 17, SCREEN_HEIGHT/2);
+    self.indicatorView.delegate = self;
+    self.indicatorView.numberOfCircles = 7;
+    self.indicatorView.radius = 5;
+    self.indicatorView.internalSpacing = 3;
+    self.indicatorView.duration = 0.5;
+    self.indicatorView.delay = 0.5;
+    [self.view addSubview:self.indicatorView];
+}
 
+- (void) startLoaderIndicator {
+    [self.indicatorView startAnimating];
+}
+
+- (void) stopLoaderIndicator {
+    [self.indicatorView stopAnimating];
+}
+
+#pragma mark -
+#pragma mark - Centering Indicator View
+
+- (void)placeAtTheCenterWithView:(UIView *)view {
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0f
+                                                           constant:0.0f]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:view
+                                                          attribute:NSLayoutAttributeCenterY
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterY
+                                                         multiplier:1.0f
+                                                           constant:0.0f]];
+}
+
+#pragma mark -
+#pragma mark - MONActivityIndicatorViewDelegate Methods
+
+- (UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView
+      circleBackgroundColorAtIndex:(NSUInteger)index {
+    CGFloat red   = (arc4random() % 256)/255.0;
+    CGFloat green = (arc4random() % 256)/255.0;
+    CGFloat blue  = (arc4random() % 256)/255.0;
+    CGFloat alpha = 1.0f;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqual:@"requestDone"]) {
+        [self stopLoaderIndicator];
+       
+        int oldNumber = [self.news count];
+        self.news = [[NSArray alloc] initWithArray:[News newsWithEmotion:self.emotion]];
+        if ([self.news count] == oldNumber) {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"没有更多新闻"
+                                                              message:@"T_T"
+                                                             delegate:nil
+                                                    cancelButtonTitle:nil
+                                                    otherButtonTitles:nil];
+        
+            [message show];
+            [self performSelector:@selector(dismissAlert:) withObject:message afterDelay:3.0f];
+        } else if ([self.news count] > oldNumber) {
+            [self showNextNews];
+        }
+    }
+}
+
+-(void)dismissAlert:(UIAlertView *) alertView
+{
+    [alertView dismissWithClickedButtonIndex:nil animated:YES];
+}
 
 @end
