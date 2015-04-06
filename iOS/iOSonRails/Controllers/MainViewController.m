@@ -9,9 +9,10 @@
 #import "MainViewController.h"
 #import "MMPlaceHolder.h"
 #import "NewsWebViewController.h"
+#import "MONActivityIndicatorView.h"
 #import "Color.h"
 
-@interface MainViewController ()<NewsWebViewControllerDelegate>
+@interface MainViewController ()<NewsWebViewControllerDelegate, MONActivityIndicatorViewDelegate>
 
 @property UIView *contentView;
 @property UIWebView *webView;
@@ -19,6 +20,7 @@
 @property UIView *navBar;
 @property UIButton *backButton;
 @property UIButton *shareButton;
+
 
 @end
 
@@ -89,6 +91,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIApplicationWillEnterForegroundNotification object:nil];
 }
+
+
 
 -(void)receiveNotification:(NSNotification *)notification
 {
@@ -366,6 +370,8 @@
 - (void)newsWebViewControllerSwippedRight:(NewsWebViewController *)newsWebViewController {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 
 @end
