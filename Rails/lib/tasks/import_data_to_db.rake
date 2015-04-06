@@ -1,4 +1,9 @@
 namespace :db do
+  desc "clean up old news (2days ago)"
+  task :cleanup => :environment do
+    News.where(["pub_date < ?", 2.days.ago]).destroy_all
+  end
+
   desc "import data from another db"
   task :import => :environment do
     puts "you may should copy your private db into ROOT/db/* first"
