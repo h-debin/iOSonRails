@@ -27,6 +27,16 @@
 - (id ) initWithEmotion:(Emotion *)emotion {
     if (self == [super init]) {
         self.emotion = emotion;
+        self.news = [[NSArray alloc] initWithArray:[News newsWithEmotion:self.emotion]];
+    }
+    
+    return self;
+}
+
+- (id ) initWithEmotionAndNews:(Emotion *)emotion news:(NSArray *)news {
+    if (self == [super init]) {
+        self.emotion = emotion;
+        self.news = news;
     }
     
     return self;
@@ -40,7 +50,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    self.news = [[NSArray alloc] initWithArray:[News newsWithEmotion:self.emotion]];
     
     if ([self.news count] > 0) {
         News *news = self.news[self.activeNewsIndex];

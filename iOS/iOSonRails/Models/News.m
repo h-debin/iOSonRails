@@ -67,7 +67,8 @@
 }
 
 + (NSArray *) newsWithEmotion:(Emotion *)emotion {
-    return [News MR_findByAttribute:@"newsEmotionType" withValue:emotion.type];
+  //return [News MR_findByAttribute:@"newsEmotionType" withValue:emotion.type];
+    return [News MR_findByAttribute:@"newsEmotionType" withValue:emotion.type andOrderBy:@"newsPubDate" ascending:NO];
 }
 
 + (NSString *) getNewsKeyWithType:(int )type {

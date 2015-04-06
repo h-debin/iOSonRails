@@ -32,8 +32,11 @@
     self.doneDataRequestCount = 0;
     [self addObserver:self forKeyPath:@"doneDataRequestCount" options:NSKeyValueObservingOptionNew context:nil];
     
-    Reachability *reach = [Reachability reachabilityWithHostname:@"google.com"];
+    Reachability *reach = [Reachability reachabilityWithHostname:@"baidu.com"];
     if ([reach isReachable]) {
+        //cleanup the old data
+        [self cleanAndResetupDB];
+        
         [self prepareIndicator];
         [self startLoaderIndicator];
         [self loadDataFromServer];
@@ -51,13 +54,11 @@
         
         [message show];
         
-        [reach setReachableBlock:^(Reachability *reachblock)
-         {
+        [reach setReachableBlock:^(Reachability *reachblock) {
              // Now reachable
          }];
         
-        [reach setUnreachableBlock:^(Reachability*reach)
-         {
+        [reach setUnreachableBlock:^(Reachability*reach) {
              // Now unreachable
          }];
     }
@@ -191,6 +192,36 @@
     CGFloat blue  = (arc4random() % 256)/255.0;
     CGFloat alpha = 1.0f;
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
+- (void)setupDB
+{
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:[self dbStore]];
+}
+
+- (NSString *)dbStore
+{
+    //NSString *bundleID = (NSString *)[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleIdentifierKey];
+    return [NSString stringWithFormat:@"%@.sqlite", @"Model"];
+}
+
+- (void)cleanAndResetupDB
+{
+    NSString *dbStore = [self dbStore];
+    
+    NSError *error = nil;
+    
+    NSURL *storeURL = [NSPersistentStore MR_urlForStoreName:dbStore];
+    
+    [MagicalRecord cleanUp];
+    
+    if([[NSFileManager defaultManager] removeItemAtURL:storeURL error:&error]){
+        [self setupDB];
+    }
+    else{
+        NSLog(@"An error has occurred while deleting %@", dbStore);
+        NSLog(@"Error description: %@", error.description);
+    }
 }
 
 @end

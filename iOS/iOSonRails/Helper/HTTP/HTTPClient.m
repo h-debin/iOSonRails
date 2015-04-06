@@ -46,19 +46,19 @@
                                                       error:nil];
     /**
      *  use different cache policy according to network status
-     */
     if ([self networkIsAvailable]) {
         [mutableRequest setCachePolicy: NSURLRequestReloadIgnoringCacheData];
     } else {
         [mutableRequest setCachePolicy: NSURLRequestReturnCacheDataElseLoad];
     }
     
-    NSLog(@"Etag: %@", [self getEtag:mutableRequest]);
-
+    //NSLog(@"Etag: %@", [self getEtag:mutableRequest]);
+     */
+    
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:mutableRequest];
     requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
-    [mutableRequest setValue:[[UserManager sharedUserManager] getUUID] forHTTPHeaderField: @"UUID"];
-    [mutableRequest setValue:[[UserManager sharedUserManager] getToken] forHTTPHeaderField: @"Token"];
+    //[mutableRequest setValue:[[UserManager sharedUserManager] getUUID] forHTTPHeaderField: @"UUID"];
+    //[mutableRequest setValue:[[UserManager sharedUserManager] getToken] forHTTPHeaderField: @"Token"];
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self cachedResponseObject:operation];
         successHandler(responseObject);
