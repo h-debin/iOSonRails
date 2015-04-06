@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "HTTPClient.h"
 #import "StartViewController.h"
-#import "CoreData+MagicalRecord.h"
+#import "DBManager.h"
 #import "UserManager.h"
 #import "Macro.h"
 #import "MainViewController.h"
@@ -27,7 +27,7 @@
     /*
      * setup CoreData, we're using MagicalRecord here
      */
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model.sqlite"];
+    [DBManager setupDB];
     
     
     /**

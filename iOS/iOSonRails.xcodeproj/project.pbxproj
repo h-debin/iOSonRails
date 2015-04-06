@@ -20,6 +20,7 @@
 		BA3CD7C11AD29C56008F44F7 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA3CD7BE1AD29C55008F44F7 /* app_icon.png */; };
 		BA3CD7C21AD29C56008F44F7 /* app_icon@58.png in Resources */ = {isa = PBXBuildFile; fileRef = BA3CD7BF1AD29C55008F44F7 /* app_icon@58.png */; };
 		BA3CD7C51AD2C2B6008F44F7 /* NetworkChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3CD7C41AD2C2B6008F44F7 /* NetworkChecker.m */; };
+		BA3CD7D81AD2CA4C008F44F7 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3CD7D71AD2CA4C008F44F7 /* DBManager.m */; };
 		BA5BF8E51ACC406A00857632 /* Emotion.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5BF8E41ACC406A00857632 /* Emotion.m */; };
 		BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */; };
 		BA8F310B1AC53D4600C6A1B3 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F310A1AC53D4600C6A1B3 /* Color.m */; };
@@ -69,6 +70,8 @@
 		BA3CD7BF1AD29C55008F44F7 /* app_icon@58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@58.png"; sourceTree = "<group>"; };
 		BA3CD7C31AD2C2B6008F44F7 /* NetworkChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkChecker.h; sourceTree = "<group>"; };
 		BA3CD7C41AD2C2B6008F44F7 /* NetworkChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkChecker.m; sourceTree = "<group>"; };
+		BA3CD7D61AD2CA4C008F44F7 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		BA3CD7D71AD2CA4C008F44F7 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		BA5BF8E31ACC406A00857632 /* Emotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotion.h; sourceTree = "<group>"; };
 		BA5BF8E41ACC406A00857632 /* Emotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emotion.m; sourceTree = "<group>"; };
 		BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
@@ -129,8 +132,8 @@
 		BA05A7BA1A80FDE90040ED7E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				BA1DB68F1A5FF44700B4E453 /* UserManager.h */,
-				BA1DB6901A5FF44700B4E453 /* UserManager.m */,
+				BA3CD7D91AD2CC9D008F44F7 /* UserManager */,
+				BA3CD7C61AD2C9DC008F44F7 /* DB */,
 				BA96BD831ACC2F190042ADDB /* Network */,
 				BA8F31081AC53D1D00C6A1B3 /* Color */,
 			);
@@ -161,17 +164,18 @@
 			isa = PBXGroup;
 			children = (
 				BA8F31021AC251EB00C6A1B3 /* NewsWebView */,
-				BA146A551ABD49A300D046F3 /* NavView */,
+				BA146A551ABD49A300D046F3 /* CommonView */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		BA146A551ABD49A300D046F3 /* NavView */ = {
+		BA146A551ABD49A300D046F3 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
 				BA146A5C1ABEAAD600D046F3 /* CommonView.h */,
 				BA146A5D1ABEAAD600D046F3 /* CommonView.m */,
 			);
+			name = CommonView;
 			path = NavView;
 			sourceTree = "<group>";
 		};
@@ -185,6 +189,25 @@
 			name = icons;
 			path = Image/icons;
 			sourceTree = SOURCE_ROOT;
+		};
+		BA3CD7C61AD2C9DC008F44F7 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				BA3CD7D61AD2CA4C008F44F7 /* DBManager.h */,
+				BA3CD7D71AD2CA4C008F44F7 /* DBManager.m */,
+			);
+			name = DB;
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		BA3CD7D91AD2CC9D008F44F7 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				BA1DB68F1A5FF44700B4E453 /* UserManager.h */,
+				BA1DB6901A5FF44700B4E453 /* UserManager.m */,
+			);
+			name = UserManager;
+			sourceTree = "<group>";
 		};
 		BA8F31021AC251EB00C6A1B3 /* NewsWebView */ = {
 			isa = PBXGroup;
@@ -471,6 +494,7 @@
 				BA3CD7C51AD2C2B6008F44F7 /* NetworkChecker.m in Sources */,
 				BA1DB6911A5FF44700B4E453 /* UserManager.m in Sources */,
 				BA146A581ABD929F00D046F3 /* MainViewController.m in Sources */,
+				BA3CD7D81AD2CA4C008F44F7 /* DBManager.m in Sources */,
 				BAD5D6E81A52E03C0009CC5F /* main.m in Sources */,
 				BA05A7C81A80FDE90040ED7E /* HTTPClient.m in Sources */,
 				BA05A7C71A80FDE90040ED7E /* AppDelegate.m in Sources */,
