@@ -10,7 +10,8 @@
 #import "MMPlaceHolder.h"
 #import "NewsWebViewController.h"
 #import "MONActivityIndicatorView.h"
-#import "Color.h"
+#import "GAITrackedViewController.h"
+#import "Color.h" 
 
 @interface MainViewController ()<NewsWebViewControllerDelegate, MONActivityIndicatorViewDelegate>
 
@@ -48,6 +49,18 @@
     
     self.motionManager = [[CMMotionManager alloc] init];
     self.motionManager.accelerometerUpdateInterval = .1;
+    
+    // Google Tracker
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName value:@"Home Screen"];
+    
+    // Previous V3 SDK versions
+    // [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+    // New SDK versions
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

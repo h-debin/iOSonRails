@@ -34,7 +34,7 @@
     
     if ([NetworkChecker isReachable:@SERVER_HOST]) {
         //cleanup the old data
-        [DBManager cleanAndResetupDB];
+        //[DBManager cleanAndResetupDB];
         
         [self prepareIndicator];
         [self startLoaderIndicator];

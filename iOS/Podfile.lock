@@ -20,6 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.5.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - GoogleAnalytics-iOS-SDK (3.10):
+    - GoogleAnalytics-iOS-SDK/Core (= 3.10)
+  - GoogleAnalytics-iOS-SDK/Core (3.10)
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
@@ -34,6 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - GoogleAnalytics-iOS-SDK
   - MagicalRecord
   - MMPlaceHolder
   - MONActivityIndicatorView
@@ -44,6 +48,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MMPlaceHolder: 8fe70118604dfd117155ff3f6e8492965e338443
   MONActivityIndicatorView: 728965121e59cef32c1bc4676f6868e35f3c8c61

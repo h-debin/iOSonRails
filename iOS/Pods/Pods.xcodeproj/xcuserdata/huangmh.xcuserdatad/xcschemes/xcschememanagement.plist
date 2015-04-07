@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-iOSonRails-GoogleAnalytics-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-iOSonRails-MMPlaceHolder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5A6C61C622572B239AC722B2</key>
+		<key>05D617A6016E6E244B1BAE29</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>744BD556D638FB8AA3E37024</key>
+		<key>1D364D0ACE420FE3655A224E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96C2C1AEAFFE6E7391138231</key>
+		<key>2D211B5B574E324B01515070</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B58970919D600E958CDD077</key>
+		<key>557C1B8329B647D0493E5D8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2AC496B2728F4B9EB95D63D</key>
+		<key>5D1A4F97FD61E28CE9778866</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C0F84A57FEC08C7165DDCEEA</key>
+		<key>64CD44C146602BCD4F903550</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C99F71028FE013FCE3F0320C</key>
+		<key>71821FE6015AC93BA6113033</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D08F8F984A7F5CE06EB89A75</key>
+		<key>94AAA4E329D3A37484570A17</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E4133E8F011CEAD1A5C5E3D6</key>
+		<key>960554384E28170327CA9B89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F15CECCA2153DC1B7A62B9F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

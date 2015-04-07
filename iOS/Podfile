@@ -11,6 +11,7 @@ target 'iOSonRails' do
   pod 'MagicalRecord'
   pod 'MONActivityIndicatorView'
   pod 'Reachability', '~> 3.2'
+  pod 'GoogleAnalytics-iOS-SDK'
 end
 
 target 'iOSonRailsTests' do

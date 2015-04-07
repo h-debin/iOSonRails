@@ -21,13 +21,13 @@
 		BA3CD7C21AD29C56008F44F7 /* app_icon@58.png in Resources */ = {isa = PBXBuildFile; fileRef = BA3CD7BF1AD29C55008F44F7 /* app_icon@58.png */; };
 		BA3CD7C51AD2C2B6008F44F7 /* NetworkChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3CD7C41AD2C2B6008F44F7 /* NetworkChecker.m */; };
 		BA3CD7D81AD2CA4C008F44F7 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3CD7D71AD2CA4C008F44F7 /* DBManager.m */; };
+		BA3CD8B01AD42296008F44F7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3CD8AF1AD42296008F44F7 /* AdSupport.framework */; };
+		BA3CD8B21AD422A5008F44F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3CD8B11AD422A5008F44F7 /* SystemConfiguration.framework */; };
+		BA3CD8B41AD422AE008F44F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3CD8B31AD422AE008F44F7 /* libz.dylib */; };
+		BA3CD8B81AD42901008F44F7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3CD8B71AD42901008F44F7 /* libsqlite3.dylib */; };
 		BA5BF8E51ACC406A00857632 /* Emotion.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5BF8E41ACC406A00857632 /* Emotion.m */; };
 		BA8F31011AC1AF3000C6A1B3 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */; };
 		BA8F310B1AC53D4600C6A1B3 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F310A1AC53D4600C6A1B3 /* Color.m */; };
-		BA8F310E1AC5635300C6A1B3 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F310D1AC5635300C6A1B3 /* back.png */; };
-		BA8F31101AC5647000C6A1B3 /* back_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F310F1AC5647000C6A1B3 /* back_24dp.png */; };
-		BA8F31121AC56A0300C6A1B3 /* share_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F31111AC56A0300C6A1B3 /* share_24dp.png */; };
-		BA8F31141AC5A47C00C6A1B3 /* wechat_share.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */; };
 		BAC0832C1AD040AE00708ACA /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC0832B1AD040AE00708ACA /* StartViewController.m */; };
 		BAD1940A1ACAEE4500389AA1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD194091ACAEE4500389AA1 /* CoreData.framework */; };
 		BAD1940D1ACAEEFA00389AA1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAD1940B1ACAEEFA00389AA1 /* Model.xcdatamodeld */; };
@@ -72,16 +72,18 @@
 		BA3CD7C41AD2C2B6008F44F7 /* NetworkChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkChecker.m; sourceTree = "<group>"; };
 		BA3CD7D61AD2CA4C008F44F7 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		BA3CD7D71AD2CA4C008F44F7 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		BA3CD7DB1AD41EE5008F44F7 /* libPods-iOSonRails-AVOSCloud.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-iOSonRails-AVOSCloud.a"; path = "Pods/build/Debug-iphoneos/libPods-iOSonRails-AVOSCloud.a"; sourceTree = "<group>"; };
+		BA3CD8AF1AD42296008F44F7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		BA3CD8B11AD422A5008F44F7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BA3CD8B31AD422AE008F44F7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		BA3CD8B51AD42889008F44F7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		BA3CD8B71AD42901008F44F7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BA5BF8E31ACC406A00857632 /* Emotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotion.h; sourceTree = "<group>"; };
 		BA5BF8E41ACC406A00857632 /* Emotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emotion.m; sourceTree = "<group>"; };
 		BA8F30FF1AC1AF3000C6A1B3 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		BA8F31001AC1AF3000C6A1B3 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		BA8F31091AC53D4600C6A1B3 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		BA8F310A1AC53D4600C6A1B3 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
-		BA8F310D1AC5635300C6A1B3 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		BA8F310F1AC5647000C6A1B3 /* back_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_24dp.png; sourceTree = "<group>"; };
-		BA8F31111AC56A0300C6A1B3 /* share_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_24dp.png; sourceTree = "<group>"; };
-		BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat_share.png; sourceTree = "<group>"; };
 		BAC0832A1AD040AE00708ACA /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		BAC0832B1AD040AE00708ACA /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		BAD194091ACAEE4500389AA1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -91,7 +93,7 @@
 		BAD5D6E21A52E03C0009CC5F /* iOSonRails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSonRails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D6E61A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D6E71A52E03C0009CC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BAD5D6F21A52E03C0009CC5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BAD5D6F21A52E03C0009CC5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iOSonRails/Images.xcassets; sourceTree = "<group>"; };
 		BAD5D6FB1A52E03C0009CC5F /* iOSonRailsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSonRailsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD5D7001A52E03C0009CC5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD5D7011A52E03C0009CC5F /* iOSonRailsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSonRailsTests.m; sourceTree = "<group>"; };
@@ -103,6 +105,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3CD8B81AD42901008F44F7 /* libsqlite3.dylib in Frameworks */,
+				BA3CD8B41AD422AE008F44F7 /* libz.dylib in Frameworks */,
+				BA3CD8B21AD422A5008F44F7 /* SystemConfiguration.framework in Frameworks */,
+				BA3CD8B01AD42296008F44F7 /* AdSupport.framework in Frameworks */,
 				BAD1940A1ACAEE4500389AA1 /* CoreData.framework in Frameworks */,
 				BA146A601ABF157D00D046F3 /* CoreMotion.framework in Frameworks */,
 				BA1DB6931A5FF87400B4E453 /* Security.framework in Frameworks */,
@@ -175,8 +181,7 @@
 				BA146A5C1ABEAAD600D046F3 /* CommonView.h */,
 				BA146A5D1ABEAAD600D046F3 /* CommonView.m */,
 			);
-			name = CommonView;
-			path = NavView;
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 		BA3CD7BC1AD29C55008F44F7 /* icons */ = {
@@ -186,9 +191,8 @@
 				BA3CD7BE1AD29C55008F44F7 /* app_icon.png */,
 				BA3CD7BF1AD29C55008F44F7 /* app_icon@58.png */,
 			);
-			name = icons;
-			path = Image/icons;
-			sourceTree = SOURCE_ROOT;
+			path = icons;
+			sourceTree = "<group>";
 		};
 		BA3CD7C61AD2C9DC008F44F7 /* DB */ = {
 			isa = PBXGroup;
@@ -196,8 +200,7 @@
 				BA3CD7D61AD2CA4C008F44F7 /* DBManager.h */,
 				BA3CD7D71AD2CA4C008F44F7 /* DBManager.m */,
 			);
-			name = DB;
-			path = HTTP;
+			path = DB;
 			sourceTree = "<group>";
 		};
 		BA3CD7D91AD2CC9D008F44F7 /* UserManager */ = {
@@ -206,7 +209,15 @@
 				BA1DB68F1A5FF44700B4E453 /* UserManager.h */,
 				BA1DB6901A5FF44700B4E453 /* UserManager.m */,
 			);
-			name = UserManager;
+			path = UserManager;
+			sourceTree = "<group>";
+		};
+		BA3CD7DD1AD421E5008F44F7 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ThirdParty;
+			path = iOSonRails/ThirdParty;
 			sourceTree = "<group>";
 		};
 		BA8F31021AC251EB00C6A1B3 /* NewsWebView */ = {
@@ -230,10 +241,6 @@
 		BA8F310C1AC5635300C6A1B3 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				BA8F31131AC5A47C00C6A1B3 /* wechat_share.png */,
-				BA8F31111AC56A0300C6A1B3 /* share_24dp.png */,
-				BA8F310F1AC5647000C6A1B3 /* back_24dp.png */,
-				BA8F310D1AC5635300C6A1B3 /* back.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -257,15 +264,16 @@
 				BA3CD7C31AD2C2B6008F44F7 /* NetworkChecker.h */,
 				BA3CD7C41AD2C2B6008F44F7 /* NetworkChecker.m */,
 			);
-			name = Network;
-			path = HTTP;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BAD5D6D91A52E03C0009CC5F = {
 			isa = PBXGroup;
 			children = (
 				BAD5D6E41A52E03C0009CC5F /* iOSonRails */,
+				BAD5D6F21A52E03C0009CC5F /* Images.xcassets */,
 				BA8F310C1AC5635300C6A1B3 /* Image */,
+				BA3CD7DD1AD421E5008F44F7 /* ThirdParty */,
 				BAD5D6FE1A52E03C0009CC5F /* iOSonRailsTests */,
 				BAD5D6E31A52E03C0009CC5F /* Products */,
 				D308DE147F5DADD426D22BB4 /* Pods */,
@@ -291,7 +299,6 @@
 				BA96BD821ACC2E4C0042ADDB /* Controllers */,
 				BA05A7BF1A80FDE90040ED7E /* Models */,
 				BA05A7C21A80FDE90040ED7E /* View */,
-				BAD5D6F21A52E03C0009CC5F /* Images.xcassets */,
 				BA3CD7BC1AD29C55008F44F7 /* icons */,
 				BAD5D6E51A52E03C0009CC5F /* Supporting Files */,
 			);
@@ -338,6 +345,12 @@
 		DA02936B6D1617D528B45F3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA3CD8B71AD42901008F44F7 /* libsqlite3.dylib */,
+				BA3CD8B51AD42889008F44F7 /* libsqlite3.0.dylib */,
+				BA3CD8B31AD422AE008F44F7 /* libz.dylib */,
+				BA3CD8B11AD422A5008F44F7 /* SystemConfiguration.framework */,
+				BA3CD8AF1AD42296008F44F7 /* AdSupport.framework */,
+				BA3CD7DB1AD41EE5008F44F7 /* libPods-iOSonRails-AVOSCloud.a */,
 				BAD194091ACAEE4500389AA1 /* CoreData.framework */,
 				BA146A5F1ABF157D00D046F3 /* CoreMotion.framework */,
 				90CD7E7EF8EA12AFB12922DF /* libPods-iOSonRails.a */,
@@ -427,15 +440,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA8F31121AC56A0300C6A1B3 /* share_24dp.png in Resources */,
 				BAD5D70B1A52E2780009CC5F /* Info.plist in Resources */,
 				BAD5D6F31A52E03C0009CC5F /* Images.xcassets in Resources */,
 				BA3CD7C21AD29C56008F44F7 /* app_icon@58.png in Resources */,
 				BA3CD7C01AD29C56008F44F7 /* app_icon.jpg in Resources */,
-				BA8F31141AC5A47C00C6A1B3 /* wechat_share.png in Resources */,
 				BA3CD7C11AD29C56008F44F7 /* app_icon.png in Resources */,
-				BA8F31101AC5647000C6A1B3 /* back_24dp.png in Resources */,
-				BA8F310E1AC5635300C6A1B3 /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +618,11 @@
 				INFOPLIST_FILE = "iOSonRails/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/iOSonRails/ThirdParty/GoogleAnalyticsServicesiOS_3.10",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -621,6 +635,11 @@
 				INFOPLIST_FILE = "iOSonRails/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/iOSonRails/ThirdParty/GoogleAnalyticsServicesiOS_3.10",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

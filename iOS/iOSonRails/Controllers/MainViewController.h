@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 #import "HTTPClient.h"
+#import "AppDelegate.h"
 #import "CommonView.h"
 #import "Macro.h"
 #import "Emotion.h"
